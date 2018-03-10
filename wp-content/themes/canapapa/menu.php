@@ -310,8 +310,10 @@
         </div>
     </li>
 </ul>
-<ul class="nav navbar-nav main-nav">
-    <li class="active">
+
+<!--
+<ul class="nav navbar-nav main-nav"> //start_lvl
+    <li class="active"> start_el
         <a href="index.html" class="ion-ios-home"></a>
     </li>
     <li><a href="about.html">Giới thiệu</a></li>
@@ -321,3 +323,13 @@
     <li><a href="blog.html">Tin tức</a></li>
     <li><a href="contact.html">Liên hệ</a></li>
 </ul>
+-->
+
+<?php
+    $args = array(
+        'theme_location' => 'primary',
+        'menu_class' => 'nav navbar-nav main-nav',
+    );
+
+    wp_nav_menu($args);
+?>

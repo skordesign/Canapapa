@@ -14,7 +14,26 @@ get_header()
     <div id="banner" class="slick-initialized slick-slider">
         <?php get_template_part( 'content', 'slider' ); ?>
     </div>
+    <div class="middle-se">
+        <?php get_template_part( 'new', 'product' ); ?>
 
+        <section class="container">
+            <div class="row">
+                <?php get_template_part( 'templates/delivery', 'free' ); ?>
+            </div>
+        </section>
+
+        <?php get_template_part( 'product', 'new' ); ?>
+
+        <?php get_template_part( 'category', 'product' ); ?>
+
+        <?php get_template_part( 'trademark'); ?>
+
+        <?php get_template_part( 'news', 'fashion'); ?>
+
+        <?php get_template_part( 'multiple', 'products'); ?>
+        <?php get_template_part( 'new', 'posts'); ?>
+    </div>
 
 <?php
 get_footer();

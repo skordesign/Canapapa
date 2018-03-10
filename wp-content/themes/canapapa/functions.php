@@ -6,6 +6,31 @@
  * Time: 12:11 AM
  */
 /**
+ * Add theme support
+ */
+function woocommerce_support() {
+    add_theme_support('woocommerce');
+}
+
+/**
+ * Setup theme canapapa
+ */
+function canapapa_setup_theme() {
+    /**
+     * Add menu support
+     */
+    add_theme_support('menus');
+    /**
+     * Navigation Menus
+     */
+    register_nav_menus(array(
+        'primary' => __('Primary Menu'),
+        'footer'=> __('Footer Menu'),
+    ));
+}
+add_action('init', 'canapapa_setup_theme');
+
+/**
  * Register script and style
  */
 function canapapa_script_enqueue() {
@@ -27,26 +52,18 @@ function canapapa_script_enqueue() {
 add_action('wp_enqueue_scripts', 'canapapa_script_enqueue');
 
 /**
- * Add theme support
- */
-function woocommerce_support() {
-    add_theme_support('woocommerce');
-}
-/**
- * Add menu support
- */
-if(function_exists('add_theme_support')) {
-    add_theme_support('menus');
-}
-
-/**
- * Add post image support
+ * Add post image, background, post-formats, html5 support
  */
 add_theme_support('post-thumbnails');
+add_theme_support('custom-background');
+add_theme_support('post-formats', array('aside', 'image', 'video'));
+add_theme_support('html5', 'search');
 
 /**
  * Add custom thumbnail sizes
  */
 if(function_exists('add_image_size')) {
-//    add_image_size('custom-image-size', 500, 500, true);
+    add_image_size('custom-image-size', 500, 500, true);
 }
+
+

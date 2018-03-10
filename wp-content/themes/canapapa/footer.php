@@ -26,14 +26,13 @@
                 </div>
                 <div class="col-md-2 col-sm-12">
                     <h5 class="text-info text-uppercase">Liên kết</h5>
-                    <ul class="list-unstyled nudge">
-                        <li><a href="index.html">Trang chủ</a></li>
-                        <li><a href="about.html">Giới thiệu</a></li>
-                        <li><a href="products.html">Sản phẩm</a></li>
-                        <li><a href="products.html">Khuyến mãi</a></li>
-                        <li><a href="blog.html">Tin tức</a></li>
-                        <li><a href="contact.html">Liên hệ</a></li>
-                    </ul>
+                    <?php
+                        $args = array(
+                                'theme_location'=> 'footer',
+                        );
+
+                        wp_nav_menu($args);
+                    ?>
                     <hr class="hidden-md hidden-lg hidden-sm">
                 </div>
                 <div class="col-md-3 col-sm-12">
