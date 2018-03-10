@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05af5021-cde8-420c-be75-525e5e9da124" name="Default" comment="themes templates">
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/canapapa/404.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/canapapa/content-none.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/canapapa/free-delivery.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/canapapa/header-canapapa.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/canapapa/makeup-archive-product.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/canapapa/new-archive-product.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/canapapa/nursing-archive-product.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/canapapa/shampoo-archive-product.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/canapapa/trademark-product.php" />
+    <list default="true" id="05af5021-cde8-420c-be75-525e5e9da124" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/canapapa/index.php" afterPath="$PROJECT_DIR$/wp-content/themes/canapapa/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -173,7 +163,7 @@
       <workItem from="1520375113176" duration="4199000" />
       <workItem from="1520532505571" duration="770000" />
       <workItem from="1520651435599" duration="8433000" />
-      <workItem from="1520667249335" duration="73000" />
+      <workItem from="1520667249335" duration="94000" />
     </task>
     <task id="LOCAL-00001" summary="init templates">
       <created>1520663752464</created>
@@ -182,11 +172,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520663752464</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="themes templates">
+      <created>1520667337342</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1520667337342</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14897000" />
+    <option name="totallyTimeSpent" value="14918000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
