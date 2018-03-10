@@ -5,9 +5,10 @@
  * Date: 3/9/2018
  * Time: 12:11 AM
  */
-
-function canapapa_script_enqueue()
-{
+/**
+ * Register script and style
+ */
+function canapapa_script_enqueue() {
     #include script css
     wp_enqueue_style('custom-style-1', get_template_directory_uri(). '/css/A.font-awesome.css+style.css,Mcc.Ql9FxO-sfy.css.pagespeed.cf.ho57CWxopf.css', array(), '1.0.0', 'all');
     wp_enqueue_style('custom-style-2', get_template_directory_uri(). '/css/A.hint.css+animate.css+bootstrap-select.min.css+jquery.simplecolorpicker.css,Mcc.ITfIRIQ_Aj.css.pagespeed.cf.GwBTqSEMS1.css', array(), '1.0.0', 'all');
@@ -23,5 +24,29 @@ function canapapa_script_enqueue()
     wp_enqueue_script('custom-script-6', get_template_directory_uri(). '/js/salvattore.js', array(), '1.0.0', true);
     wp_enqueue_script('custom-script-7', get_template_directory_uri(). '/js/bootstrap-tabcollapse.js', array(), '1.0.0', true);
 }
-
 add_action('wp_enqueue_scripts', 'canapapa_script_enqueue');
+
+/**
+ * Add theme support
+ */
+function woocommerce_support() {
+    add_theme_support('woocommerce');
+}
+/**
+ * Add menu support
+ */
+if(function_exists('add_theme_support')) {
+    add_theme_support('menus');
+}
+
+/**
+ * Add post image support
+ */
+add_theme_support('post-thumbnails');
+
+/**
+ * Add custom thumbnail sizes
+ */
+if(function_exists('add_image_size')) {
+//    add_image_size('custom-image-size', 500, 500, true);
+}
