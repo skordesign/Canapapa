@@ -11,7 +11,7 @@
                 <div class="slick-track"
                      style="opacity: 1; width: 4102px; transform: translate3d(-1172px, 0px, 0px);">
                     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                        <?php get_template_part( 'templates/products/new', 'archive-product' ); ?>
+                        <?php get_template_part( 'templates/products/components/new', 'archive-product' ); ?>
                     <?php endwhile; ?>
                     <?php else : ?>
                         <?php get_template_part( 'content', 'none' ); ?>

@@ -15,6 +15,25 @@ get_header()
         <?php get_template_part( 'content', 'slider' ); ?>
     </div>
 
+    <div class="middle-sec wow fadeIn animated animated" data-wow-offset="10" data-wow-duration="2s"
+         style="visibility: visible; animation-duration: 2s;">
+        <div class="page-header">
+            <div class="container text-center">
+                <h2 class="text-primary text-uppercase"> <?php the_title(); ?></h2>
+            </div>
+        </div>
+        <section class="container equal-height-container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <?php get_template_part( 'templates/introduce/content', 'introduce' ); ?>
+                        <?php get_template_part('sidebar')  ?>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
 
 <?php
 get_footer();

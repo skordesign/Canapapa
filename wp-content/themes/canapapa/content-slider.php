@@ -1,3 +1,7 @@
+<?php
+//    echo '<pre>'; print_r(get_post_custom('page')); die();
+?>
+
 <div aria-live="polite" class="slick-list draggable" tabindex="0">
     <div class="slick-track" style="opacity: 1; width: 2664px;">
         <div class="item slick-slide slick-active" data-slick-index="0" aria-hidden="false"

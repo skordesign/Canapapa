@@ -25,7 +25,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 product-item-container effect-wrap effect-animate"
                                  style="display: block;">
                                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                                    <?php get_template_part( 'templates/products/nursing', 'archive-product' ); ?>
+                                    <?php get_template_part( 'templates/products/components/nursing', 'archive-product' ); ?>
                                 <?php endwhile; ?>
                                 <?php else : ?>
                                     <?php get_template_part( 'content', 'none' ); ?>
@@ -37,7 +37,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 product-item-container effect-wrap effect-animate"
                                  style="display: block;">
                                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                                    <?php get_template_part( 'templates/products/makeup', 'archive-product' ); ?>
+                                    <?php get_template_part( 'templates/products/components/makeup', 'archive-product' ); ?>
                                 <?php endwhile; ?>
                                 <?php else : ?>
                                     <?php get_template_part( 'content', 'none' ); ?>
@@ -49,7 +49,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 product-item-container effect-wrap effect-animate"
                                  style="display: block;">
                                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                                    <?php get_template_part( 'templates/products/shampoo', 'archive-product' ); ?>
+                                    <?php get_template_part( 'templates/products/components/shampoo', 'archive-product' ); ?>
                                 <?php endwhile; ?>
                                 <?php else : ?>
                                     <?php get_template_part( 'content', 'none' ); ?>

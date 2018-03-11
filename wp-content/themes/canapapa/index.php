@@ -15,24 +15,24 @@
         <?php get_template_part( 'content', 'slider' ); ?>
     </div>
     <div class="middle-se">
-        <?php get_template_part( 'new', 'product' ); ?>
+        <?php get_template_part( 'templates/products/new', 'product' ); ?>
 
         <section class="container">
             <div class="row">
-                <?php get_template_part( 'templates/delivery', 'free' ); ?>
+                <?php get_template_part( 'templates/delivery/free', 'delivery' ); ?>
             </div>
         </section>
 
-        <?php get_template_part( 'product', 'new' ); ?>
+        <?php get_template_part( 'templates/products/product', 'new' ); ?>
 
         <?php get_template_part( 'category', 'product' ); ?>
 
         <?php get_template_part( 'trademark'); ?>
 
-        <?php get_template_part( 'news', 'fashion'); ?>
+        <?php get_template_part( 'templates/news/news', 'fashion'); ?>
 
-        <?php get_template_part( 'multiple', 'products'); ?>
-        <?php get_template_part( 'new', 'posts'); ?>
+        <?php get_template_part( 'templates/products/multiple', 'products'); ?>
+        <?php get_template_part( 'templates/news/new', 'posts'); ?>
     </div>
 
 <?php
