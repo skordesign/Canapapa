@@ -5,6 +5,8 @@
  * Date: 3/9/2018
  * Time: 12:11 AM
  */
+
+add_action( 'after_setup_theme', 'woocommerce_support' );
 /**
  * Add theme support
  */

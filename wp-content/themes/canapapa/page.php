@@ -26,6 +26,9 @@ get_header()
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row">
+                        <?php
+//                            echo '<pre>'; print_r(get_post_type('home'));
+                        ?>
                         <?php get_template_part( 'templates/introduce/content', 'introduce' ); ?>
                         <?php get_template_part('sidebar')  ?>
                     </div>
