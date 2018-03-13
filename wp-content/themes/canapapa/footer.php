@@ -1,39 +1,62 @@
+<?php
+    //Info website
+    $Name_canapapa = get_theme_mod('Name_canapapa');
+    $Desc_web = get_theme_mod('Desc_web');
+    $Phone = get_theme_mod('Phone');
+    $Name_web = get_theme_mod('Name_web');
+    $Addr_web = get_theme_mod('Addr_web');
+    $Skype = get_theme_mod('Skype');
+    $Email = get_theme_mod('Email');
+
+    //Info icon socail
+    $Fb = get_theme_mod('Facebook');
+    $Tw = get_theme_mod('Twitter');
+    $linkedin = get_theme_mod('Linkedin');
+    $google = get_theme_mod('Google+');
+    $pinterest= get_theme_mod('Pinterest')
+
+?>
 <div class="btm-sec">
     <footer>
         <div class="footer-middle wow fadeIn animated animated" data-wow-offset="40" data-wow-duration="2s"
              style="visibility: visible; animation-duration: 2s;">
             <div class="container">
                 <div class="col-md-3 col-sm-12">
-                    <h5 class="text-info text-uppercase">Mỹ phẩm canapapa</h5>
-                    <p>Mỹ Phẩm canapapa được quý khách hàng biết đến là phân phối các mặt hàng mỹ phẩm và Dược mỹ
-                        phẩm được sản xuất tại Hàn Quốc đặc biệt là nhà bán lẻ số 1 các Sản phẩm chăm sóc sắc đẹp
-                        của Hãng mỹ phẩm nổi tiếng ThefaceShop.</p>
+                    <h5 class="text-info text-uppercase"><?php echo $Name_canapapa; ?></h5>
+                    <p><?php echo $Desc_web ?></p>
                     <ul class="soc">
-                        <li>
-                            <a class="soc-twitter" href="#"></a>
-                        </li>
-                        <li>
-                            <a class="soc-facebook" href="#"></a>
-                        </li>
-                        <li>
-                            <a class="soc-google" href="#"></a>
-                        </li>
-                        <li>
-                            <a class="soc-pinterest" href="#"></a>
-                        </li>
+                        <?php
+                            if(!empty($Tw)) {
+                                echo '<li><a class="soc-twitter" href=""></a></li>';
+                            }
+                        ?>
+                        <?php
+                        if(!empty($Fb)) {
+                            echo '<li><a class="soc-facebook" href=""></a></li>';
+                        }
+                        ?>
+                        <?php
+                        if(!empty($google)) {
+                            echo '<li><a class="soc-google" href=""></a></li>';
+                        }
+                        ?>
+                        <?php
+                        if(!empty($pinterest)) {
+                            echo '<li><a class="soc-pinterest" href=""></a></li>';
+                        }
+                        ?>
                     </ul>
                     <hr class="hidden-md hidden-lg hidden-sm">
                 </div>
                 <div class="col-md-2 col-sm-12">
                     <h5 class="text-info text-uppercase">Liên kết</h5>
-                    <ul class="list-unstyled nudge">
-                        <li><a href="index.html">Trang chủ</a></li>
-                        <li><a href="about.html">Giới thiệu</a></li>
-                        <li><a href="products.html">Sản phẩm</a></li>
-                        <li><a href="products.html">Khuyến mãi</a></li>
-                        <li><a href="blog.html">Tin tức</a></li>
-                        <li><a href="contact.html">Liên hệ</a></li>
-                    </ul>
+                    <?php
+                    $args = array(
+                        'theme_location' => 'footer',
+                        'menu_class' => 'list-unstyled nudge',
+                    );
+                    wp_nav_menu($args);
+                    ?>
                     <hr class="hidden-md hidden-lg hidden-sm">
                 </div>
                 <div class="col-md-3 col-sm-12">
@@ -41,17 +64,17 @@
                     <ul class="list-unstyled">
                         <li>
                             <i class="fa fa-map-marker"> </i>
-                            78/1 Phan Đình Phùng, Phường Tân Thành, Quận Tân Phú, TP.Hồ Chí Minh
+                            <?php echo $Addr_web; ?>
                         </li>
                         <li>
                             <i class="fa fa-envelope"> </i>
-                            <a href="mailto:laziweb@gmail.com">laziweb@gmail.com</a>
+                            <a href="mailto:laziweb@gmail.com"><?php echo $Email ?></a>
                         </li>
                         <li>
-                            <i class="fa fa-phone"> </i>0903.915.877 (Kỹ thuật) - 0901.461.407(Kinh doanh)
+                            <i class="fa fa-phone"> </i> <?php echo $Phone; ?>
                         </li>
                         <li>
-                            <i class="fa fa-skype"></i> hotienloc.92 - <i class="fa fa-skype"></i> gm.quantrinh
+                            <i class="fa fa-skype"></i> <?php echo $Skype; ?>
                         </li>
                     </ul>
                     <hr class="hidden-md hidden-lg hidden-sm">

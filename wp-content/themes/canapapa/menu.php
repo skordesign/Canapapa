@@ -310,12 +310,10 @@
         </div>
     </li>
 </ul>
-<ul class="nav navbar-nav main-nav">
-    <?php
-    $args = array(
-        'theme_location' => 'primary',
-        'menu_class' => 'nav navbar-nav main-nav',
-    );
-    wp_nav_menu($args);
-    ?>
-</ul>
+<?php
+$args = array(
+    'theme_location' => 'primary',
+    'menu_class' => 'nav navbar-nav main-nav',
+);
+wp_nav_menu($args);
+?>

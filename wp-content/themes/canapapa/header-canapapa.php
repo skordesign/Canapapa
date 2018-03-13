@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-4 col-lg-3 ">
-                <a href="index.html" class="navbar-brand"></a>
+                <a href="<?php echo get_home_url(); ?>" class="navbar-brand"></a>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-9 feature hidden-xs">
                 <div class="row">
