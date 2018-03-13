@@ -17,8 +17,6 @@ $wc_new_product = new WP_Query($params);
                     <?php if ($wc_new_product->have_posts()) : ?>
                         <?php while ($wc_new_product->have_posts()) : $wc_new_product->the_post();
                             global $product;
-                            echo $product->price;
-                            echo $product->regular_price;
                             $discount = ($product->price / $product->regular_price)*10;
                         ?>
                             <div class="product-item-container effect-wrap effect-animate slick-slide slick-cloned"
@@ -26,7 +24,7 @@ $wc_new_product = new WP_Query($params);
                                 <div class="product-main">
                                     <div class="product-view">
                                         <?php
-                                        $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_new_product->post->ID));
+                                        $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_new_product->ID));
                                         ?>
                                         <figure class="double-img">
                                             <a href="product-details.html"><img class="btm-img" width="215" height="240"

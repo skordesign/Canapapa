@@ -1,3 +1,9 @@
+<?php
+$params = array('posts_per_page' => 10, 'post_type' => 'trademark');
+$wc_trademarks = new WP_Query($params);
+?>
+
+
 <section class="container" data-speed="6">
     <div class="row">
         <div class="col-sm-12 big-title text-uppercase text-center">
@@ -11,180 +17,28 @@
             <div aria-live="polite" class="slick-list draggable" tabindex="0">
                 <div class="slick-track"
                      style="opacity: 1; width: 4680px; transform: translate3d(-2574px, 0px, 0px);">
-                    <div class="slick-slide slick-cloned" data-slick-index="-5" aria-hidden="true"
-                         style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="1164501970"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true"
-                         style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="1459001891"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true"
-                         style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="1753501812"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true"
-                         style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="2048001733"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true"
-                         style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="2342501654"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide" data-slick-index="0" aria-hidden="true" style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="1164501970"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide" data-slick-index="1" aria-hidden="true" style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="1459001891"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide" data-slick-index="2" aria-hidden="true" style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="1753501812"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide" data-slick-index="3" aria-hidden="true" style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="2048001733"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide" data-slick-index="4" aria-hidden="true" style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="2342501654"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide" data-slick-index="5" aria-hidden="true" style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="1164501970"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide slick-active" data-slick-index="6" aria-hidden="false"
-                         style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="1459001891"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide slick-active" data-slick-index="7" aria-hidden="false"
-                         style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="1753501812"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide slick-active" data-slick-index="8" aria-hidden="false"
-                         style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="2048001733"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide slick-active" data-slick-index="9" aria-hidden="false"
-                         style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="2342501654"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide slick-cloned slick-active" data-slick-index="10" aria-hidden="false"
-                         style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="1164501970"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="11" aria-hidden="true"
-                         style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="1459001891"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="12" aria-hidden="true"
-                         style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="1753501812"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="13" aria-hidden="true"
-                         style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="2048001733"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="14" aria-hidden="true"
-                         style="width: 204px;">
-                        <a href="#">
-                            <figure><img width="200" height="100" alt="" data-pagespeed-url-hash="2342501654"
-                                         src=""
-                                >
-                            </figure>
-                        </a>
-                    </div>
+                    <?php if ($wc_trademarks->have_posts()) : ?>
+                        <?php while ($wc_trademarks->have_posts()) : $wc_trademarks->the_post();
+                            ?>
+                            <?php
+                            $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_trademarks->post->ID));
+                            ?>
+                            <div class="slick-slide" data-slick-index="-5" aria-hidden="true"
+                                 style="width: 204px;">
+                                <a href="#">
+                                    <figure><img width="200" height="100" alt="<?php the_title(); ?>" data-pagespeed-url-hash="1164501970"
+                                                 src="<?php echo $featured_image['0'] ?>"
+                                        >
+                                    </figure>
+                                </a>
+                            </div>
+                        <?php endwhile; ?>
+                        <?php wp_reset_postdata(); ?>
+                    <?php else: ?>
+                        <p>
+                            <?php _e('No Products'); ?>
+                        </p>
+                    <?php endif; ?>
                 </div>
             </div>
 
