@@ -43,6 +43,5 @@
                 </figure>
             </div>
         </div>
-
     </div>
 </section>

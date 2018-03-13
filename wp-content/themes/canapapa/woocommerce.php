@@ -1,42 +1,68 @@
-<?php
-get_header();
-?>
-    <div class="content-wrap" data-effect="lnl-push">
-<?php get_template_part( 'header', 'canapapa' ); ?>
+<?php get_header(); ?>
+<div class="content-wrap" data-effect="lnl-push">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-3 ">
+                    <a href="index.html" class="navbar-brand"></a>
+                </div>
+                <div class="col-sm-12 col-md-8 col-lg-9 feature hidden-xs">
+                    <div class="row">
+                        <div class="col-sm-4 feature-box ion-chatbubble-working">
+                            <dl class="text-primary text-capitalize">
+                                <dt>Tư vấn hỗ trợ</dt>
+                                <dd class="text-muted"> Tư vấn hỗ trợ khách hàng 24/7</dd>
+                            </dl>
+                        </div>
+                        <div class="col-sm-4 feature-box ion-android-sync">
+                            <dl class="text-primary text-capitalize">
+                                <dt>30 Ngày đổi trả miễn phí</dt>
+                                <dd class="text-muted">Đổi trả miễn phí cho khách hàng</dd>
+                            </dl>
+                        </div>
+                        <div class="col-sm-4 feature-box ion-lock-combination">
+                            <dl class="text-primary text-capitalize">
+                                <dt>Cam kết hàng chính hãng</dt>
+                                <dd class="text-muted"> Sản phẩm chính hãng, chất lượng.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
     <nav class="navbar navbar-default navbar-static-top line-navbar-two">
         <div class="container">
             <div class="collapse navbar-collapse" id="line-navbar-collapse-2">
-                <?php get_template_part( 'menu' ); ?>
-                <?php get_template_part( 'search', 'form' ); ?>
+                <!--        menu    -->
+                <?php get_template_part('menu'); ?>
+                <!--        search    -->
+                <?php get_template_part( 'search'); ?>
             </div>
         </div>
     </nav>
-
-    <div class="middle-sec wow fadeIn animated animated" data-wow-offset="10" data-wow-duration="2s"
-         style="visibility: visible; animation-duration: 2s;">
-        <div class="page-header">
-            <div class="container text-center">
-                <h2 class="text-primary text-uppercase"> <?php the_title(); ?></h2>
-            </div>
-        </div>
-        <section class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="inner-ad">
-                        <figure><img class="img-responsive" src="" width="1170" height="100" alt="" data-pagespeed-url-hash="2102948165"></figure>
-                    </div>
-                </div>
-                <div class="col-sm-12 equal-height-container">
-                    <div class="row">
-                        <?php get_template_part('sidebar', 'left') ?>
-                        <?php get_template_part('content', 'product') ?>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!--    slider-->
+    <?php get_template_part('slider') ?>
+    <div class="middle-se">
+        <!--        hàng mới về    -->
+        <?php get_template_part('templates/products/new', 'product'); ?>
+        <!--        quảng cáo    -->
+        <?php get_template_part('templates/advertise/content', 'advertise') ?>
+        <!--        sản phẩm mới    -->
+        <?php get_template_part('templates/products/product', 'new') ?>
+        <!--        danh mục sản phẩm    -->
+        <?php get_template_part('category', 'product') ?>
+        <!--        danh mục thương hiệu   -->
+        <?php get_template_part('trademark') ?>
+        <!--        tin tức thời trang   -->
+        <?php get_template_part('templates/news/news', 'fashion') ?>
+        <!--        sản phẩm mua nhiều   -->
+        <?php get_template_part('templates/products/multiple', 'products') ?>
+        <!--        tin tức   -->
+        <?php get_template_part('templates/news/news', 'posts') ?>
     </div>
 
-
-<?php
-get_footer();
-?>
+    <?php get_footer(); ?>
+</div>
+</body>
+</html>

@@ -2,7 +2,7 @@
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
             <span class="fa fa-dot-circle-o"></span> Danh mục <span
-                class="ion-android-arrow-dropdown"></span> </a>
+                    class="ion-android-arrow-dropdown"></span> </a>
         <div class="dropdown-menu" role="menu">
             <div class="lnt-dropdown-mega-menu">
                 <ul class="lnt-category list-unstyled">
@@ -10,7 +10,7 @@
                     <li><a href="#subcategory-sports">Dưỡng thể</a></li>
                     <li><a href="#subcategory-music">Chăm sóc tóc</a></li>
                     <li><a href="#subcategory-books">Trang điểm <span
-                                class="label label-danger">Hot</span></a></li>
+                                    class="label label-danger">Hot</span></a></li>
                     <li><a href="#subcategory-fashion">Nước hoa</a></li>
                     <li><a href="#subcategory-movies">Tin tức</a></li>
                 </ul>
@@ -33,7 +33,7 @@
                                 <li><a href="products.html"><i class="ion-scissors icon"></i>Xịt khoáng</a>
                                 </li>
                                 <li><a href="blog-masonry.htmproducts.htmll"><i
-                                            class="ion-document-text icon"></i>Sản phẩm trị nám</a></li>
+                                                class="ion-document-text icon"></i>Sản phẩm trị nám</a></li>
                                 <li><a href="products.html"><i class="ion-star icon"></i>Kem dưỡng trắng
                                         da</a></li>
                             </ul>
@@ -129,7 +129,7 @@
                             <ul class="list-unstyled col-sm-6">
                                 <li><a href="products.html">Dầu xả</a></li>
                                 <li><a href="products.html">Dầu ủ tóc</a> <span
-                                        class="label label-danger">Hot</span></li>
+                                            class="label label-danger">Hot</span></li>
                                 <li><a href="products.html">Tinh dầu bồ kết</a></li>
                             </ul>
                         </div>
@@ -170,7 +170,7 @@
                             <h3 class="lnt-category-name text-info text-uppercase">Trang điểm</h3>
                             <ul class="list-unstyled col-sm-6">
                                 <li><a href="products.html">Trang điểm môi</a> <span
-                                        class="label label-primary">Hot</span></li>
+                                            class="label label-primary">Hot</span></li>
                                 <li><a href="products.html">Trang điểm mặt</a></li>
                                 <li><a href="products.html">Trang điểm tóc</a></li>
                                 <li><a href="products.html">Mi giả</a></li>
@@ -178,7 +178,7 @@
                             </ul>
                             <ul class="list-unstyled col-sm-6">
                                 <li><a href="blog.html">Hương dẫn makeup</a> <span
-                                        class="label label-primary">Hot</span></li>
+                                            class="label label-primary">Hot</span></li>
                                 <li><a href="blog.html">Mẹo giữ màu son</a></li>
                             </ul>
                         </div>
@@ -269,7 +269,7 @@
                                 <li><a href="blog.html">Tin tức thời trang</a></li>
                                 <li><a href="blog.html">HƯớng dẫn làm đẹp</a></li>
                                 <li><a href="blog.html">Tin tức khuyến mãi</a> <span
-                                        class="label label-info">Hot</span></li>
+                                            class="label label-info">Hot</span></li>
                                 <li><a href="blog.html">Tin tức sản phẩm</a></li>
                             </ul>
                         </div>
@@ -310,26 +310,12 @@
         </div>
     </li>
 </ul>
-
-<!--
-<ul class="nav navbar-nav main-nav"> //start_lvl
-    <li class="active"> start_el
-        <a href="index.html" class="ion-ios-home"></a>
-    </li>
-    <li><a href="about.html">Giới thiệu</a></li>
-    <li><a href="products.html">Sản phẩm</a></li>
-    <li><a href="products.html">Bán chạy</a></li>
-    <li><span class="nav-span hot-sale">20% OFF</span><a href="products.html">Khuyến mãi</a></li>
-    <li><a href="blog.html">Tin tức</a></li>
-    <li><a href="contact.html">Liên hệ</a></li>
-</ul>
--->
-
-<?php
+<ul class="nav navbar-nav main-nav">
+    <?php
     $args = array(
         'theme_location' => 'primary',
         'menu_class' => 'nav navbar-nav main-nav',
     );
-
     wp_nav_menu($args);
-?>
+    ?>
+</ul>

@@ -4,8 +4,8 @@
              style="visibility: visible; animation-duration: 2s;">
             <div class="container">
                 <div class="col-md-3 col-sm-12">
-                    <h5 class="text-info text-uppercase">Mỹ phẩm laziweb</h5>
-                    <p>Mỹ Phẩm laziweb được quý khách hàng biết đến là phân phối các mặt hàng mỹ phẩm và Dược mỹ
+                    <h5 class="text-info text-uppercase">Mỹ phẩm canapapa</h5>
+                    <p>Mỹ Phẩm canapapa được quý khách hàng biết đến là phân phối các mặt hàng mỹ phẩm và Dược mỹ
                         phẩm được sản xuất tại Hàn Quốc đặc biệt là nhà bán lẻ số 1 các Sản phẩm chăm sóc sắc đẹp
                         của Hãng mỹ phẩm nổi tiếng ThefaceShop.</p>
                     <ul class="soc">
@@ -26,13 +26,14 @@
                 </div>
                 <div class="col-md-2 col-sm-12">
                     <h5 class="text-info text-uppercase">Liên kết</h5>
-                    <?php
-                        $args = array(
-                                'theme_location'=> 'footer',
-                        );
-
-                        wp_nav_menu($args);
-                    ?>
+                    <ul class="list-unstyled nudge">
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="about.html">Giới thiệu</a></li>
+                        <li><a href="products.html">Sản phẩm</a></li>
+                        <li><a href="products.html">Khuyến mãi</a></li>
+                        <li><a href="blog.html">Tin tức</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>
                     <hr class="hidden-md hidden-lg hidden-sm">
                 </div>
                 <div class="col-md-3 col-sm-12">
@@ -82,8 +83,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <p class="pull-left">© 2018.Canapapa Market | phát triển bởi <a href="laziweb.com"
-                                                                                        rel="nofollow">Team Canapapa</a>
+                        <p class="pull-left">© 2015.Royal Market | phát triển bởi <a href="laziweb.com"
+                                                                                     rel="nofollow">laziweb.com</a>
                         </p>
                     </div>
                 </div>
@@ -91,69 +92,3 @@
         </div>
     </footer>
 </div>
-<script data-pagespeed-no-defer="">(function () {
-        function f(b) {
-            var a = window;
-            if (a.addEventListener) a.addEventListener("load", b, !1); else if (a.attachEvent) a.attachEvent("onload", b); else {
-                var c = a.onload;
-                a.onload = function () {
-                    b.call(this);
-                    c && c.call(this)
-                }
-            }
-        };window.pagespeed = window.pagespeed || {};
-        var k = window.pagespeed;
-
-        function l(b, a, c, g, h) {
-            this.h = b;
-            this.i = a;
-            this.l = c;
-            this.j = g;
-            this.b = h;
-            this.c = [];
-            this.a = 0
-        }
-
-        l.prototype.f = function (b) {
-            for (var a = 0; 250 > a && this.a < this.b.length; ++a, ++this.a) try {
-                null != document.querySelector(this.b[this.a]) && this.c.push(this.b[this.a])
-            } catch (c) {
-            }
-            this.a < this.b.length ? window.setTimeout(this.f.bind(this), 0, b) : b()
-        };
-        k.g = function (b, a, c, g, h) {
-            if (document.querySelector && Function.prototype.bind) {
-                var d = new l(b, a, c, g, h);
-                f(function () {
-                    window.setTimeout(function () {
-                        d.f(function () {
-                            for (var a = "oh=" + d.l + "&n=" + d.j, a = a + "&cs=", b = 0; b < d.c.length; ++b) {
-                                var c = 0 < b ? "," : "", c = c + encodeURIComponent(d.c[b]);
-                                if (131072 < a.length + c.length) break;
-                                a += c
-                            }
-                            k.criticalCssBeaconData = a;
-                            var b = d.h, c = d.i, e;
-                            if (window.XMLHttpRequest) e = new XMLHttpRequest; else if (window.ActiveXObject) try {
-                                e = new ActiveXObject("Msxml2.XMLHTTP")
-                            } catch (g) {
-                                try {
-                                    e = new ActiveXObject("Microsoft.XMLHTTP")
-                                } catch (h) {
-                                }
-                            }
-                            e &&
-                            (e.open("POST", b + (-1 == b.indexOf("?") ? "?" : "&") + "url=" + encodeURIComponent(c)), e.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"), e.send(a))
-                        })
-                    }, 0)
-                })
-            }
-        };
-        k.criticalCssBeaconInit = k.g;
-    })();
-
-</script>
-    <?php wp_footer(); ?>
-</div>
-</body>
-</html>

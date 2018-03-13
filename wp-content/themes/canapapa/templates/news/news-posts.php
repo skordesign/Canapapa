@@ -1,7 +1,7 @@
 <section class="container">
     <div class="row">
         <div class="col-sm-12 big-title text-uppercase text-center">
-            <h3 class="text-primary">Tin tức mới</h3>
+            <h3 class="text-primary">tin tức mới</h3>
             <small>Tin tức mới nhất về thới giới mỹ phẩm</small>
             <p><span class="ion-android-star-outline"></span></p>
         </div>
@@ -20,7 +20,7 @@
                                     nào?</a></h4>
                             <div class="blog-info">
                                 <p class="text-muted"><span>Bởi <a href="#">Nguyễn Thị Anh</a> / <a
-                                            href="blog.html">Tư vấn làm đẹp</a> / <a href="#">3 Nhận xét</a></span>
+                                                href="blog.html">Tư vấn làm đẹp</a> / <a href="#">3 Nhận xét</a></span>
                                 </p>
                             </div>
                             <p>Bản thân làn da của chúng ta có một cơ chế tẩy da chết tự nhiên, gọi nôm na là
@@ -44,7 +44,7 @@
                                     giúp da mặt đẹp</a></h4>
                             <div class="blog-info">
                                 <p class="text-muted"><span>Bởi <a href="#">Nguyễn Thị Anh</a> / <a
-                                            href="blog.html">Tư vấn làm đẹp</a> / <a href="#">3 Nhận xét</a></span>
+                                                href="blog.html">Tư vấn làm đẹp</a> / <a href="#">3 Nhận xét</a></span>
                                 </p>
                             </div>
                             <p>Da mặt là việc mà chị em phụ nữ quan tâm nhất và là mối lo hàng đầu mỗi khi da
@@ -69,7 +69,7 @@
                                     môi đẹp</a></h4>
                             <div class="blog-info">
                                 <p class="text-muted"><span>Bởi <a href="#">Nguyễn Thị Anh</a> / <a
-                                            href="blog.html">Mỹ phẩm mới</a> / <a href="#">3 Nhận xét</a></span></p>
+                                                href="blog.html">Mỹ phẩm mới</a> / <a href="#">3 Nhận xét</a></span></p>
                             </div>
                             <p>Trong bộ trang điểm của các bạn gái không thể nào thiếu đi những thỏi soi môi để
                                 làm lên vẻ đẹp của phái nữ.Vì vậy cần có 3 yếu tố sau để làm lên một thỏi son

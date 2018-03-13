@@ -199,8 +199,7 @@
                                 <li class="lnt-cart-actions text-center"><a
                                             class="btn btn-default btn-lg hvr-underline-from-center-default"
                                             href="cart.html">Giỏ hàng</a> <a
-                                            class="btn btn-primary hvr-underline-from-center-primary"
-                                            href="checkout.html">Thanh
+                                            class="btn btn-primary hvr-underline-from-center-primary" href="checkout.html">Thanh
                                         toán</a></li>
                             </ul>
                         </li>
