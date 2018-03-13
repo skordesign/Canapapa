@@ -2,8 +2,6 @@
 $params = array('posts_per_page' => 10, 'post_type' => 'trademark');
 $wc_trademarks = new WP_Query($params);
 ?>
-
-
 <section class="container" data-speed="6">
     <div class="row">
         <div class="col-sm-12 big-title text-uppercase text-center">
@@ -21,7 +19,7 @@ $wc_trademarks = new WP_Query($params);
                         <?php while ($wc_trademarks->have_posts()) : $wc_trademarks->the_post();
                             ?>
                             <?php
-                            $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_trademarks->post->ID));
+                            $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_trademarks->ID));
                             ?>
                             <div class="slick-slide" data-slick-index="-5" aria-hidden="true"
                                  style="width: 204px;">

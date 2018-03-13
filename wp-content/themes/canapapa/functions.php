@@ -91,7 +91,12 @@ function create_slider() {
         'hierarchical' => false,
         'rewrite' => true,
         'menu_position' => 20,
-        'supports' => array('title', 'editor', 'thumbnail')
+        'supports' => array(
+            'title',
+            'author',
+            'thumbnail',
+            'editor'
+        ), //Các tính năng được hỗ trợ trong post type
     );
     register_post_type('slider',$slider_args);
 }
@@ -154,7 +159,7 @@ function create_trademark() {
         'hierarchical' => false,
         'rewrite' => true,
         'menu_position' => 20,
-        'supports' => array('title', 'editor', 'thumbnail')
+        'supports' => array('title', 'editor', 'thumbnail',  'author',)
     );
     register_post_type('trademark',$trademark_args);
 }
