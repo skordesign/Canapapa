@@ -8,8 +8,7 @@
         <div id="best-deals" class="col-sm-12 wow fadeIn slick-initialized slick-slider animated animated"
              data-wow-offset="10" data-wow-duration="2s" style="visibility: visible; animation-duration: 2s;">
             <div aria-live="polite" class="slick-list draggable" tabindex="0">
-                <div class="slick-track"
-                     style="opacity: 1; width: 4102px; transform: translate3d(-1172px, 0px, 0px);">
+                <div class="slick-track">
                     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                         <?php get_template_part( 'templates/products/components/new', 'archive-product' ); ?>
                     <?php endwhile; ?>
@@ -18,6 +17,7 @@
                     <?php endif; ?>
                 </div>
             </div>
+
 
             <button type="button" data-role="none" class="slick-prev" aria-label="previous"
                     style="display: block;">Previous

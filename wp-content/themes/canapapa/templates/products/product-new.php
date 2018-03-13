@@ -22,39 +22,32 @@
                     </div>
                     <div class="tab-content">
                         <div role="tabpanel" class=" row tab-pane fade in active clearfix" id="men">
-                            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 product-item-container effect-wrap effect-animate"
-                                 style="display: block;">
-                                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                                    <?php get_template_part( 'templates/products/components/nursing', 'archive-product' ); ?>
-                                <?php endwhile; ?>
-                                <?php else : ?>
-                                    <?php get_template_part( 'content', 'none' ); ?>
-                                <?php endif; ?>
-                            </div>
+
+                            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                                <?php get_template_part('templates/products/components/nursing', 'archive-product'); ?>
+                            <?php endwhile; ?>
+                            <?php else : ?>
+                                <?php get_template_part('content', 'none'); ?>
+                            <?php endif; ?>
 
                         </div>
                         <div role="tabpanel" class="row tab-pane fade in clearfix" id="women">
-                            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 product-item-container effect-wrap effect-animate"
-                                 style="display: block;">
-                                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                                    <?php get_template_part( 'templates/products/components/makeup', 'archive-product' ); ?>
-                                <?php endwhile; ?>
-                                <?php else : ?>
-                                    <?php get_template_part( 'content', 'none' ); ?>
-                                <?php endif; ?>
-                            </div>
+
+                            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                                <?php get_template_part('templates/products/components/makeup', 'archive-product'); ?>
+                            <?php endwhile; ?>
+                            <?php else : ?>
+                                <?php get_template_part('content', 'none'); ?>
+                            <?php endif; ?>
 
                         </div>
                         <div role="tabpanel" class="row tab-pane fade in clearfix" id="children">
-                            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 product-item-container effect-wrap effect-animate"
-                                 style="display: block;">
-                                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                                    <?php get_template_part( 'templates/products/components/shampoo', 'archive-product' ); ?>
-                                <?php endwhile; ?>
-                                <?php else : ?>
-                                    <?php get_template_part( 'content', 'none' ); ?>
-                                <?php endif; ?>
-                            </div>
+                            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                                <?php get_template_part('templates/products/components/shampoo', 'archive-product'); ?>
+                            <?php endwhile; ?>
+                            <?php else : ?>
+                                <?php get_template_part('content', 'none'); ?>
+                            <?php endif; ?>
 
                         </div>
                     </div>

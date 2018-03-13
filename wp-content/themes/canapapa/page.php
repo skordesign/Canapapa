@@ -11,9 +11,6 @@ get_header()
             </div>
         </div>
     </nav>
-    <div id="banner" class="slick-initialized slick-slider">
-        <?php get_template_part( 'content', 'slider' ); ?>
-    </div>
 
     <div class="middle-sec wow fadeIn animated animated" data-wow-offset="10" data-wow-duration="2s"
          style="visibility: visible; animation-duration: 2s;">
@@ -30,7 +27,7 @@ get_header()
 //                            echo '<pre>'; print_r(get_post_type('home'));
                         ?>
                         <?php get_template_part( 'templates/introduce/content', 'introduce' ); ?>
-                        <?php get_template_part('sidebar')  ?>
+                        <?php get_template_part('sidebar', 'right');  ?>
                     </div>
                 </div>
             </div>

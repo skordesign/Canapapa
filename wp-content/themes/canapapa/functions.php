@@ -22,13 +22,6 @@ function canapapa_setup_theme() {
      * Add menu support
      */
     add_theme_support('menus');
-    /**
-     * Navigation Menus
-     */
-    register_nav_menus(array(
-        'primary' => __('Primary Menu'),
-        'footer'=> __('Footer Menu'),
-    ));
 }
 add_action('init', 'canapapa_setup_theme');
 
@@ -59,6 +52,14 @@ add_action('wp_enqueue_scripts', 'canapapa_script_enqueue');
 add_theme_support('post-thumbnails');
 add_theme_support('custom-background');
 add_theme_support('post-formats', array('aside', 'image', 'video'));
+
+/**
+ * Navigation Menus
+ */
+register_nav_menus(array(
+    'primary' => __('Primary Menu'),
+    'footer'=> __('Footer Menu'),
+));
 
 /**
  * Add custom thumbnail sizes

@@ -18,6 +18,7 @@
         <?php get_template_part( 'templates/products/new', 'product' ); ?>
 
         <section class="container">
+
             <div class="row">
                 <?php get_template_part( 'templates/delivery/free', 'delivery' ); ?>
             </div>
