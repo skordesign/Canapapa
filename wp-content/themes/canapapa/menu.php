@@ -1,9 +1,9 @@
 <ul class="nav navbar-nav lnt-nav-mega">
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <li class="dropdown" id="cp-menu-dropdown">
+        <a href="#" id="cp-menu" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
             <span class="fa fa-dot-circle-o"></span> Danh mục <span
                     class="ion-android-arrow-dropdown"></span> </a>
-        <div class="dropdown-menu" role="menu">
+        <div id="cp-menu-panel" class="dropdown-menu" role="menu">
             <div class="lnt-dropdown-mega-menu">
                 <ul class="lnt-category list-unstyled">
                     <li class="active"><a href="#subcategory-home">Chăm sóc da</a></li>

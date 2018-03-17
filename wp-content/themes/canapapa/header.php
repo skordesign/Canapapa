@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> >
+<html <?php language_attributes();?> >
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <?php wp_head(); ?>
+    <?php wp_head();?>
     <style type="text/css">
         html {
             margin-top: 0px !important;
@@ -13,9 +13,16 @@
             position: absolute;
             font-size: 1px;
         }
+        .dropdown .dropdown-menu {
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+        }
     </style>
 </head>
-<body <?php body_class(); ?> >
+<body <?php body_class();?> >
 <div id="preloader" style="display: none;">
     <div id="status" style="display: none;"></div>
 </div>
@@ -33,11 +40,11 @@
                 <div class="col-sm-4 welcome-msg hidden-xs">Chào mừng đến với thế giới mỹ phẩm</div>
                 <div class="col-sm-8 collapse navbar-collapse navbar-right" id="line-navbar-collapse-1">
                     <ul class="nav navbar-nav top-menu">
-                        <li class="dropdown lnt-shopping-cart visible-lg visible-md ">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                        <li class="dropdown lnt-shopping-cart visible-lg visible-md " >
+                            <a href="#" id="cp-cart" class="dropdown-toggle"  data-toggle="dropdown" role="button"
                                aria-expanded="false"> <span class="ion-bag bag-icn"></span> <span
                                         class="cart-item-quantity badge cart-badge">2</span> </a>
-                            <ul role="menu" class="dropdown-menu ul-cart">
+                            <ul role="menu" id="cp-cart-menu" class="dropdown-menu ul-cart">
                                 <li>
                                     <div class="lnt-cart-products text-success"><i
                                                 class="ion-android-checkmark-circle icon"></i> 2 Sản Phẩm. <span
@@ -75,7 +82,7 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                            <a href="#" class="dropdown-toggle"  data-toggle="dropdown" role="button"
                                aria-expanded="false"><img alt=""
                                                           src="">
                                 <span class="ion-android-arrow-dropdown"></span></a>
