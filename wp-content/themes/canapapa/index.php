@@ -40,7 +40,7 @@
             </div>
         </section>
     </div>
-
+    <?php get_template_part('quickview')?>
     <?php get_footer(); ?>
 </div>
 </body>
