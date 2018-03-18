@@ -16,17 +16,15 @@ $wc_new_product = new WP_Query($params);
                             <div class="product-main">
                                 <div class="product-view">
                                     <figure class="double-img">
-                                        <a href="product-details.html"><img class="btm-img" src="<?php echo $featured_image['0'] ?>" width="215"
+                                        <a href="<?php echo get_permalink($product->ID) ?>"><img class="btm-img" src="<?php echo $featured_image['0'] ?>" width="215"
                                                                             height="240" alt="<?php the_title(); ?>"
-                                                                            data-pagespeed-url-hash="4273646131"
-                                                                            onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                                                            data-pagespeed-url-hash="4273646131">
                                             <img class="top-img" src="<?php echo $featured_image['0'] ?>" width="215" height="240" alt="<?php the_title(); ?>"
-                                                 data-pagespeed-url-hash="4089456764"
-                                                 onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                                                 data-pagespeed-url-hash="4089456764"></a>
                                     </figure>
                                     <span class="label offer-label-left">Mới</span></div>
                                 <div class="product-btns  effect-content-inner">
-                                    <p class="effect-icon"><a href="#" class="hint-top"
+                                    <p class="effect-icon"><a href="<?php echo $product->add_to_cart_url() ?>" class="hint-top"
                                                               data-hint="Thêm vào giỏ hàng"><span
                                                     class="cart ion-bag"></span></a></p>
                                     <p class="effect-icon"><a data-toggle="modal" data-target="#quick-view-box"
@@ -35,7 +33,7 @@ $wc_new_product = new WP_Query($params);
                                 </div>
                             </div>
                             <div class="product-info">
-                                <h3 class="product-name"><a href="product-details.html"><?php the_title(); ?></a>
+                                <h3 class="product-name"><a href="<?php echo get_permalink($product->ID) ?>"><?php the_title(); ?></a>
                                 </h3>
                                 <p class="group inner list-group-item-text"><?php the_content(); ?></p>
                                 <div class="product-price"><span class="real-price text-info"><span

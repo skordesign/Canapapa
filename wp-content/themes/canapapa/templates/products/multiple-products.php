@@ -29,12 +29,12 @@ $wp_product = new WP_Query($params);
                                     </figure>
                                 </div>
                                 <div class="col-sm-6 col-md-8">
-                                    <h3 class="product-name"><a href="product-details.html"><?php the_title(); ?></a>
+                                    <h3 class="product-name"><a href="<?php echo get_permalink($product->ID) ?>"><?php the_title(); ?></a>
                                     </h3>
                                     <div class="product-price"><span
-                                                class="real-price text-info"><strong><?php echo $product->regular_price; ?></strong></span>
+                                                class="real-price text-info"><strong><?php echo $product->regular_price; ?>đ</strong></span>
                                         <span
-                                                class="old-price"><del><?php echo $product->price; ?></del></span></div>
+                                                class="old-price"><del><?php echo $product->price; ?>đ</del></span></div>
                                 </div>
                             </div>
                         </div>

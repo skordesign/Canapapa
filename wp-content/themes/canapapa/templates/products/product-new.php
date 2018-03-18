@@ -1,4 +1,6 @@
 <?php
+global $woocommerce;
+$cartUrl = $woocommerce->cart->get_cart_url();
 $taxonomy = 'product_cat';
 $orderby = 'name';
 $show_count = 0;      // 1 for yes, 0 for no
@@ -85,7 +87,7 @@ $all_categories = get_categories($params);
                                                     ?>
                                                     <div class="product-view">
                                                         <figure class="double-img">
-                                                            <a href="product-details.html"><img class="btm-img"
+                                                            <a href="<?php echo get_permalink($product->ID) ?>"><img class="btm-img"
                                                                                                 width="215"
                                                                                                 height="240"
                                                                                                 alt="<?php the_title(); ?>"
@@ -101,7 +103,7 @@ $all_categories = get_categories($params);
                                                         </figure>
                                                         <span class="label offer-label-left">Mới</span></div>
                                                     <div class="product-btns  effect-content-inner">
-                                                        <p class="effect-icon"><a href="" class="hint-top"
+                                                        <p class="effect-icon"><a href="<?php echo $product->add_to_cart_url() ?>" class="hint-top"
                                                                                   data-hint="Thêm vào giỏ hàng"><span
                                                                         class="cart ion-bag"></span></a></p>
                                                         <p class="effect-icon"><a data-toggle="modal"
@@ -113,12 +115,12 @@ $all_categories = get_categories($params);
                                                 </div>
                                                 <div class="product-info">
                                                     <h3 class="product-name"><a
-                                                                href="product-details.html"><?php the_title(); ?></a>
+                                                                href="<?php echo get_permalink($product->ID) ?>"><?php the_title(); ?></a>
                                                     </h3>
                                                 </div>
                                                 <div class="product-price"><span class="real-price text-info"><span
-                                                                class="real-price text-info"><strong><?php echo $product->regular_price; ?></strong></span></span>
-                                                    <span class="old-price"><?php echo $product->price; ?></span></div>
+                                                                class="real-price text-info"><strong><?php echo $product->regular_price; ?>đ</strong></span></span>
+                                                    <span class="old-price"><?php echo $product->price; ?>đ</span></div>
                                             </div>
 
                                         <?php endwhile; ?>
@@ -144,7 +146,7 @@ $all_categories = get_categories($params);
                                                         ?>
                                                         <div class="product-view">
                                                             <figure class="double-img">
-                                                                <a href="product-details.html"><img class="btm-img"
+                                                                <a href="<?php echo get_permalink($product->ID) ?>"><img class="btm-img"
                                                                                                     width="215"
                                                                                                     height="240"
                                                                                                     alt="<?php the_title(); ?>"
@@ -160,7 +162,7 @@ $all_categories = get_categories($params);
                                                             </figure>
                                                             <span class="label offer-label-left">Mới</span></div>
                                                         <div class="product-btns  effect-content-inner">
-                                                            <p class="effect-icon"><a href="" class="hint-top"
+                                                            <p class="effect-icon"><a href="<?php echo $product->add_to_cart_url() ?>" class="hint-top"
                                                                                       data-hint="Thêm vào giỏ hàng"><span
                                                                             class="cart ion-bag"></span></a></p>
                                                             <p class="effect-icon"><a data-toggle="modal"
@@ -176,8 +178,8 @@ $all_categories = get_categories($params);
                                                         </h3>
                                                     </div>
                                                     <div class="product-price"><span class="real-price text-info"><span
-                                                                    class="real-price text-info"><strong><?php echo $product->regular_price; ?></strong></span></span>
-                                                        <span class="old-price"><?php echo $product->price; ?></span></div>
+                                                                    class="real-price text-info"><strong><?php echo $product->regular_price; ?>đ</strong></span></span>
+                                                        <span class="old-price"><?php echo $product->price; ?>đ</span></div>
                                                 </div>
 
                                             <?php endwhile; ?>

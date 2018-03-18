@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html <?php language_attributes();?> >
+<html <?php language_attributes(); ?> >
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <?php wp_head();?>
+    <?php wp_head(); ?>
     <style type="text/css">
         html {
             margin-top: 0px !important;
         }
+
         [data-columns]::before {
             visibility: hidden;
             position: absolute;
             font-size: 1px;
         }
+
         .dropdown .dropdown-menu {
             -webkit-transition: all 0.3s;
             -moz-transition: all 0.3s;
@@ -24,7 +26,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 </head>
-<body <?php body_class();?> >
+<body <?php body_class(); ?> >
 <div id="preloader" style="display: none;">
     <div id="status" style="display: none;"></div>
 </div>
@@ -42,49 +44,62 @@
                 <div class="col-sm-4 welcome-msg hidden-xs">Chào mừng đến với thế giới mỹ phẩm</div>
                 <div class="col-sm-8 collapse navbar-collapse navbar-right" id="line-navbar-collapse-1">
                     <ul class="nav navbar-nav top-menu">
-                        <li class="dropdown lnt-shopping-cart visible-lg visible-md " >
-                            <a href="#" id="cp-cart" class="dropdown-toggle"  data-toggle="dropdown" role="button"
+                        <li class="dropdown lnt-shopping-cart visible-lg visible-md ">
+                            <a href="#" id="cp-cart" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-expanded="false"> <span class="ion-bag bag-icn"></span> <span
                                         class="cart-item-quantity badge cart-badge">2</span> </a>
                             <ul role="menu" id="cp-cart-menu" class="dropdown-menu ul-cart">
                                 <li>
                                     <div class="lnt-cart-products text-success"><i
                                                 class="ion-android-checkmark-circle icon"></i> 2 Sản Phẩm. <span
-                                                class="lnt-cart-total">1.300.000₫</span></div>
+                                                class="lnt-cart-total"><?php echo WC()->cart->get_cart_subtotal(); ?></span>
+                                    </div>
                                 </li>
-                                <li>
-                                    <div class="lnt-cart-products">
-                                        <img alt="Product title" data-pagespeed-url-hash="4273646131"
-                                             src=""
+                                <?php
+                                global $woocommerce;
+                                $items = $woocommerce->cart->get_cart();
+                                $totalcart;
+                                $haveitems = 0;
+                                foreach ($items as $item => $values) {
+                                    $_product = apply_filters('woocommerce_cart_item_product', $values['data'], $values, $item);
+                                    if ($_product && $_product->exists() && $values['quantity'] > 0) {
+                                        $haveitems = 1;
+                                        $_product = wc_get_product($values['data']->get_id());
 
-                                             data-pagespeed-lazy-replaced-functions="1">
-                                        <p class="lnt-product-info">
-                                            <button class="close"><span aria-hidden="true"
-                                                                        class="ion-android-cancel"></span></button>
-                                            <span class="lnt-product-name">Sữa tắm On The Body (New)</span> <span
-                                                    class="lnt-product-price text-info">600.000₫</span></p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="lnt-cart-products"><img alt="Product title"
-                                                                        data-pagespeed-url-hash="273178756"
-                                                                        src=""/>
-                                        <p class="lnt-product-info">
-                                            <button class="close"><span aria-hidden="true"
-                                                                        class="ion-android-cancel"></span></button>
-                                            <span class="lnt-product-name">Nước hoa nữ Coco Noir Chanel 100ml</span>
-                                            <span class="lnt-product-price text-info">700.000₫</span></p>
-                                    </div>
-                                </li>
+                                        $linkpro = get_permalink($values['product_id']);
+                                        $titlepro = $_product->get_title();
+                                        $getProductDetail = wc_get_product($values['product_id']);
+                                        $imgpro = $getProductDetail->get_image(array(80, 80));
+                                        $pricepro = get_post_meta($values['product_id'], '_price', true);
+                                        $quantitypro = $values['quantity'];
+                                        ?>
+                                        <li>
+                                            <div class="lnt-cart-products">
+                                                <img alt="<?php echo $titlepro; ?>"
+                                                     src="<?php echo $imgpro; ?>">
+                                                <p class="lnt-product-info">
+                                                    <button class="close"><span aria-hidden="true"
+                                                                                class="ion-android-cancel"></span>
+                                                    </button>
+                                                    <span class="lnt-product-name"><?php echo $titlepro; ?></span> <span
+                                                            class="lnt-product-price text-info"><?php echo $pricepro; ?></span>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <?php
+                                    }
+                                }
+                                ?>
                                 <li class="lnt-cart-actions text-center"><a
                                             class="btn btn-default btn-lg hvr-underline-from-center-default"
-                                            href="cart.html">Giỏ hàng</a> <a
-                                            class="btn btn-primary hvr-underline-from-center-primary" href="checkout.html">Thanh
+                                            href="<?php echo wc_get_cart_url(); ?>">Giỏ hàng</a> <a
+                                            class="btn btn-primary hvr-underline-from-center-primary"
+                                            href="checkout.html">Thanh
                                         toán</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle"  data-toggle="dropdown" role="button"
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-expanded="false"><img alt=""
                                                           src="">
                                 <span class="ion-android-arrow-dropdown"></span></a>

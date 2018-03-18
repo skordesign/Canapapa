@@ -27,7 +27,7 @@ $wc_new_product = new WP_Query($params);
                                         $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_new_product->ID));
                                         ?>
                                         <figure class="double-img">
-                                            <a href="product-details.html"><img class="btm-img" width="215" height="240"
+                                            <a href="<?php echo get_permalink($product->ID) ?>"><img class="btm-img" width="215" height="240"
                                                                                 alt="<?php the_title(); ?>"
                                                                                 data-pagespeed-url-hash="862281302"
                                                                                 src="<?php echo $featured_image['0'] ?>"
@@ -40,7 +40,7 @@ $wc_new_product = new WP_Query($params);
                                         <span class="label offer-label-left">bán chạy</span> <span
                                                 class="label offer-label-right"><?php echo round($discount, 2); ?>% giảm</span></div>
                                     <div class="product-btns  effect-content-inner">
-                                        <p class="effect-icon"><a href="<?php echo $product->get_id(); ?>" class="hint-top"
+                                        <p class="effect-icon"><a href="<?php echo $product->add_to_cart_url() ?>" class="hint-top"
                                                                   data-hint="Thêm vào giỏ hàng"><span
                                                         class="cart ion-bag"></span></a></p>
                                         <p class="effect-icon"><a data-toggle="modal" data-target="#quick-view-box"
@@ -49,12 +49,12 @@ $wc_new_product = new WP_Query($params);
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <h3 class="product-name"><a href="product-details.html"><?php the_title(); ?></a></h3>
+                                    <h3 class="product-name"><a href="<?php echo get_permalink($product->ID) ?>"><?php the_title(); ?></a></h3>
                                 </div>
                                 <div class="product-price"><span class="real-price text-info"><span
-                                                class="real-price text-info"><strong><?php echo $product->regular_price; ?></strong></span></span>
+                                                class="real-price text-info"><strong><?php echo $product->regular_price; ?>đ</strong></span></span>
                                     <span
-                                            class="old-price"><?php echo $product->price; ?></span></div>
+                                            class="old-price"><?php echo $product->price; ?></span>đ</div>
                             </div>
 
                         <?php endwhile; ?>
