@@ -21,6 +21,8 @@
             transition: all 0.3s;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 </head>
 <body <?php body_class();?> >
 <div id="preloader" style="display: none;">
