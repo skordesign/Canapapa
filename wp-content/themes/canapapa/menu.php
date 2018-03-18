@@ -28,23 +28,21 @@ $all_categories = get_categories($params1);
                 <ul class="lnt-category list-unstyled">
                     <?php
                     foreach ($all_categories as $key => $cat) {
-                        if($key == 0) {
+                        if ($key == 0) {
                             if ($cat->category_parent == 0) {
                                 $category_id = $cat->term_id;
                                 $category_name = $cat->name;
                                 echo '<li class="active"><a href="' . get_term_link($cat->slug, 'product_cat') . '">' . $category_name . '</a></li>';
                             }
-                        }else{
+                        } else {
                             if ($cat->category_parent == 0) {
                                 $category_id = $cat->term_id;
                                 $category_name = $cat->name;
                                 echo '<li ><a href="' . get_term_link($cat->slug, 'product_cat') . '">' . $category_name . '</a></li>';
                             }
                         }
-
                     }
                     ?>
-
                 </ul>
                 <?php
                 $params2 = array(
@@ -61,53 +59,102 @@ $all_categories = get_categories($params1);
                 $sub_cats = get_categories($params2);
                 ?>
                 <div class="lnt-subcategroy-carousel-wrap container-fluid">
+                    <?php if ($all_categories) : ?>
+                        <?php foreach ($all_categories as $key => $cate) : ?>
+                            <?php if($key == 0) : ?>
+                                <?php if($cate->category_parent == 0) : ?>
+                                    <div id="subcategory-<?php echo $cate->slug ?>" class="active">
+                                        <div class="lnt-subcategory col-sm-8 col-md-8">
+                                            <h3 class="lnt-category-name text-info text-uppercase"><?php echo $cate->name ?></h3>
+                                            <?php foreach ($sub_cats as $sub_cat) : ?>
+                                            <ul class="list-unstyled col-sm-6">
+                                                <li><a href="<?php echo get_term_link($sub_cat->slug, 'product_cat') ?>"><?php echo $sub_cat->name; ?></a>
+                                                </li>
+                                            </ul>
+                                            <?php endforeach; ?>
+                                        </div>
+                                        <div class="col-sm-4 col-md-4">
+                                            <div id="carousel-category-home" class="carousel slide"
+                                                 data-ride="carousel">
+                                                <ol class="carousel-indicators" style="display: none;">
+                                                    <li data-target="#carousel-category-home" data-slide-to="0"
+                                                        class="active"></li>
+                                                    <li data-target="#carousel-category-home" data-slide-to="1"
+                                                        class=""></li>
+                                                    <li data-target="#carousel-category-home" data-slide-to="2"
+                                                        class=""></li>
+                                                </ol>
+                                                <div class="carousel-inner" role="listbox">
+                                                    <div class="item next left"><img width="296" height="400"
+                                                                                     alt="Slide image"
+                                                                                     data-pagespeed-url-hash="2385484616"
+                                                                                     src=""
+                                                        >
+                                                    </div>
+                                                    <div class="item"><img width="296" height="400" alt="Slide image"
+                                                                           data-pagespeed-url-hash="2385484616"
+                                                                           src=""
+                                                        >
+                                                    </div>
+                                                    <div class="item active left"><img width="296" height="400"
+                                                                                       alt="Slide image"
+                                                                                       data-pagespeed-url-hash="2385484616"
+                                                                                       src="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            <?php else: ?>
+                                <?php if($cate->category_parent == 0) : ?>
+                                    <div id="subcategory-<?php echo $cate->slug ?>">
+                                        <div class="lnt-subcategory col-sm-8 col-md-8">
+                                            <h3 class="lnt-category-name text-info text-uppercase"><?php echo $cate->name ?></h3>
+                                            <?php foreach ($sub_cats as $sub_cat) : ?>
+                                                <ul class="list-unstyled col-sm-6">
+                                                    <li><a href="<?php echo get_term_link($sub_cat->slug, 'product_cat') ?>"><?php echo $sub_cat->name; ?></a>
+                                                    </li>
+                                                </ul>
+                                            <?php endforeach; ?>
+                                        </div>
+                                        <div class="col-sm-4 col-md-4">
+                                            <div id="carousel-category-home" class="carousel slide"
+                                                 data-ride="carousel">
+                                                <ol class="carousel-indicators" style="display: none;">
+                                                    <li data-target="#carousel-category-home" data-slide-to="0"
+                                                        class="active"></li>
+                                                    <li data-target="#carousel-category-home" data-slide-to="1"
+                                                        class=""></li>
+                                                    <li data-target="#carousel-category-home" data-slide-to="2"
+                                                        class=""></li>
+                                                </ol>
+                                                <div class="carousel-inner" role="listbox">
+                                                    <div class="item next left"><img width="296" height="400"
+                                                                                     alt="Slide image"
+                                                                                     data-pagespeed-url-hash="2385484616"
+                                                                                     src=""
+                                                        >
+                                                    </div>
+                                                    <div class="item"><img width="296" height="400" alt="Slide image"
+                                                                           data-pagespeed-url-hash="2385484616"
+                                                                           src=""
+                                                        >
+                                                    </div>
+                                                    <div class="item active left"><img width="296" height="400"
+                                                                                       alt="Slide image"
+                                                                                       data-pagespeed-url-hash="2385484616"
+                                                                                       src="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
 
-                    <div id="subcategory-home" class="active">
-                        <div class="lnt-subcategory col-sm-8 col-md-8">
-                            <h3 class="lnt-category-name text-info text-uppercase"><?php echo $category_name ?></h3>
-                            <?php
-                            foreach ($sub_cats as $sub_category) :
-                                $sub_category_name = $sub_category->name;
-                                $sub_category_id = $sub_category->term_id;
-                                ?>
-                                <ul class="list-unstyled col-sm-6">
-                                    <li><a href="<?php echo get_term_link($sub_category->slug, 'product_cat') ?>"><?php echo $sub_category_name ?></a>
-                                    </li>
-                                </ul>
-                            <?php endforeach; ?>
-                        </div>
-                        <div class="col-sm-4 col-md-4">
-                            <div id="carousel-category-home" class="carousel slide"
-                                 data-ride="carousel">
-                                <ol class="carousel-indicators" style="display: none;">
-                                    <li data-target="#carousel-category-home" data-slide-to="0"
-                                        class="active"></li>
-                                    <li data-target="#carousel-category-home" data-slide-to="1"
-                                        class=""></li>
-                                    <li data-target="#carousel-category-home" data-slide-to="2"
-                                        class=""></li>
-                                </ol>
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="item next left"><img width="296" height="400"
-                                                                     alt="Slide image"
-                                                                     data-pagespeed-url-hash="2385484616"
-                                                                     src=""
-                                        >
-                                    </div>
-                                    <div class="item"><img width="296" height="400" alt="Slide image"
-                                                           data-pagespeed-url-hash="2385484616"
-                                                           src=""
-                                        >
-                                    </div>
-                                    <div class="item active left"><img width="296" height="400"
-                                                                       alt="Slide image"
-                                                                       data-pagespeed-url-hash="2385484616"
-                                                                       src="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
