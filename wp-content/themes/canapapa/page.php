@@ -17,23 +17,30 @@
         <section class="container equal-height-container">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="row">
                         <?php
-                        if ( have_posts() ) :
-                            get_template_part('templates/introduce/content', 'introduce');
-                        else :
-                            get_template_part( 'content', 'none' );
-                        endif;
-
+                            if(is_page('gioi-thieu'))
+                            {
+                                get_template_part('templates/introduce/content', 'introduce');
+                                get_template_part('sidebar', 'right');
+                            }
+                            else if(is_page('ban-chay'))
+                            {
+                                echo 'ban chay';
+                            }
+                            else if(is_page('tin-tuc'))
+                            {
+                                get_template_part('templates/news/news', 'content');
+                                get_template_part('category', 'news');
+                            }
+                            else if(is_page('lien-he'))
+                            {
+                                get_template_part('templates/contact/map', 'content');
+                            }
+                            else if(is_page('cart'))
+                            {
+                                get_template_part('templates/cart/cart', 'content');
+                            }
                         ?>
-                        <?php
-                        if ( have_posts() ) :
-                            get_template_part('sidebar', 'right');
-                        else :
-                            get_template_part( 'content', 'none' );
-                        endif;
-                        ?>
-                    </div>
                 </div>
             </div>
         </section>
