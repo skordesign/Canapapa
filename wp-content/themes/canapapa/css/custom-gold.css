@@ -4519,3 +4519,11 @@ footer hr {
         top: 25px
     }
 }
+
+.woocommerce-billing-fields {
+    width: 350px;
+}
+div#order_review {
+    margin-top: 46px;
+    margin-left: -140px;
+}

@@ -36,9 +36,13 @@
                             {
                                 get_template_part('templates/contact/map', 'content');
                             }
-                            else if(is_page('cart'))
+                            else if(is_page('gio-hang'))
                             {
                                 get_template_part('templates/cart/cart', 'content');
+                            }
+                            else if(is_page('thanh-toan'))
+                            {
+                                get_template_part('templates/checkout/checkout', 'content');
                             }
                         ?>
                 </div>

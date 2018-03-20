@@ -44,11 +44,18 @@
             <div class="row">
                 <div class="col-sm-4 welcome-msg hidden-xs">Chào mừng đến với thế giới mỹ phẩm</div>
                 <div class="col-sm-8 collapse navbar-collapse navbar-right" id="line-navbar-collapse-1">
+                    <?php
+                    global $woocommerce;
+                    $items = $woocommerce->cart->get_cart();
+                    $totalcart;
+                    $haveitems = 0;
+                    ?>
                     <ul class="nav navbar-nav top-menu">
                         <li class="dropdown lnt-shopping-cart visible-lg visible-md ">
                             <a href="#" id="cp-cart" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-expanded="false"> <span class="ion-bag bag-icn"></span> <span
                                         class="cart-item-quantity badge cart-badge">2</span> </a>
+                            <?php if(!empty($items)) : ?>
                             <ul role="menu" id="cp-cart-menu" class="dropdown-menu ul-cart">
                                 <li>
                                     <div class="lnt-cart-products text-success"><i
@@ -57,10 +64,6 @@
                                     </div>
                                 </li>
                                 <?php
-                                global $woocommerce;
-                                $items = $woocommerce->cart->get_cart();
-                                $totalcart;
-                                $haveitems = 0;
                                 foreach ($items as $item => $values) {
                                     $_product = apply_filters('woocommerce_cart_item_product', $values['data'], $values, $item);
                                     if ($_product && $_product->exists() && $values['quantity'] > 0) {
@@ -73,7 +76,7 @@
                                         $imgpro = $getProductDetail->get_image(array(80, 80));
                                         $pricepro = get_post_meta($values['product_id'], '_price', true);
                                         $quantitypro = $values['quantity'];
-                                        ?>
+                                ?>
                                         <li>
                                             <div class="lnt-cart-products">
                                                 <img alt="<?php echo $titlepro; ?>" src="<?php echo $imgpro; ?>">
@@ -98,6 +101,7 @@
                                     <a class="btn btn-primary hvr-underline-from-center-primary" href="<?php echo wc_get_checkout_url() ?>">Thanh toán</a>
                                 </li>
                             </ul>
+                            <?php endif; ?>
                         </li>
                     </ul>
                 </div>
