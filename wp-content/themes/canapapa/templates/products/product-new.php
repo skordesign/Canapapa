@@ -24,13 +24,12 @@ $all_categories = get_categories($params);
 <section class="container">
     <div class="row">
         <div class="col-sm-12 big-title text-uppercase text-center">
-            <h3 class="text-primary">Sản phẩm mới</h3>
-            <small>Luôn cập nhật những sản phẩm mới nhất đem đến tay khách hàng</small>
+            <h3 class="text-primary"><?php esc_attr_e( 'Product new'); ?></h3>
+            <small><?php esc_attr_e( 'Always up to launch the most popular products to your customer is hand'); ?></small>
             <p><span class="ion-android-star-outline"></span></p>
         </div>
         <div class="col-sm-12">
-            <div id="new-arrivals" class="col-sm-12 accordion wow fadeIn animated animated" data-wow-offset="10"
-                 data-wow-duration="2s" style="visibility: visible; animation-duration: 2s;">
+            <div id="new-arrivals" class="col-sm-12 accordion wow fadeIn">
                 <div role="tabpanel">
                     <div class="centered-pills">
                         <ul id="new-items" class="nav nav-tabs nav-pills hidden-xs" role="tablist">

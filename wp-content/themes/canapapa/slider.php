@@ -2,57 +2,43 @@
 $params = array('posts_per_page' => 4, 'post_type' => 'slider');
 $wp_slider = new WP_Query($params);
 ?>
-<div id="banner" class="slick-initialized slick-slider">
-    <div aria-live="polite" class="slick-list draggable" tabindex="0">
-        <div class="slick-track" style="opacity: 1; width: 2664px;">
-            <?php if ($wp_slider->have_posts()) : ?>
-                <?php while ($wp_slider->have_posts()) : $wp_slider->the_post();
-                    ?>
-                    <?php
-                    $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wp_slider->ID));
-                    ?>
-                    <div class="item slick-slide" data-slick-index="1" aria-hidden="true"
-                         style="width: 1332px; position: relative; left: -1332px; top: 0px; z-index: 900; opacity: 1;">
-                        <img
-                                class="img-responsive"
-                                src="<?php echo $featured_image['0'] ?>"
-                                alt="<?php the_title(); ?>"
-                        >
-                        <div class="slider-caption">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-8 col-lg-6 caption-body">
-                                        <h2 data-animation="fadeInLeft" class="title fadeInDownBig text-primary">Khuyến
-                                            mãi</h2>
-                                        <h1 data-animation="fadeInDownBig" class="title fadeInDownBig text-primary"> <?php the_title(); ?></h1>
-                                        <p data-animation="fadeInUp"
-                                           class="subtitle col-sm-9  fadeInUp text-primary hidden-xs">
-                                            <?php the_content(); ?>
-                                        </p>
-                                        <div class="clearfix"></div>
-                                        <a data-animation="fadeIn"
-                                           class="btn btn-default fadeInUp hvr-underline-from-center-default hidden-xs"
-                                           href="blog-detail.html"> <i class="rm-icon ion-android-star"></i> <span>Xem chi tiết</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
-            <?php else: ?>
-                <p>
-                    <?php _e('No Products'); ?>
-                </p>
+<div id="banner">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <?php if ($wp_slider) : ?>
+                <?php
+                    foreach ($wp_slider->posts as $post)
+                    {
+                        $src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), array(600, 172), false, '');
+                        if ($wp_slider->posts['0'] == $post) {
+                            echo '<div class="item active">
+                                    <img src="'.esc_url($src['0']).'" height="150px" width="1300px">
+                                  </div>';
+                        } else {
+                            echo '<div class="item">
+                                    <img src="'.esc_url($src['0']).'" height="150px" width="1300px">
+                                  </div>';
+                        }
+                    }
+                ?>
             <?php endif; ?>
         </div>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-
-    <button type="button" data-role="none" class="slick-prev" aria-label="previous" style="display: block;">
-        Previous
-    </button>
-    <button type="button" data-role="none" class="slick-next" aria-label="next" style="display: block;">Next
-    </button>
 
 </div>

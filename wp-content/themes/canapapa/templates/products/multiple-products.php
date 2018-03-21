@@ -6,12 +6,12 @@ $wp_product = new WP_Query($params);
 <section class="container" data-speed="2">
     <div class="row">
         <div class="col-sm-12 big-title text-uppercase text-center">
-            <h3 class="text-primary">Sản phẩm mua nhiều</h3>
-            <small>Những sản phẩm khách hàng ưa chuộng hiện nay</small>
+            <h3 class="text-primary"> <?php esc_attr_e('Buy more products'); ?></h3>
+            <small> <?php esc_attr_e('Popular consumer products today'); ?></small>
             <p><span class="ion-android-star-outline"></span></p>
         </div>
         <div class="col-sm-12">
-            <div class="row list-inline best-selling wow fadeIn animated animated" style="visibility: visible;">
+            <div class="row list-inline best-selling wow fadeIn">
                 <?php if ($wp_product->have_posts()) : ?>
                     <?php while ($wp_product->have_posts()) : $wp_product->the_post();
                         global $product;
@@ -23,7 +23,6 @@ $wp_product = new WP_Query($params);
                             <div class="row">
                                 <div class="col-sm-6 col-md-4">
                                     <figure><img class="img-responsive" alt="<?php the_title(); ?>"
-                                                 data-pagespeed-url-hash="2839335814"
                                                  src="<?php echo $featured_image['0'] ?>"
                                         >
                                     </figure>

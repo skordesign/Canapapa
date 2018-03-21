@@ -5,8 +5,8 @@ $wc_new_posts = new WP_Query($params);
 <section class="container">
     <div class="row">
         <div class="col-sm-12 big-title text-uppercase text-center">
-            <h3 class="text-primary">tin tức mới</h3>
-            <small>Tin tức mới nhất về thới giới mỹ phẩm</small>
+            <h3 class="text-primary"><?php esc_attr_e('News'); ?></h3>
+            <small><?php esc_attr_e('Latest news about cosmetic world'); ?></small>
             <p><span class="ion-android-star-outline"></span></p>
         </div>
         <div class="col-sm-12">
@@ -20,22 +20,23 @@ $wc_new_posts = new WP_Query($params);
                         <div class="col-sm-12 col-md-4">
                             <div class="thumbnail">
                                 <figure>
-                                    <a href="blog-detail.html"><img class="img-responsive" width="1024" height="683"
-                                                                    alt="<?php the_title(); ?>" data-pagespeed-url-hash="3470658641"
-                                                                    src="<?php echo $featured_image['0'] ?>"
-                                        ></a>
+                                    <a href="">
+                                        <img class="img-responsive" width="1024" height="683" alt="<?php the_title(); ?>" src="<?php echo $featured_image['0'] ?>">
+                                    </a>
                                 </figure>
                                 <div class="caption">
                                     <h4 class="text-uppercase"><a href="blog-detail.html"><?php the_title(); ?></a></h4>
                                     <div class="blog-info">
-                                        <p class="text-muted"><span>Bởi <a href="#">Nguyễn Thị Anh</a> / <a
-                                                        href="blog.html">Tư vấn làm đẹp</a> / <a href="#">3 Nhận xét</a></span>
+                                        <p class="text-muted">
+                                            <span>Bởi
+                                            <a href="">Nguyễn Thị Anh</a> /
+                                            <a href="">Tư vấn làm đẹp</a> /
+                                            <a href="#">3 Nhận xét</a></span>
                                         </p>
                                     </div>
                                     <p><?php the_content(); ?></p>
                                     <hr>
-                                    <a href="blog-detail.html"
-                                       class="btn btn-primary hvr-underline-from-center-primary">Xem chi tiết</a></div>
+                                    <a href="" class="btn btn-primary hvr-underline-from-center-primary"><?php esc_attr_e('Details'); ?></a></div>
                             </div>
                         </div>
                     <?php endwhile; ?>

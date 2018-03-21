@@ -3,11 +3,8 @@
         <div class="col-sm-12 col-md-4 ad-box-outer">
             <div class="small-ad">
                 <figure class="effect-layla">
-                    <a href="products.html">
-                        <img class="img-responsive" width="370" height="200" alt=""
-                             data-pagespeed-url-hash="1940429585"
-                             src=""
-                        >
+                    <a href="">
+                        <img class="img-responsive" width="370" height="200" alt="" src="">
                         <figcaption>
                             <h3><span>Chăm sóc tóc</span></h3>
                             <p>Những sản phẩm tốt nhất cho mái tóc của bạn </p>
@@ -19,10 +16,8 @@
         </div>
         <div class="col-sm-12 col-md-4 ad-box-outer">
             <div class="small-ad">
-                <figure class="effect-layla"><img class="img-responsive" width="370" height="200" alt=""
-                                                  data-pagespeed-url-hash="1940429585"
-                                                  src=""
-                    >
+                <figure class="effect-layla">
+                    <img class="img-responsive" width="370" height="200" alt="" src="">
                     <figcaption>
                         <h3><span>nước hoa</span></h3>
                         <p>Hương thơm quyết rũ, dịu nhẹ </p>
@@ -32,10 +27,8 @@
         </div>
         <div class="col-sm-12 col-md-4 ad-box-outer">
             <div class="small-ad">
-                <figure class="effect-layla"><img class="img-responsive" width="370" height="200" alt=""
-                                                  data-pagespeed-url-hash="1940429585"
-                                                  src=""
-                    >
+                <figure class="effect-layla">
+                    <img class="img-responsive" width="370" height="200" alt="" src="">
                     <figcaption>
                         <h3><span>chăm sóc da</span></h3>
                         <p>Cho một làn da mềm mịn, dịu êm</p>
