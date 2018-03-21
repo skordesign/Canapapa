@@ -132,18 +132,16 @@ $all_categories = get_categories($params1);
                                                 <div class="carousel-inner" role="listbox">
                                                     <div class="item next left"><img width="296" height="400"
                                                                                      alt="Slide image"
-                                                                                     data-pagespeed-url-hash="2385484616"
                                                                                      src=""
                                                         >
                                                     </div>
                                                     <div class="item"><img width="296" height="400" alt="Slide image"
-                                                                           data-pagespeed-url-hash="2385484616"
                                                                            src=""
                                                         >
                                                     </div>
                                                     <div class="item active left"><img width="296" height="400"
                                                                                        alt="Slide image"
-                                                                                       data-pagespeed-url-hash="2385484616"
+
                                                                                        src="">
                                                     </div>
                                                 </div>
@@ -168,7 +166,7 @@ $all_categories = get_categories($params1);
     $primaryNav = wp_get_nav_menu_items($menuID);
     ?>
     <?php foreach ($primaryNav as $navItem) : ?>
-        <?php if (rtrim($navItem->url, "/") == get_home_url()) : ?>
+            <?php if (rtrim($navItem->url, "/") == get_home_url()) : ?>
             <li class="active">
                 <a href="<?php echo $navItem->url ?>" class="ion-ios-home"></a>
             </li>

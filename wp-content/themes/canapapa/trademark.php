@@ -18,7 +18,7 @@ $wc_trademarks = new WP_Query($params);
                             $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_trademarks->ID));
                             ?>
                             <div>
-                                <a href="#">
+                                <a href="<?php echo get_permalink($wc_trademarks->ID) ?>">
                                     <figure><img alt="<?php the_title(); ?>"src="<?php echo $featured_image['0'] ?>">
                                     </figure>
                                 </a>

@@ -43,6 +43,8 @@
                             else if(is_page('thanh-toan'))
                             {
                                 get_template_part('templates/checkout/checkout', 'content');
+                            }else if(is_page('san-pham')) {
+                                get_template_part('templates/products/product', 'content');
                             }
                         ?>
                 </div>

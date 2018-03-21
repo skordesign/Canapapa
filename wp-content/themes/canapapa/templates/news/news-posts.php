@@ -20,12 +20,12 @@ $wc_new_posts = new WP_Query($params);
                         <div class="col-sm-12 col-md-4">
                             <div class="thumbnail">
                                 <figure>
-                                    <a href="">
+                                    <a href="<?php echo get_post_permalink($wc_new_posts->ID) ?>">
                                         <img class="img-responsive" width="1024" height="683" alt="<?php the_title(); ?>" src="<?php echo $featured_image['0'] ?>">
                                     </a>
                                 </figure>
                                 <div class="caption">
-                                    <h4 class="text-uppercase"><a href="blog-detail.html"><?php the_title(); ?></a></h4>
+                                    <h4 class="text-uppercase"><a href="<?php echo get_post_permalink($wc_new_posts->ID) ?>"><?php the_title(); ?></a></h4>
                                     <div class="blog-info">
                                         <p class="text-muted">
                                             <span>Bởi
@@ -36,7 +36,7 @@ $wc_new_posts = new WP_Query($params);
                                     </div>
                                     <p><?php the_content(); ?></p>
                                     <hr>
-                                    <a href="" class="btn btn-primary hvr-underline-from-center-primary"><?php esc_attr_e('Details'); ?></a></div>
+                                    <a href="<?php echo get_post_permalink($wc_new_posts->ID) ?>" class="btn btn-primary hvr-underline-from-center-primary"><?php esc_attr_e('Details'); ?></a></div>
                             </div>
                         </div>
                     <?php endwhile; ?>

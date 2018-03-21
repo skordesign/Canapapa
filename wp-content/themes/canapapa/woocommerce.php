@@ -1,3 +1,4 @@
+
 <?php get_header(); ?>
 <div class="content-wrap" data-effect="lnl-push">
     <?php get_template_part('header', 'canapapa'); ?>
@@ -11,27 +12,37 @@
             </div>
         </div>
     </nav>
-    <!--    slider-->
-    <?php get_template_part('slider') ?>
-    <div class="middle-se">
-        <!--        hàng mới về    -->
-        <?php get_template_part('templates/products/new', 'product'); ?>
-        <!--        quảng cáo    -->
-        <?php get_template_part('templates/advertise/content', 'advertise') ?>
-        <!--        sản phẩm mới    -->
-        <?php get_template_part('templates/products/product', 'new') ?>
-        <!--        danh mục sản phẩm    -->
-        <?php get_template_part('category', 'product') ?>
-        <!--        danh mục thương hiệu   -->
-        <?php get_template_part('trademark') ?>
-        <!--        tin tức thời trang   -->
-        <?php get_template_part('templates/news/news', 'fashion') ?>
-        <!--        sản phẩm mua nhiều   -->
-        <?php get_template_part('templates/products/multiple', 'products') ?>
-        <!--        tin tức   -->
-        <?php get_template_part('templates/news/news', 'posts') ?>
+    <div class="middle-sec wow fadeIn animated animated" data-wow-offset="10" data-wow-duration="2s"
+         style="visibility: visible; animation-duration: 2s;">
+        <div class="page-header">
+            <div class="container text-center">
+                <h2 class="text-primary text-uppercase"> DANH SÁCH SẢN PHẨM</h2>
+            </div>
+        </div>
+        <section class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="inner-ad">
+                        <figure><img class="img-responsive" src="" width="1170" height="100" alt="" data-pagespeed-url-hash="2102948165" ></figure>
+                    </div>
+                </div>
+                <div class="col-sm-12 equal-height-container">
+                    <div class="row">
+                        <?php get_template_part('archive') ?>
+                        <div class="col-sm-8 col-md-9 col-lg-9 main-sec">
+                            <div class="row">
+                                <?php get_template_part('templates/title', 'product') ?>
+                                <?php get_template_part('templates/products/detail', 'content') ?>
+                                <?php get_template_part('templates/products/desc', 'product') ?>
+                                <?php get_template_part('templates/products/relasionship', 'product') ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-
+    <?php get_template_part('quickview')?>
     <?php get_footer(); ?>
 </div>
 </body>
