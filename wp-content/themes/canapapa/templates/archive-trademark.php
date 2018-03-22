@@ -1,9 +1,15 @@
+<?php
+$params = array('posts_per_page' => 10, 'post_type' => 'trademark');
+$wc_trademark = new WP_Query($params);
+?>
+
 <section>
-    <h5 class="sub-title text-info text-uppercase">Thương hiệu</h5>
+    <h5 class="sub-title text-info text-uppercase"><?php esc_attr_e( 'Trademark'); ?></h5>
     <ul class="list-group nudge">
-        <li class="list-group-item"><a href="products.html">Revlon</a> <span class="pull-right">(22)</span></li>
-        <li class="list-group-item"><a href="products.html">Clinique</a> <span class="pull-right">(10)</span></li>
-        <li class="list-group-item"><a href="products.html">Cover Girl</a> <span class="pull-right">(19)</span></li>
-        <li class="list-group-item"><a href="products.html">Oriflame</a> <span class="pull-right">(31)</span></li>
+        <?php if($wc_trademark->have_posts()) : ?>
+        <?php while ($wc_trademark->have_posts()) : $wc_trademark->the_post(); ?>
+        <li class="list-group-item"><a href="<?php echo get_permalink($wc_trademark->ID) ?>"><?php the_title() ?></a></li>
+        <?php endwhile; ?>
+        <?php endif; ?>
     </ul>
 </section>

@@ -165,8 +165,9 @@ $all_categories = get_categories($params1);
     $menuID = $menuLocations['primary'];
     $primaryNav = wp_get_nav_menu_items($menuID);
     ?>
+    <?php echo basename(get_permalink('trang-chu')); ?>
     <?php foreach ($primaryNav as $navItem) : ?>
-            <?php if (rtrim($navItem->url, "/") == get_home_url()) : ?>
+            <?php if (get_permalink() == 'trang-chu') : ?>
             <li class="active">
                 <a href="<?php echo $navItem->url ?>" class="ion-ios-home"></a>
             </li>

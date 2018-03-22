@@ -1,4 +1,3 @@
-
 <?php get_header(); ?>
 <div class="content-wrap" data-effect="lnl-push">
     <?php get_template_part('header', 'canapapa'); ?>

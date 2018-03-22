@@ -19,7 +19,7 @@ $params = array(
 $all_categories = get_categories($params);
 ?>
 <section>
-    <h5 class="sub-title text-info text-uppercase ">Danh mục</h5>
+    <h5 class="sub-title text-info text-uppercase "><?php esc_attr_e( 'Category'); ?></h5>
     <ul class="list-group nudge">
         <?php if ($all_categories) : ?>
             <?php foreach ($all_categories as $cat) : ?>
