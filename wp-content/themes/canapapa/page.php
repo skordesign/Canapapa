@@ -16,6 +16,7 @@
         <?php get_template_part('templates/title', 'page') ?>
         <section class="container equal-height-container">
             <div class="row">
+
                 <div class="col-sm-12">
                         <?php
                             if(is_page('gioi-thieu'))
@@ -44,6 +45,7 @@
                             {
                                 get_template_part('templates/checkout/checkout', 'content');
                             }else if(is_page('san-pham')) {
+
                                 get_template_part('templates/products/product', 'content');
                             }
                         ?>

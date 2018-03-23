@@ -17,6 +17,7 @@ $params = array(
     'hide_empty' => $empty
 );
 $all_categories = get_categories($params);
+
 ?>
 <section>
     <h5 class="sub-title text-info text-uppercase "><?php esc_attr_e( 'Category'); ?></h5>

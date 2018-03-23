@@ -1,3 +1,6 @@
+<?php
+global $getProductDetail;
+?>
 <div class="col-sm-12 accordion">
     <div role="tabpanel">
         <ul id="product-tabs" class="nav nav-tabs text-uppercase" role="tablist">
@@ -7,15 +10,7 @@
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane product-pane fade clearfix active in" id="descreption">
-                <p><strong>Dưỡng Môi Vị Trái Cây Avanta Không Màu - Nga</strong> <br>
-                    Xuất xứ: Nga <br>
-                    Trọng lượng: 2.8 gr <br>
-                    Thương hiệu :AVANTA <br>
-                    Công dụng: Son dưỡng ẩm môi ,chống nứt nẻ,giữ mầu tự nhiên cho đôi môi</p>
-                <img src="images/pd4.jpeg" class="img-responsive" style="margin:auto" data-pagespeed-url-hash="4175125194" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                <p>Với thành phần chiết xuất từ cây hắc mai biển kết hợp với các loại dầu, sáp tự nhiên và hoàn toàn không chứa chất bảo quản, son dưỡng môi Avanta có mùi thơm dễ chịu từ thiên nhiên giúp phục hồi chức năng bảo vệ tự nhiên của da môi. <br>
-                    Một hàm lượng cao chiết xuất từ cây hắc mai biển có chứa beta-carotene – một loại vitamin A tự nhiên có tác dụng dưỡng ẩm chuyên sâu và nuôi dưỡng da môi, giúp cho da môi luôn mềm mại, giữ ẩm tốt, ngăn ngừa môi bị khô và bong tróc, cho da môi sắc màu tươi sáng. <br>
-                    Vitamin E – một chất chống oxy hóa tự nhiên bảo vệ da môi khi tiếp xúc với tác dụng tiêu cực của môi trường và tia UV.</p>
+                <?php echo $getProductDetail->post_content ?>
             </div>
             <div role="tabpanel" class="tab-pane product-pane fade clearfix" id="reviews">
                 <div class="single-review clearfix">

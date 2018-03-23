@@ -7,6 +7,7 @@ $args = array(
     'include'    => $ids,
 );
 $tags = get_terms( 'product_tag', $args) ;
+
 ?>
 <section class="col-sm-12 tags">
     <h5 class="sub-title text-info text-uppercase"><?php esc_attr_e( 'Tags'); ?></h5>

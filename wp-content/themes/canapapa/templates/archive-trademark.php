@@ -1,6 +1,7 @@
 <?php
 $params = array('posts_per_page' => 10, 'post_type' => 'trademark');
 $wc_trademark = new WP_Query($params);
+
 ?>
 
 <section>
