@@ -15,7 +15,9 @@ if(is_product_category($product_cat['1'])) {
     );
     $wc_new_product = new WP_Query( $params );
 } else {
-    $params = array('posts_per_page' => 15, 'post_type' => 'product');
+    $postName = $_GET['postname'];
+    $params = array('posts_per_page' => 15, 'post_type' => 'product', 's' => $postName
+);
     $wc_new_product = new WP_Query($params);
 }
 ?>
