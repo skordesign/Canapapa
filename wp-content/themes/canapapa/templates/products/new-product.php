@@ -20,10 +20,10 @@ $wc_new_product = new WP_Query($params);
                             <div class="product-main">
                                 <div class="product-view">
                                     <?php
-                                    $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_new_product->ID));
+                                    $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()));
                                     ?>
                                     <figure class="double-img">
-                                        <a href="<?php echo get_permalink($product->ID) ?>">
+                                        <a href="<?php echo get_permalink(get_the_ID()) ?>">
                                             <img class="btm-img" width="215" height="240" alt="<?php the_title(); ?>" src="<?php echo $featured_image['0'] ?>">
                                             <img class="top-img" width="215" height="240" alt="<?php the_title(); ?>" src="<?php echo $featured_image['0'] ?>">
                                         </a>
@@ -36,12 +36,13 @@ $wc_new_product = new WP_Query($params);
                                             <span class="cart ion-bag"></span></a>
                                         </p>
                                         <p class="effect-icon">
-                                            <a data-toggle="modal" data-target="#quick-view-box" data-id="<?php echo $product->ID ?>" class="hint-top" data-hint="Xem nhanh">
-                                            <span class="ion-ios-eye view"></span> </a></p>
+                                            <a data-toggle="modal" data-target="#quick-view-box" data-id="<?php echo get_the_ID() ?>" class="hint-top" data-hint="Xem nhanh">
+                                            <span class="ion-ios-eye view"></span> </a>
+                                        </p>
                                     </div>
                             </div>
                             <div class="product-info">
-                                <h3 class="product-name"><a href="<?php echo get_permalink($product->ID) ?>"><?php the_title(); ?></a></h3>
+                                <h3 class="product-name"><a href="<?php echo get_permalink(get_the_ID()) ?>"><?php the_title(); ?></a></h3>
                             </div>
                             <div class="product-price">
                                 <span class="real-price text-info"><strong><?php echo number_format($product->regular_price, 0, '.', ','); ?>đ</strong></span>

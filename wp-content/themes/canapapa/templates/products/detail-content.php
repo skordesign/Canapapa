@@ -9,7 +9,6 @@ $imgUrls = array();
 foreach ($attachmentIds as $attachmentId) {
     $imgUrls[] = wp_get_attachment_url($attachmentId);
 }
-//var_dump($imgUrls); die();
 ?>
 
 <div class="col-sm-12 product-details">

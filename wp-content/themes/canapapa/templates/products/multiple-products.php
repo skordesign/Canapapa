@@ -28,7 +28,7 @@ $wp_product = new WP_Query($params);
                                     </figure>
                                 </div>
                                 <div class="col-sm-6 col-md-8">
-                                    <h3 class="product-name"><a href="<?php echo get_permalink($product->ID) ?>"><?php the_title(); ?></a>
+                                    <h3 class="product-name"><a href="<?php echo get_permalink(get_the_ID()) ?>"><?php the_title(); ?></a>
                                     </h3>
                                     <div class="product-price">
                                         <span class="real-price text-info"><strong><?php echo number_format($product->regular_price, 0, '.', ','); ?>đ</strong></span>

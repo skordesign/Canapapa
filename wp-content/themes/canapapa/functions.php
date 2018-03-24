@@ -39,14 +39,17 @@ function canapapa_script_enqueue()
     wp_enqueue_style('custom-style-4', get_template_directory_uri() . '/css/custom-gold.css', array(), '1.0.0', 'all');
     wp_enqueue_style('custom-style-5', get_template_directory_uri() . '/css/slick/slick.css', array(), '1.0.0', 'all');
     wp_enqueue_style('custom-style-6', get_template_directory_uri() . '/css/slick/slick-theme.css', array(), '1.0.0', 'all');
-    wp_enqueue_script('jquery');
 
+
+    wp_enqueue_script('jquery');
+    wp_localize_script( 'ajax-script', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'));
     wp_enqueue_script('slickjs', get_template_directory_uri() . '/js/slick/slick.min.js', array('jquery'));
     wp_enqueue_script('header', get_template_directory_uri() . '/js/header.js', array('jquery'));
     wp_enqueue_script('menu', get_template_directory_uri() . '/js/menu.js', array('jquery'));
     wp_enqueue_script('quickview', get_template_directory_uri() . '/js/quickview.js', array('jquery'));
     wp_enqueue_script('detail.content', get_template_directory_uri() . '/js/detail.content.js', array('jquery'));
+
     #include script js
     /* wp_enqueue_script('custom-script-1', get_template_directory_uri(). '/js/jquery.min.js.pagespeed.jm.gB2NxZAQFn.js', array(), '1.0.0', true);
     wp_enqueue_script('custom-script-2', get_template_directory_uri(). '/js/custom.js+style-switcher.js+switches.js+slick.js+wow.min.js+bootstrap.min.js+jquery.highlight.js.pagespeed.jc.Ptc5pSddfg.js', array(), '1.0.0', true);
@@ -86,3 +89,36 @@ include 'inc/icon_socail.php';
 include 'inc/info_web.php';
 include 'inc/create_module_slider.php';
 include 'inc/create_module_trademark.php';
+
+
+add_action('wp_ajax_showDetailProduct', 'showDetailProduct');
+add_action('wp_ajax_nopriv_showDetailProduct', 'showDetailProduct');
+
+function showDetailProduct() {
+    if(isset($_POST)) {
+        if(!empty($_POST['product_id']))
+        {
+            $product_id = $_POST['product_id'];
+            $params = array('posts_per_page' => 15, 'post_type' => 'product', 'post__in'=> array($product_id));
+            $wc_product = new WP_Query($params);
+            echo json_encode($wc_product);
+            exit();
+        }
+        else
+        {
+            echo json_encode(array(
+                'err' => 0,
+                'msg' => 'Product id empty',
+            ));
+            exit();
+        }
+    }
+    else
+    {
+        echo json_encode(array(
+            'err' => 0,
+            'msg' => 'No isset request POST'
+        ));
+        exit();
+    }
+}

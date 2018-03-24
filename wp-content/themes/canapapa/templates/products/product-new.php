@@ -142,11 +142,11 @@ $all_categories = get_categories($params);
                                                      style="display: block;">
                                                     <div class="product-main">
                                                         <?php
-                                                        $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_new_product->post->ID));
+                                                        $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()));
                                                         ?>
                                                         <div class="product-view">
                                                             <figure class="double-img">
-                                                                <a href="<?php echo get_permalink($product->ID) ?>"><img class="btm-img"
+                                                                <a href="<?php echo get_permalink(get_the_ID()) ?>"><img class="btm-img"
                                                                                                     width="215"
                                                                                                     height="240"
                                                                                                     alt="<?php the_title(); ?>"
@@ -165,7 +165,7 @@ $all_categories = get_categories($params);
                                                                                       data-hint="Thêm vào giỏ hàng"><span
                                                                             class="cart ion-bag"></span></a></p>
                                                             <p class="effect-icon"><a data-toggle="modal"
-                                                                                      data-id="<?php echo $product->ID ?>"
+                                                                                      data-id="<?php echo get_the_ID() ?>"
                                                                                       data-target="#quick-view-box"
                                                                                       class="hint-top"
                                                                                       data-hint="Xem nhanh"><span
@@ -174,7 +174,7 @@ $all_categories = get_categories($params);
                                                     </div>
                                                     <div class="product-info">
                                                         <h3 class="product-name"><a
-                                                                    href="product-details.html"><?php the_title(); ?></a>
+                                                                    href="<?php echo get_permalink(get_the_ID()) ?>"><?php the_title(); ?></a>
                                                         </h3>
                                                     </div>
                                                     <div class="product-price">
