@@ -15,7 +15,7 @@
          style="visibility: visible; animation-duration: 2s;">
         <div class="page-header">
             <div class="container text-center">
-                <h2 class="text-primary text-uppercase"> DANH SÁCH SẢN PHẨM</h2>
+                <h2 class="text-primary text-uppercase"> <?php esc_attr_e('List Product') ?></h2>
             </div>
         </div>
         <?php
@@ -26,11 +26,6 @@
         ?>
         <section class="container">
             <div class="row">
-                <div class="col-sm-12">
-                    <div class="inner-ad">
-                        <figure><img class="img-responsive" src="" width="1170" height="100" alt="" data-pagespeed-url-hash="2102948165" ></figure>
-                    </div>
-                </div>
                 <div class="col-sm-12 equal-height-container">
                     <div class="row">
 
@@ -38,10 +33,10 @@
                         <div class="col-sm-8 col-md-9 col-lg-9 main-sec">
                             <div class="row">
                                 <?php if(is_product()) : ?>
-                                <?php get_template_part('templates/title', 'product') ?>
-                                <?php get_template_part('templates/products/detail', 'content') ?>
-                                <?php get_template_part('templates/products/desc', 'product') ?>
-                                <?php get_template_part('templates/products/relasionship', 'product') ?>
+                                    <?php get_template_part('templates/title', 'product') ?>
+                                    <?php get_template_part('templates/products/detail', 'content') ?>
+                                    <?php get_template_part('templates/products/desc', 'product') ?>
+                                    <?php get_template_part('templates/products/relasionship', 'product') ?>
                                 <?php else : ?>
                                     <?php get_template_part('templates/title', 'product') ?>
                                     <?php get_template_part('templates/search', 'product') ?>

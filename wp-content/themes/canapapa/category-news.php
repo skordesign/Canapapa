@@ -1,25 +1,53 @@
+<?php
+$args = array(
+    'type'                     => 'post',
+    'child_of'                 => 0,
+    'parent'                   => '',
+    'orderby'                  => 'name',
+    'order'                    => 'ASC',
+    'hide_empty'               => 1,
+    'hierarchical'             => 1,
+    'exclude'                  => '',
+    'include'                  => '',
+    'number'                   => '',
+    'taxonomy'                 => 'category',
+    'pad_counts'               => false
+
+);
+$categories = get_categories( $args );
+
+$params = array('posts_per_page' => 15, 'post_type' => 'post');
+$wc_posts = new WP_Query($params);
+
+
+?>
 <div class="col-sm-4 col-md-3 sub-data-right sub-equal">
     <div class="row">
         <section class="col-sm-12">
-            <h5 class="sub-title text-info text-uppercase">Danh mục</h5>
+            <h5 class="sub-title text-info text-uppercase"><?php esc_attr_e( 'Category'); ?></h5>
             <ul class="list-group nudge">
-                <li class="list-group-item"><a href="blog.html">Tư vấn làm đẹp</a><span class="pull-right">(22)</span></li>
-                <li class="list-group-item"><a href="blog.html">Sản phẩm mỹ phẩm mới</a><span class="pull-right">(15)</span></li>
-                <li class="list-group-item"><a href="blog.html">Hướng dẫn trang điểm</a><span class="pull-right">(47)</span></li>
-                <li class="list-group-item"><a href="blog.html">Tuyển dụng</a><span class="pull-right">(0)</span></li>
+                <?php foreach ($categories as $cate) : ?>
+                <li class="list-group-item"><a href="<?php echo get_permalink($cate->term_id) ?>"><?php echo $cate->name ?></a></li>
+               <?php endforeach; ?>
             </ul>
         </section>
         <section class="col-sm-12">
-            <h5 class="sub-title text-info text-uppercase">Tin tức mới</h5>
-            <a href="blog-detail.html"> <img class=" img-responsive" src="" width="370" height="200" alt="" data-pagespeed-url-hash="3470658641" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"> </a>
-            <h5 class=" text-uppercase"> <a href="blog-detail.html">Tẩy da chết quan trọng như thế nào?</a></h5>
-            <p>Bản thân làn da của chúng ta có một cơ chế tẩy da chết tự nhiên, gọi nôm na là bong da, đó là quá trình rơi rụng của các tế bào da cũ, khô cứng ra khỏi bề mặt da để nhường chỗ cho các tế bào mới
+            <h5 class="sub-title text-info text-uppercase"><?php esc_attr_e( 'News'); ?></h5>
+            <?php if($wc_posts->have_posts()) : ?>
+            <?php while ($wc_posts->have_posts()) : $wc_posts->the_post() ;
+                    $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()));
+            ?>
+            <a href="<?php echo get_permalink(get_the_ID()) ?>">
+                <img class="img-responsive" src="<?php echo $featured_image['0'] ?>" width="370" height="50" alt="">
+            </a>
+            <h5 class="text-uppercase">
+                <a href="<?php echo get_permalink(get_the_ID()) ?>"><?php the_title() ?></a>
+            </h5>
+            <p>
+                <?php the_content() ?>
             </p>
-            <hr>
-            <a href="blog-detail.html"> <img class=" img-responsive" src="" width="370" height="200" alt="" data-pagespeed-url-hash="2345764184" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"> </a>
-            <h5 class=" text-uppercase"> <a href="blog-detail.html">Cách chọn kem dưỡng trắng da Hàn Quốc</a></h5>
-            <p>Mách bạn cách chọn kem dưỡng trắng da-mỹ phẩm hàn quốc an toàn, hiệu quả và phù hợp nhất với làn da của bạn giúp dưỡng da trắng hồng, mịn màng tự nhiên.
-            </p>
+            <?php endwhile; ?>
+            <?php endif; ?>
         </section>
         <section class="col-sm-12 instagram">
             <h5 class="sub-title text-info text-uppercase">instagram</h5>

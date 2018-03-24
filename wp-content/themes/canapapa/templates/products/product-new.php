@@ -100,14 +100,16 @@ $all_categories = get_categories($params);
                                                         </figure>
                                                         <span class="label offer-label-left">Mới</span></div>
                                                     <div class="product-btns  effect-content-inner">
-                                                        <p class="effect-icon"><a href="<?php echo $product->add_to_cart_url() ?>" class="hint-top"
-                                                                                  data-hint="Thêm vào giỏ hàng"><span
-                                                                        class="cart ion-bag"></span></a></p>
-                                                        <p class="effect-icon"><a data-toggle="modal"
-                                                                                  data-target="#quick-view-box"
-                                                                                  class="hint-top"
-                                                                                  data-hint="Xem nhanh"><span
-                                                                        class="ion-ios-eye view"></span> </a></p>
+                                                        <p class="effect-icon">
+                                                            <a href="<?php echo $product->add_to_cart_url() ?>" class="hint-top" data-hint="Thêm vào giỏ hàng">
+                                                                <span class="cart ion-bag"></span>
+                                                            </a>
+                                                        </p>
+                                                        <p class="effect-icon">
+                                                            <a data-toggle="modal" data-id="<?php echo $product->ID ?>" data-target="#quick-view-box" class="hint-top"
+                                                                                  data-hint="Xem nhanh">
+                                                                <span class="ion-ios-eye view"></span> </a>
+                                                        </p>
                                                     </div>
                                                 </div>
                                                 <div class="product-info">
@@ -148,7 +150,6 @@ $all_categories = get_categories($params);
                                                                                                     width="215"
                                                                                                     height="240"
                                                                                                     alt="<?php the_title(); ?>"
-                                                                                                    data-pagespeed-url-hash="4273646131"
                                                                                                     src="<?php echo $featured_image['0'] ?>"
 
                                                                                                     data-pagespeed-lazy-replaced-functions="1">
@@ -164,6 +165,7 @@ $all_categories = get_categories($params);
                                                                                       data-hint="Thêm vào giỏ hàng"><span
                                                                             class="cart ion-bag"></span></a></p>
                                                             <p class="effect-icon"><a data-toggle="modal"
+                                                                                      data-id="<?php echo $product->ID ?>"
                                                                                       data-target="#quick-view-box"
                                                                                       class="hint-top"
                                                                                       data-hint="Xem nhanh"><span

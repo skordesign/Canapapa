@@ -1,6 +1,23 @@
 <?php
-$params = array('posts_per_page' => 15, 'post_type' => 'product');
-$wc_new_product = new WP_Query($params);
+global $product_cat;
+if(is_product_category($product_cat['1'])) {
+    $params = array(
+        'posts_per_page' => -5,
+        'tax_query' => array(
+            'relation' => 'AND',
+            array(
+                'taxonomy' => 'product_cat',
+                'field' => 'slug',
+                'terms' => $product_cat['1']
+            )
+        ),
+        'post_type' => 'product',
+    );
+    $wc_new_product = new WP_Query( $params );
+} else {
+    $params = array('posts_per_page' => 15, 'post_type' => 'product');
+    $wc_new_product = new WP_Query($params);
+}
 ?>
 <div class="col-sm-12">
     <div class="row">
@@ -24,21 +41,26 @@ $wc_new_product = new WP_Query($params);
                                     </figure>
                                     <span class="label offer-label-left">Mới</span></div>
                                 <div class="product-btns  effect-content-inner">
-                                    <p class="effect-icon"><a href="<?php echo $product->add_to_cart_url() ?>" class="hint-top"
-                                                              data-hint="Thêm vào giỏ hàng"><span
-                                                    class="cart ion-bag"></span></a></p>
-                                    <p class="effect-icon"><a data-toggle="modal" data-target="#quick-view-box"
-                                                              class="hint-top" data-hint="Xem nhanh"><span
-                                                    class="ion-ios-eye view"></span> </a></p>
+                                    <p class="effect-icon">
+                                        <a href="<?php echo $product->add_to_cart_url() ?>" class="hint-top" data-hint="Thêm vào giỏ hàng">
+                                            <span  class="cart ion-bag"></span>
+                                        </a>
+                                    </p>
+                                    <p class="effect-icon">
+                                        <a data-toggle="modal" data-target="#quick-view-box"
+                                                              class="hint-top" data-hint="Xem nhanh">
+                                            <span class="ion-ios-eye view"></span> </a>
+                                    </p>
                                 </div>
                             </div>
                             <div class="product-info">
                                 <h3 class="product-name"><a href="<?php echo get_permalink($product->ID) ?>"><?php the_title(); ?></a>
                                 </h3>
-                                <p class="group inner list-group-item-text"><?php the_content(); ?></p>
-                                <div class="product-price"><span class="real-price text-info"><span
-                                                class="real-price text-info"><strong><?php echo $product->regular_price; ?></strong></span></span>
-                                    <span class="old-price"><?php echo $product->price; ?></span></div>
+                                <p class="group inner list-group-item-text"><?php echo the_excerpt() ?></p>
+                                <div class="product-price">
+                                    <span class="real-price text-info"><strong><?php echo number_format($product->regular_price, 0, '.', ','); ?>đ</strong></span>
+                                    <span class="old-price"><?php echo number_format($product->price, 0, '.', ',') ?>đ</span>
+                                </div>
                             </div>
                         </div>
                     <?php endwhile; ?>

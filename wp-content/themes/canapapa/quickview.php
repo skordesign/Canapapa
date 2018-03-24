@@ -1,3 +1,5 @@
+
+
 <div class="modal fade in" id="quick-view-box" tabindex="-1" role="dialog" aria-labelledby="quickviewboxLabel"
      aria-hidden="false" style="display: none; padding-right: 17px;">
     <div class="modal-backdrop fade in" style="height: 708px;"></div>
@@ -53,3 +55,4 @@
         </div>
     </div>
 </div>
+

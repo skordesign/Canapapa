@@ -36,7 +36,7 @@ $wc_new_product = new WP_Query($params);
                                             <span class="cart ion-bag"></span></a>
                                         </p>
                                         <p class="effect-icon">
-                                            <a data-toggle="modal" data-target="#quick-view-box" class="hint-top" data-hint="Xem nhanh">
+                                            <a data-toggle="modal" data-target="#quick-view-box" data-id="<?php echo $product->ID ?>" class="hint-top" data-hint="Xem nhanh">
                                             <span class="ion-ios-eye view"></span> </a></p>
                                     </div>
                             </div>
