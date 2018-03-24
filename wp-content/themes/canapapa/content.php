@@ -37,7 +37,7 @@ if(is_product_category($product_cat['1'])) {
                                     <figure class="double-img">
                                         <a href="<?php echo get_permalink($product->ID) ?>"><img class="btm-img" src="<?php echo $featured_image['0'] ?>" width="215"
                                                                             height="240" alt="<?php the_title(); ?>"
-                                                                            data-pagespeed-url-hash="4273646131">
+                                                                           data-pagespeed-url-hash="4273646131">
                                             <img class="top-img" src="<?php echo $featured_image['0'] ?>" width="215" height="240" alt="<?php the_title(); ?>"
                                                  data-pagespeed-url-hash="4089456764"></a>
                                     </figure>
