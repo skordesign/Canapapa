@@ -142,7 +142,7 @@ foreach ($attachmentIds as $attachmentId) {
             <div class="product-quantity">
                 <h5 class="text-primary text-uppercase">Số lượng</h5>
                 <div class="qty-btngroup clearfix pull-left">
-                    <button type="button" class="minus">-</button>
+                    <button type="button" class="minus" >-</button>
                     <input type="text" value="1">
                     <button type="button" class="plus">+</button>
                 </div>

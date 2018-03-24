@@ -16,6 +16,7 @@
     $pinterest= get_theme_mod('Pinterest')
 
 ?>
+<?php get_template_part('quickview')?>
 <div class="btm-sec">
     <footer>
         <div class="footer-middle wow fadeIn animated animated" data-wow-offset="40" data-wow-duration="2s"
