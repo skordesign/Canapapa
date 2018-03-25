@@ -28,11 +28,14 @@
             transition: all 0.3s;
         }
     </style>
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 </head>
 <body <?php body_class(); ?> >
 <div id="preloader" style="display: none;">
     <div id="status" style="display: none;"></div>
 </div>
+<input type="hidden" name="home_url" value="<?php echo get_home_url(); ?>">
 <?php
     global $woocommerce;
     $items = $woocommerce->cart->get_cart();

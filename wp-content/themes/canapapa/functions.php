@@ -90,4 +90,5 @@ include 'inc/create_module_slider.php';
 include 'inc/create_module_trademark.php';
 include 'inc/feature_system.php';
 include 'inc/custom_metebox_products.php';
+include 'inc/custom_metabox_page.php';
 

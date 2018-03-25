@@ -132,9 +132,7 @@ function custom_meta_box_trademark($object)
     <?php
 }
 
-
 function product_trademark_save_postdata($post_id) {
-//    echo '<pre>'; print_r($_POST); die();
     if (array_key_exists('product_trademark_meta_box', $_POST)) {
         update_post_meta(
             $post_id,

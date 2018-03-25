@@ -1164,6 +1164,10 @@ h6 small {
 .text-primary {
     color: #333
 }
+.text-primary1 {
+    color: #333;
+    text-align: center;
+}
 .text-success {
     color: #8bb174
 }
@@ -4960,4 +4964,38 @@ a.btn_xemthem_cungthuonghieu, .btn_xemthem_cungthuonghieu {
     padding: 10px;
     color: #666666;
     background: #f7f7f7;
+}
+.modal-header .close_cart {
+    margin-top: -2px;
+}
+button:not(.primary) {
+    box-shadow: none;
+}
+button.close_cart {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+}
+.close_cart {
+    color: #d29c56;
+    opacity: 1;
+}
+.close_cart {
+    float: right;
+    font-size: 21px;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+
+.alert .alert-link, .close_cart {
+    font-weight: 700;
+}
+.close_cart {
+    color: #d29c56;
+    opacity: 1;
 }

@@ -1,4 +1,5 @@
 <?php
+//get all categories
 $taxonomy = 'product_cat';
 $orderby = 'name';
 $show_count = 0;      // 1 for yes, 0 for no
@@ -17,6 +18,26 @@ $params1 = array(
     'hide_empty' => $empty
 );
 $all_categories = get_categories($params1);
+
+
+//get id shop
+$params2 = array(
+    'name' => 'shop',
+    'post_type' => 'page',
+    'post_status' => 'publish',
+    'posts_per_page' => 1,
+);
+$page_shop = get_posts($params2);
+$shop_id = $page_shop['0']->ID;
+
+$custom_slider = get_post_custom($shop_id, "_custom_slider_metabox", true);
+$meta_slider_value = $custom_slider['_custom_slider_metabox'];
+$arr_slider_ids = unserialize($meta_slider_value[0]);
+
+foreach ($arr_slider_ids as $id) {
+    $slider_image[] = wp_get_attachment_image_src(get_post_thumbnail_id($id));
+}
+
 ?>
 <ul class="nav navbar-nav lnt-nav-mega">
     <li class="dropdown" id="cp-menu-dropdown">
@@ -74,22 +95,21 @@ $all_categories = get_categories($params1);
                                             class=""></li>
                                     </ol>
                                     <div class="carousel-inner" role="listbox">
-                                        <div class="item next left"><img width="296" height="400"
-                                                                         alt="Slide image"
-                                                                         data-pagespeed-url-hash="2385484616"
-                                                                         src=""
-                                            >
-                                        </div>
-                                        <div class="item"><img width="296" height="400" alt="Slide image"
-                                                               data-pagespeed-url-hash="2385484616"
-                                                               src=""
-                                            >
-                                        </div>
-                                        <div class="item active left"><img width="296" height="400"
-                                                                           alt="Slide image"
-                                                                           data-pagespeed-url-hash="2385484616"
-                                                                           src="">
-                                        </div>
+                                        <?php foreach ($slider_image as $key => $image) : ?>
+                                            <?php if ($key == 0) : ?>
+                                                <div class="item active left">
+                                                    <img width="296" height="400"
+                                                         alt="Slide image"
+                                                         src="<?php echo $image['0'] ?>"
+                                                    >
+                                                </div>
+                                            <?php endif; ?>
+                                            <div class="item">
+                                                <img width="296" height="400" alt="Slide image"
+                                                     src="<?php echo $image['0'] ?>"
+                                                >
+                                            </div>
+                                        <?php endforeach; ?>
                                     </div>
                                 </div>
                             </div>
@@ -123,22 +143,21 @@ $all_categories = get_categories($params1);
                                                     class=""></li>
                                             </ol>
                                             <div class="carousel-inner" role="listbox">
-                                                <div class="item next left"><img width="296" height="400"
-                                                                                 alt="Slide image"
-                                                                                 data-pagespeed-url-hash="2385484616"
-                                                                                 src=""
-                                                    >
-                                                </div>
-                                                <div class="item"><img width="296" height="400" alt="Slide image"
-                                                                       data-pagespeed-url-hash="2385484616"
-                                                                       src=""
-                                                    >
-                                                </div>
-                                                <div class="item active left"><img width="296" height="400"
-                                                                                   alt="Slide image"
-                                                                                   data-pagespeed-url-hash="2385484616"
-                                                                                   src="">
-                                                </div>
+                                                <?php foreach ($slider_image as $key => $image) : ?>
+                                                    <?php if ($key == 0) : ?>
+                                                        <div class="item active left">
+                                                            <img width="296" height="400"
+                                                                 alt="Slide image"
+                                                                 src="<?php echo $image['0'] ?>"
+                                                            >
+                                                        </div>
+                                                    <?php endif; ?>
+                                                    <div class="item">
+                                                        <img width="296" height="400" alt="Slide image"
+                                                             src="<?php echo $image['0'] ?>"
+                                                        >
+                                                    </div>
+                                                <?php endforeach; ?>
                                             </div>
                                         </div>
                                     </div>
