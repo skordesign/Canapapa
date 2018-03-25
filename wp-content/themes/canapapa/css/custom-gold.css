@@ -2047,6 +2047,7 @@ legend {
     display:inline
 }
 .line-navbar-one .lnt-shopping-cart .lnt-cart-products .lnt-product-info .lnt-product-name {
+    margin-left: -15px;
     font-size:13px
 }
 .line-navbar-one .lnt-shopping-cart .lnt-cart-products .lnt-product-info .lnt-product-price {
@@ -3953,8 +3954,8 @@ legend::after {
     background:#fafafa
 }
 .top-menu {
-    padding-right:15px;
-    padding-left:15px;
+    /*padding-right:15px;*/
+    /*padding-left:15px;*/
     background: #eaeaea;
 }
 .list-view {
@@ -4909,11 +4910,6 @@ a.txt_color_1, .txt_color_1 {
 .tb_info_sanpham td {
     padding: 7px 20px;
     border: 1px solid #eaeaea;
-}
-.item_box_col_right {
-    border-bottom: 1px solid #e5e5e5;
-    border-left: 1px solid #e5e5e5;
-    border-right: 1px solid #e5e5e5;
 }
 .space_bottom_20 {
     margin-bottom: 20px;
