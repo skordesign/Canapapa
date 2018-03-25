@@ -81,44 +81,13 @@ register_nav_menus(array(
  * Add custom thumbnail sizes
  */
 if (function_exists('add_image_size')) {
-//    add_image_size('custom-image-size', 500, 500, true);
-//    add_image_size( 'slider-thumb', 1920, 500, true );
+    add_image_size('custom-image-size', 500, 500, true);
 }
 
 include 'inc/icon_socail.php';
 include 'inc/info_web.php';
 include 'inc/create_module_slider.php';
 include 'inc/create_module_trademark.php';
+include 'inc/feature_system.php';
+include 'inc/custom_metebox_products.php';
 
-
-add_action('wp_ajax_showDetailProduct', 'showDetailProduct');
-add_action('wp_ajax_nopriv_showDetailProduct', 'showDetailProduct');
-
-function showDetailProduct() {
-    if(isset($_POST)) {
-        if(!empty($_POST['product_id']))
-        {
-            $product_id = $_POST['product_id'];
-            $params = array('posts_per_page' => 15, 'post_type' => 'product', 'post__in'=> array($product_id));
-            $wc_product = new WP_Query($params);
-            echo json_encode($wc_product);
-            exit();
-        }
-        else
-        {
-            echo json_encode(array(
-                'err' => 0,
-                'msg' => 'Product id empty',
-            ));
-            exit();
-        }
-    }
-    else
-    {
-        echo json_encode(array(
-            'err' => 0,
-            'msg' => 'No isset request POST'
-        ));
-        exit();
-    }
-}

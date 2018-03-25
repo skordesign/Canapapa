@@ -1,8 +1,10 @@
 <?php
 global $product_cat;
-if(is_product_category($product_cat['1'])) {
+$wc_new_product = '';
+
+if (is_product_category($product_cat['1']))
+{
     $params = array(
-        'posts_per_page' => -5,
         'tax_query' => array(
             'relation' => 'AND',
             array(
@@ -13,12 +15,49 @@ if(is_product_category($product_cat['1'])) {
         ),
         'post_type' => 'product',
     );
-    $wc_new_product = new WP_Query( $params );
-} else {
-    $postName = $_GET['postname'];
-    $params = array('posts_per_page' => 15, 'post_type' => 'product', 's' => $postName
-);
     $wc_new_product = new WP_Query($params);
+} else
+{
+    if(is_page('san-pham-deals'))
+    {
+        $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+
+        $params = array(
+            'posts_per_page' => 15,
+            'paged' => $paged,
+            'post_type' => 'product',
+            'meta_query'     => array(
+                'relation' => 'OR',
+                array( // Simple products type
+                    'key'           => '_sale_price',
+                    'value'         => 0,
+                    'compare'       => '>',
+                    'type'          => 'numeric'
+                ),
+                array( // Variable products type
+                    'key'           => '_min_variation_sale_price',
+                    'value'         => 0,
+                    'compare'       => '>',
+                    'type'          => 'numeric'
+                )
+            )
+        );
+        $wc_new_product = new WP_Query($params);
+    }
+    else
+    {
+        $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+
+        $postName = (isset($_GET['postname']) && !empty($_GET['postname']) ? $_GET['postname'] : '');
+        $params = array(
+            'posts_per_page' => 15,
+            'paged' => $paged,
+            'post_type' => 'product',
+            's' => $postName
+        );
+        $wc_new_product = new WP_Query($params);
+    }
+
 }
 ?>
 <div class="col-sm-12">
@@ -35,33 +74,41 @@ if(is_product_category($product_cat['1'])) {
                             <div class="product-main">
                                 <div class="product-view">
                                     <figure class="double-img">
-                                        <a href="<?php echo get_permalink($product->ID) ?>"><img class="btm-img" src="<?php echo $featured_image['0'] ?>" width="215"
-                                                                            height="240" alt="<?php the_title(); ?>"
-                                                                           data-pagespeed-url-hash="4273646131">
-                                            <img class="top-img" src="<?php echo $featured_image['0'] ?>" width="215" height="240" alt="<?php the_title(); ?>"
-                                                 data-pagespeed-url-hash="4089456764"></a>
+                                        <a href="<?php echo get_permalink($product->ID) ?>">
+                                            <img class="btm-img"
+                                             src="<?php echo $featured_image['0'] ?>"
+                                             width="215"
+                                             height="240"
+                                             alt="<?php the_title(); ?>"
+                                            >
+                                            <img class="top-img" src="<?php echo $featured_image['0'] ?>" width="215"
+                                                 height="240" alt="<?php the_title(); ?>"
+                                                >
+                                        </a>
                                     </figure>
-                                    <span class="label offer-label-left">Mới</span></div>
+                                    <span class="label offer-label-left"></span></div>
                                 <div class="product-btns  effect-content-inner">
                                     <p class="effect-icon">
-                                        <a href="<?php echo $product->add_to_cart_url() ?>" class="hint-top" data-hint="Thêm vào giỏ hàng">
-                                            <span  class="cart ion-bag"></span>
+                                        <a href="<?php echo $product->add_to_cart_url() ?>" class="hint-top"
+                                           data-hint="Thêm vào giỏ hàng">
+                                            <span class="cart ion-bag"></span>
                                         </a>
                                     </p>
                                     <p class="effect-icon">
-                                        <a data-toggle="modal" data-target="#quick-view-box"
-                                                              class="hint-top" data-hint="Xem nhanh">
+                                        <a data-toggle="modal" data-target="#quick-view-box" data-id="<?php echo get_the_ID() ?>"
+                                           class="hint-top" data-hint="Xem nhanh">
                                             <span class="ion-ios-eye view"></span> </a>
                                     </p>
                                 </div>
                             </div>
                             <div class="product-info">
-                                <h3 class="product-name"><a href="<?php echo get_permalink($product->ID) ?>"><?php the_title(); ?></a>
+                                <h3 class="product-name"><a
+                                            href="<?php echo get_permalink($product->ID) ?>"><?php the_title(); ?></a>
                                 </h3>
-                                <p class="group inner list-group-item-text"><?php echo the_excerpt() ?></p>
+<!--                                <p class="group inner list-group-item-text">--><?php //wp_trim_words(the_excerpt()) ?><!--</p>-->
                                 <div class="product-price">
-                                    <span class="real-price text-info"><strong><?php echo number_format($product->regular_price, 0, '.', ','); ?>đ</strong></span>
-                                    <span class="old-price"><?php echo number_format($product->price, 0, '.', ',') ?>đ</span>
+                                    <span class="real-price text-info"><strong><?php echo number_format($product->price, 0, '.', ',') ?>đ</strong></span>
+                                    <span class="old-price"><?php echo number_format($product->regular_price, 0, '.', ','); ?>đ</span>
                                 </div>
                             </div>
                         </div>
@@ -77,14 +124,8 @@ if(is_product_category($product_cat['1'])) {
         <div class="col-sm-12">
             <nav role="navigation">
                 <ul class="cd-pagination">
-                    <li class="button"><a href="#0">Trước</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#" class="current">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><span>...</span></li>
-                    <li><a href="#">20</a></li>
-                    <li class="button"><a href="#0">Sau</a></li>
+                    <li class="button"><?php echo get_next_posts_link('Trước', $wc_new_product->max_num_pages) ?></li>
+                    <li class="button"><?php echo  get_previous_posts_link('Sau', $wc_new_product->max_num_pages) ?></li>
                 </ul>
             </nav>
         </div>
