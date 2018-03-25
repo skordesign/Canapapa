@@ -40,9 +40,15 @@
                             </div>
                         </div>
                         <div class="col-sm-4 col-md-3 col-lg-3 main-sec">
-                            <?php get_template_part('templates/archive', 'transport'); ?>
-                            <?php get_template_part('templates/archive', 'trademark'); ?>
-                            <?php get_template_part('templates/archive', 'tags'); ?>
+                            <?php if(is_product_category($product_cat['1'])) : ?>
+                                <?php get_template_part('templates/archive', 'category'); ?>
+                                <?php get_template_part('templates/archive', 'trademark'); ?>
+                                <?php get_template_part('templates/archive', 'tags'); ?>
+                            <?php else: ?>
+                                <?php get_template_part('templates/archive', 'transport'); ?>
+                                <?php get_template_part('templates/archive', 'trademark'); ?>
+                                <?php get_template_part('templates/archive', 'tags'); ?>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

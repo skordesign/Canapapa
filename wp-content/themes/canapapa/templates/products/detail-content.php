@@ -93,21 +93,6 @@ foreach ($attachmentIds as $attachmentId) {
             <div class="product-size">
                 <div class="product-colors">
                     <h5 class="text-primary text-uppercase">select color</h5>
-                    <select name="colorpicker-bootstrap3-form" id="colorpicker-bootstrap3-form" class="form-control"
-                            style="display: none;">
-                        <option value="#7bd148">Green</option>
-                        <option value="#5484ed">Bold blue</option>
-                        <option value="#a4bdfc">Blue</option>
-                        <option value="#46d6db">Turquoise</option>
-                        <option value="#7ae7bf">Light green</option>
-                        <option value="#51b749">Bold green</option>
-                        <option value="#fbd75b">Yellow</option>
-                        <option value="#ffb878">Orange</option>
-                        <option value="#ff887c">Red</option>
-                        <option value="#dc2127">Bold red</option>
-                        <option value="#dbadff">Purple</option>
-                        <option value="#e1e1e1">Gray</option>
-                    </select>
                     <span class="simplecolorpicker inline ionicons">
                         <span class="color" title="Green" style="background-color: #7bd148;"
                                data-color="#7bd148" data-selected=""
@@ -157,15 +142,15 @@ foreach ($attachmentIds as $attachmentId) {
                 <h5 class="text-primary text-uppercase">Số lượng</h5>
                 <div class="qty-btngroup clearfix pull-left">
                     <button type="button" class="minus" >-</button>
-                    <input type="text" value="1">
+                    <input name="quantity" type="text" value="1">
                     <button type="button" class="plus">+</button>
                 </div>
-                <a href="#" class="btn btn-primary pull-left hvr-underline-from-center-primary">Thêm giỏ hàng</a>
+                <a class="btn btn-primary pull-left hvr-underline-from-center-primary" id="add_to_cart">Thêm giỏ hàng</a>
             </div>
             <div class="box-tocart">
                 <div class="quick_ship">
-                    <img class="image_quick_ship" src="https://hasaki.vn/static/frontend/Hasaki/default/vi_VN/images/graphics/deliverynow.png"><span id="quickship_info">HCM: Nhận hàng hỏa tốc dưới 120'( trước <span class="txt_color_2">10h</span> ngày mai. Đặt hàng trước <span class="txt_color_2">8h</span> và chọn giao hàng dưới <span class="txt_color_2">120 phút</span> ở bước thanh toán.</span>
-                    <a href="/giao-hang-duoi-120-phut.html" class="txt_color_1" target="_blank">Xem chi tiết</a>
+                    <img class="image_quick_ship" src="<?php bloginfo('template_url') ?>/images/deliverynow.png"><span id="quickship_info">HCM: Nhận hàng hỏa tốc dưới 120'( trước <span class="txt_color_2">10h</span> ngày mai. Đặt hàng trước <span class="txt_color_2">8h</span> và chọn giao hàng dưới <span class="txt_color_2">120 phút</span> ở bước thanh toán.</span>
+                    <a href="" class="txt_color_1" target="_blank">Xem chi tiết</a>
                 </div>
             </div>
         </div>

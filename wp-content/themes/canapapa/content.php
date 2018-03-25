@@ -18,10 +18,9 @@ if (is_product_category($product_cat['1']))
     $wc_new_product = new WP_Query($params);
 } else
 {
+    $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
     if(is_page('san-pham-deals'))
     {
-        $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-
         $params = array(
             'posts_per_page' => 15,
             'paged' => $paged,
@@ -46,15 +45,25 @@ if (is_product_category($product_cat['1']))
     }
     else
     {
-        $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-
         $postName = (isset($_GET['postname']) && !empty($_GET['postname']) ? $_GET['postname'] : '');
-        $params = array(
-            'posts_per_page' => 15,
-            'paged' => $paged,
-            'post_type' => 'product',
-            's' => $postName
-        );
+
+        $params = array();
+        $params['paged'] = $paged;
+        $params['post_type'] = 'product';
+        $params['posts_per_page'] = 15;
+        $params['order'] = 'desc';
+
+        if($postName == "name" && isset($_GET['order_by']) && !empty($_GET['order_by'])) {
+            $params['order_by'] = $postName;
+        } else if ($postName == "price" && isset($_GET['order_by']) && !empty($_GET['order_by'])){
+            $params['order_by'] = $postName;
+        }
+        else if(is_numeric($postName) && isset($_GET['order_by']) && !empty($_GET['order_by'])) {
+            $params['posts_per_page'] = $postName;
+        } else if(!is_numeric($postName)){
+            $params['s'] = $postName;
+        }
+
         $wc_new_product = new WP_Query($params);
     }
 
