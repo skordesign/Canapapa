@@ -41,7 +41,7 @@ $wc_relationship_product = new WP_Query($args);
                             <span class="cart ion-bag"></span></a>
                     </p>
                     <p class="effect-icon">
-                        <a data-toggle="modal" data-target="#quick-view-box" class="hint-top" data-hint="Xem nhanh">
+                        <a data-toggle="modal" data-target="#quick-view-box" data-id="<?php echo get_the_ID() ?>" class="hint-top" data-hint="Xem nhanh">
                             <span class="ion-ios-eye view"></span> </a></p>
                 </div>
             </div>
@@ -49,8 +49,8 @@ $wc_relationship_product = new WP_Query($args);
                 <h3 class="product-name"><a href="<?php echo get_permalink($product->ID) ?>"><?php the_title(); ?></a></h3>
             </div>
             <div class="product-price">
-                <span class="real-price text-info"><strong><?php echo number_format($product->regular_price, 0, '.', ','); ?>đ</strong></span>
-                <span class="old-price"><?php echo number_format($product->price, 0, '.', ',') ?>đ</span>
+                <span class="real-price text-info"><strong><?php echo number_format($product->price, 0, '.', ',') ?>đ</strong></span>
+                <span class="old-price"><?php echo number_format($product->regular_price, 0, '.', ','); ?>đ</span>
             </div>
         </div>
             <?php endwhile; ?>

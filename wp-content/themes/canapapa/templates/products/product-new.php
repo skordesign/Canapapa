@@ -106,7 +106,7 @@ $all_categories = get_categories($params);
                                                             </a>
                                                         </p>
                                                         <p class="effect-icon">
-                                                            <a data-toggle="modal" data-id="<?php echo $product->ID ?>" data-target="#quick-view-box" class="hint-top"
+                                                            <a data-toggle="modal" data-id="<?php echo get_the_ID() ?>"  data-target="#quick-view-box" class="hint-top"
                                                                                   data-hint="Xem nhanh">
                                                                 <span class="ion-ios-eye view"></span> </a>
                                                         </p>
@@ -118,8 +118,8 @@ $all_categories = get_categories($params);
                                                     </h3>
                                                 </div>
                                                 <div class="product-price">
-                                                        <span class="real-price text-info"><strong><?php echo number_format($product->regular_price, 0, '.', ','); ?>đ</strong></span>
-                                                    <span class="old-price"><?php echo number_format($product->price, 0, '.', ',') ?>đ</span>
+                                                    <span class="real-price text-info"><strong><?php echo number_format($product->price, 0, '.', ',') ?>đ</strong></span>
+                                                    <span class="old-price"><?php echo number_format($product->regular_price, 0, '.', ','); ?>đ</span>
                                                 </div>
                                             </div>
 
@@ -155,7 +155,6 @@ $all_categories = get_categories($params);
                                                                                                     data-pagespeed-lazy-replaced-functions="1">
                                                                     <img class="top-img" width="215" height="240"
                                                                          alt="<?php the_title(); ?>"
-                                                                         data-pagespeed-url-hash="4089456764"
                                                                          src="<?php echo $featured_image['0'] ?>"
                                                                     ></a>
                                                             </figure>
@@ -178,8 +177,8 @@ $all_categories = get_categories($params);
                                                         </h3>
                                                     </div>
                                                     <div class="product-price">
-                                                        <span class="real-price text-info"><strong><?php echo number_format($product->regular_price, 0, '.', ','); ?>đ</strong></span>
-                                                        <span class="old-price"><?php echo number_format($product->price, 0, '.', ',') ?>đ</span>
+                                                        <span class="real-price text-info"><strong><?php echo number_format($product->price, 0, '.', ',') ?>đ</strong></span>
+                                                        <span class="old-price"><?php echo number_format($product->regular_price, 0, '.', ','); ?>đ</span>
                                                     </div>
                                                 </div>
 

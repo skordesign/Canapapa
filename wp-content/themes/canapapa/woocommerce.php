@@ -14,9 +14,6 @@
     <div class="middle-sec wow fadeIn animated animated" data-wow-offset="10" data-wow-duration="2s"
          style="visibility: visible; animation-duration: 2s;">
         <div class="page-header">
-            <div class="container text-center">
-                <h2 class="text-primary text-uppercase"> <?php esc_attr_e('List Product') ?></h2>
-            </div>
         </div>
         <?php
         global $getProductDetail;
@@ -28,9 +25,7 @@
             <div class="row">
                 <div class="col-sm-12 equal-height-container">
                     <div class="row">
-
-                        <?php get_template_part('archive') ?>
-                        <div class="col-sm-8 col-md-9 col-lg-9 main-sec">
+                        <div class="col-sm-8  col-md-9 col-lg-9 sub-data-left sub-equal">
                             <div class="row">
                                 <?php if(is_product()) : ?>
                                     <?php get_template_part('templates/title', 'product') ?>
@@ -43,6 +38,11 @@
                                     <?php get_template_part('content') ?>
                                 <?php endif; ?>
                             </div>
+                        </div>
+                        <div class="col-sm-4 col-md-3 col-lg-3 main-sec">
+                            <?php get_template_part('templates/archive', 'transport'); ?>
+                            <?php get_template_part('templates/archive', 'trademark'); ?>
+                            <?php get_template_part('templates/archive', 'tags'); ?>
                         </div>
                     </div>
                 </div>

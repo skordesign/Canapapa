@@ -56,13 +56,21 @@ foreach ($attachmentIds as $attachmentId) {
                 <h5 class="text-primary text-uppercase"><?php echo $getProductDetail->post_title ?></h5>
             </div>
             <div class="product-review">
-                <p><a href="#">
-                        <small><?php echo $getProductDetail->post_title ?></small>
-                    </a></p>
+                <div class="block_start start_small">
+                    <div class="number_start" style="width:100%;"></div>
+                    <div class="start_background"></div>
+                </div>
+                <div class="block_review">
+                    <a> 5 đánh giá</a>
+                    <span>|</span>
+                    <a> 55 Hỏi đáp</a>
+                    <span> | </span>
+                    <span>MSP: 100550103</span>
+                </div>
             </div>
             <div class="product-description">
                 <h5 class="text-primary text-uppercase">Thông tin nhanh</h5>
-                <p> <?php echo $getProductDetail->post_excerpt ?></p>
+                <p> <?php echo wp_trim_words($getProductDetail->post_excerpt) ?></p>
             </div>
             <div class="product-availability in-stock">
                 <p>Tình trạng:
@@ -73,10 +81,15 @@ foreach ($attachmentIds as $attachmentId) {
                     </span>
                 </p>
             </div>
-            <div class="product-price clearfix"><span
-                        class="pull-left btn btn-primary"><strong><?php echo number_format($regular_price, 0, '.', ','); ?>
-                        đ</strong></span> <span class="pull-left btn btn-link"><del><?php echo number_format($sale_price, 0, '.', ','); ?>
-                        đ</del></span></div>
+            <div class="product-price clearfix">
+                <span class="pull-left btn btn-primary">
+                    <strong><?php echo number_format($sale_price, 0, '.', ','); ?>
+                        đ</strong>
+                </span>
+                <span class="pull-left btn">
+                    (Đã bao gồm VAT)
+                </span>
+            </div>
             <div class="product-size">
                 <div class="product-colors">
                     <h5 class="text-primary text-uppercase">select color</h5>
@@ -94,11 +107,13 @@ foreach ($attachmentIds as $attachmentId) {
                         <option value="#dc2127">Bold red</option>
                         <option value="#dbadff">Purple</option>
                         <option value="#e1e1e1">Gray</option>
-                    </select><span class="simplecolorpicker inline ionicons"><span class="color" title="Green"
-                                                                                   style="background-color: #7bd148;"
-                                                                                   data-color="#7bd148" data-selected=""
-                                                                                   role="button"
-                                                                                   tabindex="0"></span><span
+                    </select>
+                    <span class="simplecolorpicker inline ionicons">
+                        <span class="color" title="Green" style="background-color: #7bd148;"
+                               data-color="#7bd148" data-selected=""
+                               role="button"
+                               tabindex="0"></span>
+                        <span
                                 class="color" title="Bold blue" style="background-color: #5484ed;" data-color="#5484ed"
                                 role="button" tabindex="0"></span><span class="color" title="Blue"
                                                                         style="background-color: #a4bdfc;"
@@ -145,7 +160,14 @@ foreach ($attachmentIds as $attachmentId) {
                     <input type="text" value="1">
                     <button type="button" class="plus">+</button>
                 </div>
-                <a href="#" class="btn btn-primary pull-left hvr-underline-from-center-primary">THêm giỏ hàng</a></div>
+                <a href="#" class="btn btn-primary pull-left hvr-underline-from-center-primary">Thêm giỏ hàng</a>
+            </div>
+            <div class="box-tocart">
+                <div class="quick_ship">
+                    <img class="image_quick_ship" src="https://hasaki.vn/static/frontend/Hasaki/default/vi_VN/images/graphics/deliverynow.png"><span id="quickship_info">HCM: Nhận hàng hỏa tốc dưới 120'( trước <span class="txt_color_2">10h</span> ngày mai. Đặt hàng trước <span class="txt_color_2">8h</span> và chọn giao hàng dưới <span class="txt_color_2">120 phút</span> ở bước thanh toán.</span>
+                    <a href="/giao-hang-duoi-120-phut.html" class="txt_color_1" target="_blank">Xem chi tiết</a>
+                </div>
+            </div>
         </div>
     </div>
     <hr>
