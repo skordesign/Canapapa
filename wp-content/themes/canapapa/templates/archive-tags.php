@@ -9,11 +9,15 @@ $args = array(
 $tags = get_terms( 'product_tag', $args) ;
 
 ?>
-<section class="col-sm-12 tags">
-    <h5 class="sub-title text-info text-uppercase"><?php esc_attr_e( 'Tags'); ?></h5>
-    <?php if($tags) : ?>
-    <?php foreach ($tags as $tag) : ?>
-    <a href="<?php echo get_tag_link($tag->term_id) ?>"><?php echo $tag->name ?></a>
-    <?php endforeach; ?>
-    <?php endif; ?>
-</section>
+<div id="product_tag" class="item_box_col_right space_bottom_20">
+    <div class="title_common_site">
+        Tags
+    </div>
+    <div class="content_common_site">
+        <?php if($tags) : ?>
+            <?php foreach ($tags as $tag) : ?>
+                <a href="<?php echo get_tag_link($tag->term_id) ?>" title="<?php echo $tag->name ?>"><?php echo $tag->name ?></a>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
+</div>

@@ -1,33 +1,26 @@
 <?php
-global $getProductDetail;
+global $getProductDetail, $nameTrademark, $nameOrigin, $nameProduction, $user_manual;
 ?>
 <div class="col-sm-12 accordion">
     <div role="tabpanel">
         <ul id="product-tabs" class="nav nav-tabs text-uppercase" role="tablist">
             <li role="presentation" class="active"><a href="#descreption" aria-controls="descreption" role="tab" data-toggle="tab" aria-expanded="true">Mô tả</a></li>
-            <li role="presentation" class=""><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab" aria-expanded="false">Hướng dẫn sử dụng</a></li>
-            <li role="presentation" class=""><a href="#tags" aria-controls="tags" role="tab" data-toggle="tab" aria-expanded="false"> Đánh giá</a></li>
-            <li role="presentation" class=""><a href="#tags1" aria-controls="tags" role="tab" data-toggle="tab" aria-expanded="false"> Hỏi đáp</a></li>
-            <li role="presentation" class=""><a href="#tags2" aria-controls="tags" role="tab" data-toggle="tab" aria-expanded="false"> Thông số</a></li>
+            <li role="presentation" class=""><a href="#user_manual" aria-controls="reviews" role="tab" data-toggle="tab" aria-expanded="false">Hướng dẫn sử dụng</a></li>
+            <li role="presentation" class=""><a href="#evaluate" aria-controls="tags" role="tab" data-toggle="tab" aria-expanded="false"> Đánh giá</a></li>
+            <li role="presentation" class=""><a href="#answer" aria-controls="tags" role="tab" data-toggle="tab" aria-expanded="false"> Hỏi đáp</a></li>
+            <li role="presentation" class=""><a href="#params" aria-controls="tags" role="tab" data-toggle="tab" aria-expanded="false"> Thông số</a></li>
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane product-pane fade clearfix active in" id="descreption">
                 <?php echo $getProductDetail->post_content ?>
             </div>
-            <div role="tabpanel" class="tab-pane product-pane fade clearfix" id="reviews">
+            <div role="tabpanel" class="tab-pane product-pane fade clearfix" id="user_manual">
                 <div class="single-review clearfix">
-                    <h5 class="text-primary">Nguyễn Thị Cúc<small class=" text-info"><strong>18 tháng 3, 2015</strong></small> </h5>
-                    <p><span class="reviews-ratings text-info"><i class="ion-android-star"></i> <i class="ion-android-star"></i> <i class="ion-android-star"></i> <i class="ion-android-star"></i> <i class="ion-android-star-half"></i></span></p>
-                    <p>Sản phẩm rất tốt</p>
+                    <p><?php echo $user_manual['_custom_product_user_manual']['0'] ?></p>
                     <hr>
                 </div>
-                <div class="single-review clearfix">
-                    <h5 class="text-primary">Trần Thị Phương<small class=" text-info"><strong> 17 tháng 8, 2015</strong></small> </h5>
-                    <p><span class="reviews-ratings text-info"><i class="ion-android-star"></i> <i class="ion-android-star"></i> <i class="ion-android-star"></i> <i class="ion-android-star"></i> <i class="ion-android-star-half"></i></span></p>
-                    <p>Nhất định sẽ mua sản phẩm này lần nữa</p>
-                </div>
             </div>
-            <div role="tabpanel" class="tab-pane product-pane fade clearfix" id="tags">
+            <div role="tabpanel" class="tab-pane product-pane fade clearfix" id="evaluate">
                 <div class="item_box_col_right space_bottom_20" id="box_rating">
                     <div class="title_common_site">
                         Khách hàng nhận xét
@@ -230,7 +223,7 @@ global $getProductDetail;
                     </div>
                 </div>
             </div>
-            <div role="tabpanel" class="tab-pane product-pane fade clearfix" id="tags1">
+            <div role="tabpanel" class="tab-pane product-pane fade clearfix" id="answer">
                 <div id="box_qa" class="item_box_col_right space_bottom_20">
                     <div class="title_common_site">
                         Hỏi đáp
@@ -417,30 +410,32 @@ global $getProductDetail;
                     </div>
                 </div>
             </div>
-            <div role="tabpanel" class="tab-pane product-pane fade clearfix" id="tags2">
+            <div role="tabpanel" class="tab-pane product-pane fade clearfix" id="params">
 
                 <table cellspacing="0" cellpadding="0" border="0" class="tb_info_sanpham" id="product-attribute-specs-table">
                     <tbody>
+                    <?php if($nameTrademark['_custom_product_trademark_metabox']) : ?>
                     <tr>
                         <td class="col_tb_info_sp bg_info_sp">Thương Hiệu</td>
-                        <td>MAC</td>
+                        <td><?php echo $nameTrademark['_custom_product_trademark_metabox']['0']; ?></td>
                     </tr>
+                    <?php endif; ?>
+                    <?php if($nameOrigin['_custom_product_origin']) : ?>
                     <tr>
                         <td class="col_tb_info_sp bg_info_sp">Xuất xứ</td>
-                        <td>Canada</td>
+                        <td><?php echo $nameOrigin['_custom_product_origin']['0'] ?></td>
                     </tr>
-                    <tr>
+                    <?php endif; ?>
+                    <!--<tr>
                         <td class="col_tb_info_sp bg_info_sp">Quy cách đóng gói</td>
                         <td>3gr</td>
-                    </tr>
-                    <tr>
-                        <td class="col_tb_info_sp bg_info_sp">Barcode</td>
-                        <td>773602033805</td>
-                    </tr>
+                    </tr>-->
+                    <?php if($nameProduction['_custom_product_production']) : ?>
                     <tr>
                         <td class="col_tb_info_sp bg_info_sp">Nơi sản xuất</td>
-                        <td>Ca-na-đa</td>
+                        <td><?php echo $nameProduction['_custom_product_production']['0'] ?></td>
                     </tr>
+                    <?php endif; ?>
                     </tbody>
                 </table>
             </div>

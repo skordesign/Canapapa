@@ -80,7 +80,7 @@ add_action('add_meta_boxes', 'custom_filed_product_user_manual');
 
 function custom_product_user_manual_box_html($post)
 {
-    $value = get_post_meta($post->ID, '_custom_product_user_manual_meta_key', true);
+    $value = get_post_meta($post->ID, '_custom_product_user_manual', true);
     ?>
     <textarea id name="user_manual_field" id="user_manual_field" class="postbox" cols="130"><?php echo $value; ?></textarea>
     <?php
@@ -90,7 +90,7 @@ function product_user_manual_save_postdata($post_id) {
     if (array_key_exists('user_manual_field', $_POST)) {
         update_post_meta(
             $post_id,
-            '_custom_product_user_manual_meta_key',
+            '_custom_product_user_manual',
             $_POST['user_manual_field']
         );
     }
@@ -123,7 +123,6 @@ function custom_meta_box_trademark($object)
                     } else {
                         echo '<option>'.$val->post_title.'</option>';
                     }
-
                 }
                 ?>
             </select>

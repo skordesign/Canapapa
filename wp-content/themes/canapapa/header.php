@@ -47,27 +47,25 @@
 <div class="top-sec">
     <nav class="navbar navbar-static-top line-navbar-one">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed ion-android-menu" data-toggle="collapse"
-                        data-target="#line-navbar-collapse-1"><span class="sr-only">Toggle navigation</span></button>
-                <a class="lno-cart" href="cart.html"> <span class="glyphicon glyphicon-shopping-cart"></span> <span
-                            class="cart-item-quantity"></span> </a>
-                <button class="lno-btn-toggle"><span class="ion-android-menu"></span></button>
-            </div>
             <div class="row">
                 <div class="col-sm-4 welcome-msg hidden-xs">Chào mừng đến với thế giới mỹ phẩm</div>
                 <div class="col-sm-8 collapse navbar-collapse navbar-right" id="line-navbar-collapse-1">
+
                     <ul class="nav navbar-nav top-menu">
                         <li class="dropdown lnt-shopping-cart visible-lg visible-md ">
                             <a href="#" id="cp-cart" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-expanded="false"> <span class="ion-bag bag-icn"></span> <span
-                                        class="cart-item-quantity badge cart-badge"><?php echo $count ?></span> </a>
+                               aria-expanded="false"> <span class="ion-bag bag-icn"></span>
+                                <span class="cart-item-quantity badge cart-badge"><?php echo $count ?></span>
+                            </a>
                             <?php if($count > 0) : ?>
                             <ul role="menu" id="cp-cart-menu" class="dropdown-menu ul-cart">
                                 <li>
-                                    <div class="lnt-cart-products text-success"><i
-                                                class="ion-android-checkmark-circle icon"></i> <?php echo $count ?> Sản Phẩm. <span
-                                                class="lnt-cart-total"><?php echo WC()->cart->get_cart_subtotal(); ?></span>
+                                    <div class="lnt-cart-products text-success">
+                                        <i class="ion-android-checkmark-circle icon"></i>
+                                        <?php echo $count ?> Sản Phẩm.
+                                        <span class="lnt-cart-total">
+                                            <?php echo WC()->cart->get_cart_subtotal(); ?>
+                                        </span>
                                     </div>
                                 </li>
                                 <?php

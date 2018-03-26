@@ -16,7 +16,7 @@ $wc_new_product = new WP_Query($params);
                         global $product;
                         $discount = ($product->price / $product->regular_price)*10;
                     ?>
-                        <div class="product-item-container effect-wrap effect-animate" style="width: 263px;">
+                        <div class="product-item-container effect-wrap effect-animate">
                             <div class="product-main">
                                 <div class="product-view">
                                     <?php

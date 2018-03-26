@@ -46,7 +46,7 @@
                                 <?php get_template_part('templates/archive', 'tags'); ?>
                             <?php else: ?>
                                 <?php get_template_part('templates/archive', 'transport'); ?>
-                                <?php get_template_part('templates/archive', 'trademark'); ?>
+                                <?php get_template_part('templates/archive', 'product-trademark'); ?>
                                 <?php get_template_part('templates/archive', 'tags'); ?>
                             <?php endif; ?>
                         </div>

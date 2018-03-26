@@ -1,10 +1,16 @@
 <?php
-global $getProductDetail;
+global $getProductDetail, $nameTrademark, $nameOrigin, $nameProduction, $user_manual;
+
 $regular_price = get_post_meta($getProductDetail->ID, '_regular_price', true);
 $sale_price = get_post_meta($getProductDetail->ID, '_sale_price', true);
 $sku = get_post_meta($getProductDetail->ID, '_sku', true);
 $stock_status = get_post_meta($getProductDetail->ID, '_stock_status', true);
 $attachmentIds = explode(',', get_post_meta($getProductDetail->ID, '_product_image_gallery', true));
+$nameTrademark = get_post_custom($getProductDetail->ID, '_custom_product_trademark_metabox', true);
+$nameOrigin = get_post_custom($getProductDetail->ID, '_custom_product_origin', true);
+$nameProduction = get_post_custom($getProductDetail->ID, '_custom_product_production', true);
+$user_manual = get_post_custom($getProductDetail->ID, '_custom_product_user_manual', true);
+
 $imgUrls = array();
 foreach ($attachmentIds as $attachmentId) {
     $imgUrls[] = wp_get_attachment_url($attachmentId);
@@ -53,9 +59,10 @@ foreach ($attachmentIds as $attachmentId) {
         </div>
         <div class="col-sm-6 sub-info">
             <div class="product-name">
-                <h5 class="text-primary text-uppercase"><?php echo $getProductDetail->post_title ?></h5>
+                <h5 class="text-primary text-uppercase"><?php echo $nameTrademark['_custom_product_trademark_metabox']['0'] ?></h5>
             </div>
             <div class="product-review">
+                <h5 class="text-primary text-uppercase"><?php echo $getProductDetail->post_title ?></h5>
                 <div class="block_start start_small">
                     <div class="number_start" style="width:100%;"></div>
                     <div class="start_background"></div>
