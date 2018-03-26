@@ -19,11 +19,11 @@ $wp_slider = new WP_Query($params);
                         $src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), array(600, 172), false, '');
                         if ($wp_slider->posts['0'] == $post) {
                             echo '<div class="item active">
-                                    <img src="'.esc_url($src['0']).'" height="150px" width="1300px">
+                                    <img src="'.esc_url($src['0']).'" height="500px" width="1920px">
                                   </div>';
                         } else {
                             echo '<div class="item">
-                                    <img src="'.esc_url($src['0']).'" height="150px" width="1300px">
+                                    <img src="'.esc_url($src['0']).'" height="500px" width="1920px">
                                   </div>';
                         }
                     }
