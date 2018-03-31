@@ -1,15 +1,14 @@
 <?php
 $params = array('posts_per_page' => 8, 'post_type' => 'slider');
 $wp_slider = new WP_Query($params);
-
 ?>
 <div class="main_top_story">
     <div class="item_banner_big_top" id="slider_item_big_top">
         <div class="flexslider">
             <ul class="slides">
-                <?php if($wp_slider) : ?>
-                <?php foreach ($wp_slider as $slider) :
-                    $src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), array(600, 172), false, '');
+                <?php if ($wp_slider->have_posts()) : ?>
+                <?php while ($wp_slider->have_posts()) : $wp_slider->the_post();
+                $src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), array(600, 172), false, '');
                 ?>
                 <li>
                     <a title="<?php the_title() ?>" target="_parent"
@@ -18,8 +17,9 @@ $wp_slider = new WP_Query($params);
                              draggable="false">
                     </a>
                 </li>
-                <?php endforeach; ?>
+                <?php endwhile; ?>
                 <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
             </ul>
         </div>
     </div>
