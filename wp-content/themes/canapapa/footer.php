@@ -107,8 +107,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <p class="pull-left">© 2015.Royal Market | phát triển bởi <a href="laziweb.com"
-                                                                                     rel="nofollow">laziweb.com</a>
+                        <p class="pull-left">© 2018.Canapapa | phát triển bởi <a href="<?php echo get_home_url() ?>"
+                                                                                     rel="nofollow">Team Canapapa</a>
                         </p>
                     </div>
                 </div>

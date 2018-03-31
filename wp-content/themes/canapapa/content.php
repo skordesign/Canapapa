@@ -1,10 +1,13 @@
 <?php
 global $product_cat;
 $wc_new_product = '';
+$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
 if (is_product_category($product_cat['1']))
 {
     $params = array(
+        'posts_per_page' => 15,
+        'paged' => $paged,
         'tax_query' => array(
             'relation' => 'AND',
             array(
@@ -16,9 +19,28 @@ if (is_product_category($product_cat['1']))
         'post_type' => 'product',
     );
     $wc_new_product = new WP_Query($params);
-} else
+}
+else if(is_singular('trademark'))
 {
-    $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+    $nameTrademark = $wp->query_vars['trademark'];
+    $params = array(
+        'posts_per_page' => 15,
+        'paged' => $paged,
+        'tax_query' => array(
+            'relation' => 'AND',
+            array(
+                'meta_key' => '_custom_product_trademark_metabox',
+                'meta_value' => 'Trademark 4',
+            )
+        ),
+        'post_type' => 'product',
+    );
+    $wc_new_product = new WP_Query($params);
+
+    echo '<pre>'; print_r($wc_new_product); die();
+}
+else
+{
     if(is_page('san-pham-deals'))
     {
         $params = array(

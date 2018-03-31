@@ -29,7 +29,7 @@ $wc_product = new WP_Query($params);
             <div class="item_sanpham">
                 <a href="<?php echo get_permalink(get_the_ID()) ?>" class="item_shopping txt_link_hasaki">
                     <div class="main_thumb_shopping">
-                        <img src="<?php echo $featured_image['0'] ?>" width="300" height="300" alt="<?php the_title() ?>">
+                        <img src="<?php echo $featured_image['0'] ?>" width="150" height="100" alt="<?php the_title() ?>">
                     </div>
                     <div class="info_shopping">
                         <div class="price_item_shopping">
