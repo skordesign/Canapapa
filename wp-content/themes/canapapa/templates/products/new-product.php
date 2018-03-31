@@ -5,7 +5,7 @@ $wc_new_product = new WP_Query($params);
 <section class="container">
     <div class="row">
         <div class="col-sm-12 big-title text-uppercase text-center">
-            <h3 class="text-primary"> <?php esc_attr_e('New Product'); ?></h3>
+            <h3 class="text-primary"> <?php _e( 'New Product', 'woocommerce' ); ?></h3>
             <small><?php esc_attr_e('Some new products on the store') ?></small>
             <p><span class="ion-android-star-outline"></span></p>
         </div>

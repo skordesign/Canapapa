@@ -90,9 +90,7 @@ $all_categories = get_categories($params);
                                                                                                 width="215"
                                                                                                 height="240"
                                                                                                 alt="<?php the_title(); ?>"
-                                                                                                src="<?php echo $featured_image['0'] ?>"
-
-                                                                                                data-pagespeed-lazy-replaced-functions="1">
+                                                                                                src="<?php echo $featured_image['0'] ?>">
                                                                 <img class="top-img" width="215" height="240"
                                                                      alt="<?php the_title(); ?>"
                                                                      src="<?php echo $featured_image['0'] ?>"

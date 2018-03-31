@@ -16,7 +16,27 @@ if (is_product_category($product_cat['1']))
         'post_type' => 'product',
     );
     $wc_new_product = new WP_Query($params);
-} else
+}
+else if(is_singular('trademark'))
+{
+
+    global $post;
+    $post_slug=$post->slug;
+    echo '<pre>'; print_r(get_the_slug($post->ID)); die();
+    $params = array(
+        'tax_query' => array(
+            'relation' => 'AND',
+            array(
+                'taxonomy' => 'product_cat',
+                'field' => 'slug',
+                'terms' => $product_cat['1']
+            )
+        ),
+        'post_type' => 'product',
+    );
+    $wc_new_product = new WP_Query($params);
+}
+else
 {
     $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
     if(is_page('san-pham-deals'))
