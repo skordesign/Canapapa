@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="05af5021-cde8-420c-be75-525e5e9da124" name="Default" comment="setup themes canapapa">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/canapapa/content.php" afterPath="$PROJECT_DIR$/wp-content/themes/canapapa/content.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/canapapa/css/canapapa.css" afterPath="$PROJECT_DIR$/wp-content/themes/canapapa/css/canapapa.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,10 +24,60 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bg_arrow_active_sort.gif" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bg_arrow_active_sort.gif" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/images/bg_arrow_active_sort.gif">
           <provider selected="true" editor-type-id="images">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="flexslider.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/css/flexslider/flexslider.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1155">
+              <caret line="72" column="16" lean-forward="true" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="canapapa.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/css/canapapa.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="457">
+              <caret line="1451" column="20" lean-forward="true" selection-start-line="1451" selection-start-column="20" selection-end-line="1451" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="slider.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/slider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="35" lean-forward="false" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new-product.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/templates/products/new-product.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="53" column="49" lean-forward="true" selection-start-line="52" selection-start-column="20" selection-end-line="53" selection-end-column="49" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -62,7 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>col-sm-12 wide-ad</find>
       <find>figure.effect-layla</find>
       <find>trade</find>
       <find>flexslider</find>
@@ -72,7 +121,6 @@
       <find>.slick-dots li.slick-active button</find>
       <find>#wrapper_header .item_header</find>
       <find>sub_item_menu</find>
-      <find>.item_banner_big_top</find>
       <find>#wrapper_header .block-search</find>
       <find>#wrapper_header .sort_title</find>
       <find>body</find>
@@ -86,12 +134,14 @@
       <find>#breadcrumb</find>
       <find>container</find>
       <find>breadcrumb</find>
-      <find>.columns .column.main</find>
       <find>.breadcrumb</find>
       <find>.bootstrap-select .dropdown-menu</find>
       <find>a:visited, .alink:visited, a.txt_link_hasaki, a, a:focus, a:active, .alink</find>
       <find>action showcart popup-cart</find>
       <find>.brand_thuongthieu</find>
+      <find>.page-main</find>
+      <find>.item_banner_big_top</find>
+      <find>.columns .column.main</find>
     </findStrings>
     <replaceStrings>
       <replace>#326e51</replace>
@@ -154,7 +204,6 @@
         <option value="$PROJECT_DIR$/templates/css/custom-gold.css" />
         <option value="$PROJECT_DIR$/wp-content/themes/canapapa/header-canapapa.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/canapapa/css/custom-gold.css" />
-        <option value="$PROJECT_DIR$/wp-content/themes/canapapa/slider.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/canapapa/css/flexslider/flexslider.css" />
         <option value="$PROJECT_DIR$/wp-content/themes/canapapa/menu.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/canapapa/menu-page.php" />
@@ -166,13 +215,14 @@
         <option value="$PROJECT_DIR$/wp-content/themes/canapapa/templates/archive-product-trademark.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/canapapa/templates/trademark/trademark-content.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/canapapa/header.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/canapapa/css/canapapa.css" />
         <option value="$PROJECT_DIR$/wp-content/themes/canapapa/page.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/canapapa/single-trademark.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/canapapa/woocommerce.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/canapapa/functions.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/canapapa/footer.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/canapapa/content.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/canapapa/slider.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/canapapa/css/canapapa.css" />
       </list>
     </option>
   </component>
@@ -183,7 +233,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1386" />
@@ -319,7 +369,7 @@
       <workItem from="1522404017021" duration="193000" />
       <workItem from="1522405366571" duration="835000" />
       <workItem from="1522412701981" duration="16284000" />
-      <workItem from="1522484394101" duration="1618000" />
+      <workItem from="1522484394101" duration="4375000" />
     </task>
     <task id="LOCAL-00001" summary="setup theme canapapa">
       <created>1520533458804</created>
@@ -454,14 +504,35 @@
       <option name="project" value="LOCAL" />
       <updated>1522485063208</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="setup themes canapapa">
+      <created>1522486758235</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1522486758235</updated>
+    </task>
+    <task id="LOCAL-00021" summary="setup themes canapapa">
+      <created>1522486925944</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1522486925944</updated>
+    </task>
+    <task id="LOCAL-00022" summary="setup themes canapapa">
+      <created>1522488060014</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1522488060014</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222023000" />
+    <option name="totallyTimeSpent" value="224780000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3524962" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -471,7 +542,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6547009" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -503,13 +574,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/woocommerce/cart/cart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="35" column="93" lean-forward="false" selection-start-line="35" selection-start-column="82" selection-end-line="35" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/languages/loco/plugins/woocommerce-vi.po">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="49147">
@@ -620,27 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/css/flexslider/flexslider.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="68" column="45" lean-forward="true" selection-start-line="68" selection-start-column="45" selection-end-line="68" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/slider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="11" column="120" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/templates/products/new-product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" column="14" lean-forward="true" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/menu-page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -736,13 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="251" column="114" lean-forward="false" selection-start-line="251" selection-start-column="114" selection-end-line="251" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/css/canapapa.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="1464" column="33" lean-forward="false" selection-start-line="1464" selection-start-column="33" selection-end-line="1464" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -843,6 +879,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/images/bg_arrow_active_sort.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/css/flexslider/flexslider.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="72" column="16" lean-forward="true" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/content.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -851,9 +900,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/images/bg_arrow_active_sort.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/templates/products/new-product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="53" column="49" lean-forward="true" selection-start-line="52" selection-start-column="20" selection-end-line="53" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/slider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="35" lean-forward="false" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/canapapa/css/canapapa.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="1451" column="20" lean-forward="true" selection-start-line="1451" selection-start-column="20" selection-end-line="1451" selection-end-column="20" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

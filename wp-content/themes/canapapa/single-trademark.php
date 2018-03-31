@@ -1,35 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <?php wp_head(); ?>
-</head>
-<body>
-<div class="page-wrapper hidden_mobile">
-    <header id="wrapper_header" class="page-header">
-        <div class="header content">
-            <?php get_template_part('header') ?>
-            <?php get_template_part('menu-page') ?>
-        </div>
-    </header>
-
-    <main id="maincontent" class="page-main">
-        <div class="columns container">
-            <div class="column main">
-                <section class="container equal-height-container">
-                    <div class="col-sm-12">
-                        <?php
-                            get_template_part('templates/products/product', 'content');
-                        ?>
-                    </div>
-                </section>
-
+<?php get_header(); ?>
+<div class="content-wrap" data-effect="lnl-push">
+    <?php get_template_part('header', 'canapapa'); ?>
+    <nav class="navbar navbar-default navbar-static-top line-navbar-two">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="line-navbar-collapse-2">
+                <!--        menu    -->
+                <?php get_template_part('menu'); ?>
+                <!--        search    -->
+                <?php get_template_part( 'search'); ?>
             </div>
         </div>
+    </nav>
+    <hr>
+    <div class="middle-sec wow fadeIn animated animated" data-wow-offset="10" data-wow-duration="2s"
+         style="visibility: visible; animation-duration: 2s;">
+        <section class="container equal-height-container">
+            <div class="col-sm-12">
+                <?php get_template_part('templates/trademark/trademark', 'content') ?>
+            </div>
+        </section>
+    </div>
 
-    </main>
     <?php get_footer(); ?>
 </div>
 </body>
