@@ -1,3 +1,28 @@
+<?php
+$cat = (isset($_GET['cat']) && !empty($_GET['cat']) ? $_GET['cat'] : '');
+$postname = (isset($_GET['postname']) && !empty($_GET['postname']) ? $_GET['postname'] : '');
+
+//get all categories
+$taxonomy = 'product_cat';
+$orderby = 'name';
+$show_count = 0;      // 1 for yes, 0 for no
+$pad_counts = 0;      // 1 for yes, 0 for no
+$hierarchical = 1;      // 1 for yes, 0 for no
+$title = '';
+$empty = 0;
+
+$params = array(
+    'taxonomy' => $taxonomy,
+    'orderby' => $orderby,
+    'show_count' => $show_count,
+    'pad_counts' => $pad_counts,
+    'hierarchical' => $hierarchical,
+    'title_li' => $title,
+    'hide_empty' => $empty
+);
+$all_categories = get_categories($params);
+//echo '<pre>'; print_r($all_categories); die();
+?>
 <div class="container"><!--mo div bao 3 block, logo, search, (gio hang, ho tro, dang nhap)-->
     <div class="col-lg-2 col-md-3 col-sm-4">
         <a class="logo" href="<?php echo get_home_url() ?>" title="Canapapa - Chất lượng cho tất cả">
@@ -6,125 +31,48 @@
         </a>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-5">
-        <form class="form minisearch" id="search_mini_form" action=""
+        <form class="form minisearch" id="search_mini_form" action="<?php echo home_url('/san-pham'); ?>"
               method="get">
             <div class="block block-search" style="padding-left: 69px;">
                 <div class="block-title">
-                    <input type="hidden" class="search_category" name="cat" value="">
-                    <a class="sort_title" href="javascript:;" id="dLabel" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false" style="width: 70px;">
-                        <span>Tất cả</span>
-                        <i class="fa fa-caret-down"></i></a>
+                    <input type="hidden" class="search_category" name="cat" value="21">
+                    <?php if($cat != '') : ?>
+                    <?php foreach ($all_categories as $category) : ?>
+                    <?php if($category->term_id == $cat) : ?>
+                                <a class="sort_title" href="javascript:;" id="dLabel" data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false" style="width: 70px;">
+                                    <span><?php echo $category->name ?></span>
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                    <?php endif; ?>
+                    <?php endforeach; ?>
+                    <?php else: ?>
+                        <a class="sort_title" href="javascript:;" id="dLabel" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false" style="width: 70px;">
+                            <span>Tất cả</span>
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    <?php endif; ?>
                     <ul class="dropdown-menu" aria-labelledby="dLabel" name="cat" style="left: 0px;">
+                        <?php if($cat == '') : ?>
                         <li data-id="" value="">
                             <span>Tất cả</span>
                         </li>
-
-                        <li class="search_cate" data-id="3" value="3">
-                            <span>Sức Khỏe - Làm Đẹp</span>
-                        </li>
-                        <li class="search_child_cate" data-id="23" value="23">
-                            <span>Trang Điểm</span>
-                        </li>
-                        <li class="search_child_cate" data-id="4" value="4">
-                            <span>Chăm Sóc Da Mặt</span>
-                        </li>
-                        <li class="search_child_cate" data-id="12" value="12">
-                            <span>Chăm Sóc Cơ Thể</span>
-                        </li>
-                        <li class="search_child_cate" data-id="297" value="297">
-                            <span>Chăm Sóc Vùng Da Mắt</span>
-                        </li>
-                        <li class="search_child_cate" data-id="14" value="14">
-                            <span>Chăm Sóc Cho Bé</span>
-                        </li>
-                        <li class="search_child_cate" data-id="96" value="96">
-                            <span>Chăm Sóc Tóc</span>
-                        </li>
-                        <li class="search_child_cate" data-id="100" value="100">
-                            <span>Chăm Sóc Cho Nam</span>
-                        </li>
-                        <li class="search_child_cate" data-id="103" value="103">
-                            <span>Nước Hoa</span>
-                        </li>
-                        <li class="search_child_cate" data-id="119" value="119">
-                            <span>Tinh Dầu - Spa</span>
-                        </li>
-                        <li class="search_child_cate" data-id="156" value="156">
-                            <span>Thực Phẩm Chức Năng</span>
-                        </li>
-                        <li class="search_child_cate" data-id="198" value="198">
-                            <span>Phụ Kiện Làm Ðẹp</span>
-                        </li>
-                        <li class="search_cate" data-id="331" value="331">
-                            <span>Hasaki Clinic &amp; Spa</span>
-                        </li>
-                        <li class="search_child_cate" data-id="333" value="333">
-                            <span>Giảm Béo</span>
-                        </li>
-                        <li class="search_child_cate" data-id="339" value="339">
-                            <span>Triệt Lông Vĩnh Viễn</span>
-                        </li>
-                        <li class="search_child_cate" data-id="345" value="345">
-                            <span>Nâng Cơ Công Nghệ RF</span>
-                        </li>
-                        <li class="search_child_cate" data-id="348" value="348">
-                            <span>Chăm Sóc Da Mặt</span>
-                        </li>
-                        <li class="search_child_cate" data-id="351" value="351">
-                            <span>Trị Liệu Toàn Thân</span>
-                        </li>
-                        <li class="search_child_cate" data-id="357" value="357">
-                            <span>Thư Giãn Toàn Thân</span>
-                        </li>
-                        <li class="search_child_cate" data-id="360" value="360">
-                            <span>Điều Trị Tàn Nhang Công Nghệ Cao</span>
-                        </li>
-                        <li class="search_child_cate" data-id="363" value="363">
-                            <span>Điều Trị Nám Công Nghệ Cao</span>
-                        </li>
-                        <li class="search_child_cate" data-id="366" value="366">
-                            <span>Dưỡng Trắng Da</span>
-                        </li>
-                        <li class="search_child_cate" data-id="369" value="369">
-                            <span>Điều Trị Mụn </span>
-                        </li>
-                        <li class="search_child_cate" data-id="398" value="398">
-                            <span>Điều Trị Sẹo Rỗ</span>
-                        </li>
-                        <li class="search_child_cate" data-id="402" value="402">
-                            <span>Trẻ Hóa Da</span>
-                        </li>
-                        <li class="search_child_cate" data-id="1290" value="1290">
-                            <span>Điều Trị Mọi Bệnh Lý Về Da</span>
-                        </li>
-                        <li class="search_cate" data-id="447" value="447">
-                            <span>Ba Mẹ Và Bé - Ðồ Chơi</span>
-                        </li>
-                        <li class="search_child_cate" data-id="450" value="450">
-                            <span>Bé Ăn</span>
-                        </li>
-                        <li class="search_child_cate" data-id="465" value="465">
-                            <span>Bé Mặc</span>
-                        </li>
-                        <li class="search_child_cate" data-id="474" value="474">
-                            <span>Bé Vệ Sinh</span>
-                        </li>
-                        <li class="search_child_cate" data-id="492" value="492">
-                            <span>Sức Khỏe Bé</span>
-                        </li>
-                        <li class="search_child_cate" data-id="540" value="540">
-                            <span>Dành Cho Ba Mẹ</span>
-                        </li>
-                        <li class="search_child_cate" data-id="771" value="771">
-                            <span>Bé Chơi</span>
-                        </li>
-                        <li class="search_child_cate" data-id="1116" value="1116">
-                            <span>Bé Ra Ngoài</span>
-                        </li>
-                        <li class="search_child_cate" data-id="1200" value="1200">
-                            <span>Bé Ngủ</span>
-                        </li>
+                        <?php endif; ?>
+                        <?php foreach ($all_categories as $cate) : ?>
+                        <?php if($cate->parent == 0) : ?>
+                            <li class="search_cate" data-id="<?php echo $cate->term_id ?>" value="<?php echo $cate->term_id ?>">
+                                <span><?php echo $cate->name ?></span>
+                            </li>
+                        <?php endif; ?>
+                        <?php foreach ($all_categories as $child_cate) : ?>
+                            <?php if($child_cate->parent == $cate->term_id) : ?>
+                            <li class="search_child_cate" data-id="<?php echo $child_cate->term_id ?>" value="<?php echo $child_cate->term_id ?>">
+                                <span><?php echo $child_cate->name ?></span>
+                            </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
                 <div class="block block-content">
@@ -133,14 +81,14 @@
                         <div class="control">
                             <input class="input-text"
                                    placeholder="Tìm sản phẩm bạn mong muốn..." id="search"
-                                   name="q" autocomplete="off" value="" aria-haspopup="false">
+                                   name="postname" autocomplete="off" value="<?php echo $postname ?>" aria-haspopup="false">
                             <div id="block_suggest_search" style="display: none">
 
                             </div>
                         </div>
                     </div>
                     <div class="actions">
-                        <button class="action search" title="Search" type="submit" disabled=""><i
+                        <button class="action search" title="Search" type="submit"><i
                                     class="fa fa-search"></i></button>
                     </div>
                 </div>
@@ -170,39 +118,22 @@
             $('.dropdown-menu').css('left', '0px');
         })
     </script>
+    <?php
+    global $woocommerce;
+    $items = $woocommerce->cart->get_cart();
+    $count = $woocommerce->cart->cart_contents_count;
+    ?>
     <div class="col-lg-4 col-md-3 col-sm-3">
         <!--mo block "gio hang, dang nhap, ho tro", the dong o cuoi item ho tro khach hang-->
         <div class="item_header">
             <div data-block="minicart" class="minicart-wrapper">
-                <a class="action showcart popup-cart" href="#popup-cart">
+                <a class="action showcart popup-cart" href="<?php echo wc_get_cart_url(); ?>">
                     <img alt="Giỏ hàng"
                          src="<?php bloginfo('template_url') ?>/images/icon_01.png">
-                    <span class="counter qty">0</span>
+                    <span class="counter qty"><?php echo $count ?></span>
                 </a>
             </div>
             <a class="txt_gio_hang popup-cart" href="#popup-cart"> Giỏ <br> hàng </a>
-        </div>
-        <div id="popup-cart" class="mfp-hide relative">
-            <div class="hsk-popup-header">
-                <button title="Đóng" type="button" class="mfp-close">×</button>
-            </div>
-            <div class="hsk-popup-content"><a href="/checkout/cart">
-                    <div class="page-title-wrapper">
-                        <h1 class="page-title">
-                            <span class="base" data-ui-id="page-title-wrapper">Giỏ hàng(0 sản phẩm)</span></h1>
-                    </div>
-                </a>
-                <div class="cart-empty">
-                    <div class="content_emty text-center">
-                        <img class="space_bottom_20" alt=""
-                             src="<?php bloginfo('template_url') ?>/images/img_lb_empty.gif">
-                        <div class="txt_empty_1">Bạn chưa chọn sản phẩm.<p></p>
-                            <div><a class="btn btn_site_1" href="https://hasaki.vn/">Tiếp tục mua sắm</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="item_header item_login">
             <a class="icon_header" href="#"><img alt=""

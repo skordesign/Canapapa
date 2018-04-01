@@ -5,8 +5,8 @@ $wc_new_product = new WP_Query($params);
 <section class="container">
     <div class="row">
         <div class="col-sm-12 big-title text-uppercase text-center">
-            <h3 class="text-primary"> <?php _e( 'New Product', 'woocommerce' ); ?></h3>
-            <small><?php esc_attr_e('Some new products on the store') ?></small>
+            <h3 class="text-primary"> <?php _e( 'Hàng mới về', 'woocommerce' ); ?></h3>
+            <small><?php esc_attr_e('Một số sản phẩm về cửa hàng') ?></small>
             <p><span class="ion-android-star-outline"></span></p>
         </div>
         <div id="best-deals" class="col-sm-12 wow fadeIn">
@@ -20,7 +20,7 @@ $wc_new_product = new WP_Query($params);
                             <div class="product-main">
                                 <div class="product-view">
                                     <?php
-                                    $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()));
+                                    $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), array(215, 240), false, '');
                                     ?>
                                     <figure class="double-img">
                                         <a href="<?php echo get_permalink(get_the_ID()) ?>">

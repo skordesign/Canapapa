@@ -6,8 +6,8 @@ $wp_product = new WP_Query($params);
 <section class="container" data-speed="2">
     <div class="row">
         <div class="col-sm-12 big-title text-uppercase text-center">
-            <h3 class="text-primary"> <?php esc_attr_e('Buy more products'); ?></h3>
-            <small> <?php esc_attr_e('Popular consumer products today'); ?></small>
+            <h3 class="text-primary"> <?php esc_attr_e('Sản phẩm mua nhiều'); ?></h3>
+            <small> <?php esc_attr_e('Những sản phẩm khách hàng ưa chuộng hiện nay'); ?></small>
             <p><span class="ion-android-star-outline"></span></p>
         </div>
         <div class="col-sm-12">
@@ -17,7 +17,7 @@ $wp_product = new WP_Query($params);
                         global $product;
                         ?>
                         <?php
-                        $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wp_product->ID));
+                        $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wp_product->ID), array(100, 100), false, '');
                         ?>
                         <div class="col-sm-6 col-md-4">
                             <div class="row">
