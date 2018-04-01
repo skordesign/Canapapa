@@ -833,7 +833,7 @@ button.mfp-close, button.mfp-arrow {
 }
 /*details product*/
 div#order_review {
-    margin-top: 46px;
+    margin-top: 35px;
     margin-left: -140px;
 }
 span.old-price {
@@ -5916,9 +5916,5 @@ footer hr {
     width: 350px;
 }
 h3#order_review_heading {
-    margin-left: -140px;
-}
-div#order_review {
-    margin-top: 46px;
     margin-left: -140px;
 }

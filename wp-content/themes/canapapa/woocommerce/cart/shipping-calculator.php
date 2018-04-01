@@ -30,7 +30,7 @@ do_action( 'woocommerce_before_shipping_calculator' ); ?>
 
 <form class="woocommerce-shipping-calculator" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 
-	<p><a href="#" class="shipping-calculator-button"><?php esc_html_e( 'Calculate shipping', 'woocommerce' ); ?></a></p>
+	<p><a href="#" class="shipping-calculator-button"><?php esc_html_e( 'Tính toán vận chuyển', 'woocommerce' ); ?></a></p>
 
 	<section class="shipping-calculator-form" style="display:none;">
 

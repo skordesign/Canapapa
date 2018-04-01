@@ -32,10 +32,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<tr>
 				<th scope="col" class="product-remove">&nbsp;</th>
 				<th scope="col" class="product-thumbnail">&nbsp;</th>
-				<th scope="col" class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
-				<th scope="col" class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
-				<th scope="col" class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
-				<th scope="col" class="product-subtotal"><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
+				<th scope="col" class="product-name"><?php esc_html_e( 'Sản phẩm', 'woocommerce' ); ?></th>
+				<th scope="col" class="product-price"><?php esc_html_e( 'Giá', 'woocommerce' ); ?></th>
+				<th scope="col" class="product-quantity"><?php esc_html_e( 'Số lượng', 'woocommerce' ); ?></th>
+				<th scope="col" class="product-subtotal"><?php esc_html_e( 'Tổng', 'woocommerce' ); ?></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -130,12 +130,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 					<?php if ( wc_coupons_enabled() ) { ?>
 						<div class="coupon">
-							<label for="coupon_code"><?php esc_html_e( 'Coupon code:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Code', 'woocommerce' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon code', 'woocommerce' ); ?>"><?php esc_attr_e( 'Apply coupon code', 'woocommerce' ); ?></button>
+							<label for="coupon_code"><?php esc_html_e( 'Phiếu mua hàng:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Code', 'woocommerce' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Áp dụng phiếu mua hàng', 'woocommerce' ); ?>"><?php esc_attr_e( 'Áp dụng phiếu mua hàng', 'woocommerce' ); ?></button>
 							<?php do_action( 'woocommerce_cart_coupon' ); ?>
 						</div>
 					<?php } ?>
 
-					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Cập nhật giỏ hàng', 'woocommerce' ); ?>"><?php esc_html_e( 'Cập nhật giỏ hàng', 'woocommerce' ); ?></button>
 
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 

@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php else : ?>
 
-		<h3><?php _e( 'Billing details', 'woocommerce' ); ?></h3>
+		<h3><?php _e( '1. Chi tiết thanh toán', 'woocommerce' ); ?></h3>
 
 	<?php endif; ?>
 
@@ -39,7 +39,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="woocommerce-billing-fields__field-wrapper">
 		<?php
 			$fields = $checkout->get_checkout_fields( 'billing' );
+            $fields['billing_first_name']['label'] = 'Tên';
+            $fields['billing_last_name']['label'] = 'Họ và tên lót';
+            $fields['billing_company']['label'] = 'Tên công ty';
+            $fields['billing_country']['label'] = 'Quốc gia';
+            $fields['billing_address_1']['label'] = 'Tên đường / Phường';
+            $fields['billing_address_1']['placeholder'] = 'Địa chỉ đường / Phường xã';
+            $fields['billing_address_2']['placeholder'] = 'Quận / Huyện';
+            $fields['billing_city']['label'] = 'Thị trấn / thành phố';
+            $fields['billing_phone']['label'] = 'Điện thoại';
             $fields['billing_phone']['required'] = 1;
+            $fields['billing_email']['label'] = 'Email';
+
 			foreach ( $fields as $key => $field ) {
 				if ( isset( $field['country_field'], $fields[ $field['country_field'] ] ) ) {
 					$field['country'] = $checkout->get_value( $field['country_field'] );
