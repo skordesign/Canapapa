@@ -32,16 +32,16 @@ function woocommerce_product_custom_block_general()
     woocommerce_wp_text_input(
         array(
             'id' => '_custom_product_origin',
-            'placeholder' => 'Origin',
-            'label' => __('Origin', 'woocommerce'),
+            'placeholder' => 'Nguồn gốc',
+            'label' => __('Nguồn gốc', 'woocommerce'),
         )
     );
     //Custom Product Number Field
     woocommerce_wp_text_input(
         array(
             'id' => '_custom_product_production',
-            'placeholder' => 'Where production',
-            'label' => __('Where production', 'woocommerce'),
+            'placeholder' => 'Nơi sản xuất',
+            'label' => __('Nơi sản xuất', 'woocommerce'),
         )
     );
     echo '</div>';

@@ -25,7 +25,7 @@ $wc_relationship_product = new WP_Query($args);
             <div class="product-main">
                 <div class="product-view">
                     <?php
-                    $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_new_product->ID));
+                    $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_new_product->ID), array(263, 240), false, '');
                     ?>
                     <figure class="double-img">
                         <a href="<?php echo get_permalink($product->ID) ?>">

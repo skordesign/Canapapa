@@ -5,8 +5,8 @@ $wc_new_posts = new WP_Query($params);
 <section class="container">
     <div class="row">
         <div class="col-sm-12 big-title text-uppercase text-center">
-            <h3 class="text-primary"><?php esc_attr_e('News'); ?></h3>
-            <small><?php esc_attr_e('Latest news about cosmetic world'); ?></small>
+            <h3 class="text-primary"><?php esc_attr_e('Tin tức mới'); ?></h3>
+            <small><?php esc_attr_e('Tin tức mới về thời giới mỹ phẩm'); ?></small>
             <p><span class="ion-android-star-outline"></span></p>
         </div>
         <div class="col-sm-12">
@@ -15,7 +15,7 @@ $wc_new_posts = new WP_Query($params);
                     <?php while ($wc_new_posts->have_posts()) : $wc_new_posts->the_post();
                         ?>
                         <?php
-                        $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_new_posts->ID));
+                        $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_new_posts->ID), array(352, 198), '', false);
                         ?>
                         <div class="col-sm-12 col-md-4">
                             <div class="thumbnail">
@@ -30,13 +30,13 @@ $wc_new_posts = new WP_Query($params);
                                         <p class="text-muted">
                                             <span>Bởi
                                             <a href="">Nguyễn Thị Anh</a> /
-                                            <a href="">Tư vấn làm đẹp</a> /
-                                            <a href="#">3 Nhận xét</a></span>
+                                            <a href="">Tư vấn làm đẹp</a>
+<!--                                            <a href="#">3 Nhận xét</a></span>-->
                                         </p>
                                     </div>
                                     <p><?php the_content(); ?></p>
                                     <hr>
-                                    <a href="<?php echo get_post_permalink($wc_new_posts->ID) ?>" class="btn btn-primary hvr-underline-from-center-primary"><?php esc_attr_e('Details'); ?></a></div>
+                                    <a href="<?php echo get_post_permalink($wc_new_posts->ID) ?>" class="btn btn-primary hvr-underline-from-center-primary"><?php esc_attr_e('Chi tiết'); ?></a></div>
                             </div>
                         </div>
                     <?php endwhile; ?>

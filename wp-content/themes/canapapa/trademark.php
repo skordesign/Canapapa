@@ -5,8 +5,8 @@ $wc_trademarks = new WP_Query($params);
 <section class="container" data-speed="6">
     <div class="row">
         <div class="col-sm-12 big-title text-uppercase text-center">
-            <h3 class="text-primary"><?php esc_attr_e('Trademark'); ?></h3>
-            <small> <?php esc_attr_e('Commit to genuine products from well-known brands'); ?></small>
+            <h3 class="text-primary"><?php esc_attr_e('Thương hiệu'); ?></h3>
+            <small> <?php esc_attr_e('Cam kết sản phẩm  chính hãng từ những thương hiệu nổi tiếng'); ?></small>
             <p><span class="ion-android-star-outline"></span></p>
         </div>
         <div id="brands"  class="col-sm-12 opacity-eff wow fadeIn">
@@ -15,7 +15,7 @@ $wc_trademarks = new WP_Query($params);
                         <?php while ($wc_trademarks->have_posts()) : $wc_trademarks->the_post();
                             ?>
                             <?php
-                            $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_trademarks->ID));
+                            $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_trademarks->ID), array(165, 165), false, '');
                             ?>
                             <div>
                                 <a href="<?php echo get_permalink($wc_trademarks->ID) ?>">

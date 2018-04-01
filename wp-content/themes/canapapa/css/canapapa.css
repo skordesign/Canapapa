@@ -8,7 +8,7 @@ body {
     background: #f5fbf6;
 }
 .page-wrapper {
-    padding-top: 109px;
+    /*padding-top: 109px;*/
 }
 #wrapper_header .logo {
     margin: 5px 0 14px 10px;
@@ -473,10 +473,10 @@ a.item_menu_web_right {
 
 .columns .column.main {
     padding-bottom: 20px;
-    margin-top: 55px;
+    margin-top: 12px;
 }
 section#top_story {
-    margin-top: -23px;
+    margin-top: -25px;
 }
 #top_story .main_top_story {
     padding-left: 220px;
@@ -592,7 +592,7 @@ section#top_story {
 
 /*header*/
 #wrapper_header {
-    position: absolute;
+    /*position: absolute;*/
     z-index: 99;
     transition: all 0.3s ease 0s;
     left: 0;
@@ -1792,6 +1792,7 @@ h1, h2, h3 {
 }
 
 .dashed-border {
+    /*margin-top: 10px;*/
     /*margin-bottom: 25px;*/
     /*padding-top: 5px;*/
     /*padding-bottom: 15px*/
@@ -3977,7 +3978,7 @@ legend {
     bottom:-50px
 }
 #brands .slick-dots li.slick-active button {
-    background:#333
+    /*background:#333*/
 }
 .carousel-inner {
     margin-bottom:5px!important
@@ -5910,4 +5911,14 @@ footer hr {
     .switcher-container {
         top: 25px
     }
+}
+.woocommerce-billing-fields {
+    width: 350px;
+}
+h3#order_review_heading {
+    margin-left: -140px;
+}
+div#order_review {
+    margin-top: 46px;
+    margin-left: -140px;
 }

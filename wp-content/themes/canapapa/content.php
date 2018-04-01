@@ -2,7 +2,9 @@
 global $product_cat;
 $wc_new_product = '';
 $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-
+//echo '<pre>'; print_r($wp);
+//echo '<pre>'; print_r($_REQUEST);
+//die();
 if (is_product_category($product_cat['1']))
 {
     $params = array(
@@ -22,22 +24,15 @@ if (is_product_category($product_cat['1']))
 }
 else if(is_singular('trademark'))
 {
-    $nameTrademark = $wp->query_vars['trademark'];
+    $nameTrademark = str_replace('-', ' ', $wp->query_vars['trademark']);
     $params = array(
         'posts_per_page' => 15,
         'paged' => $paged,
-        'tax_query' => array(
-            'relation' => 'AND',
-            array(
-                'meta_key' => '_custom_product_trademark_metabox',
-                'meta_value' => 'Trademark 4',
-            )
-        ),
+        'meta_key' => '_custom_product_trademark_metabox',
+        'meta_value' => $nameTrademark,
         'post_type' => 'product',
     );
     $wc_new_product = new WP_Query($params);
-
-    echo '<pre>'; print_r($wc_new_product); die();
 }
 else
 {
@@ -68,12 +63,23 @@ else
     else
     {
         $postName = (isset($_GET['postname']) && !empty($_GET['postname']) ? $_GET['postname'] : '');
+        $cat_id = (isset($_GET['cat']) && !empty($_GET['cat']) ? $_GET['cat'] : '');
+
 
         $params = array();
         $params['paged'] = $paged;
         $params['post_type'] = 'product';
         $params['posts_per_page'] = 15;
         $params['order'] = 'desc';
+        if(!empty($cat_id)) {
+            $params['tax_query'] = array(
+                array (
+                    'taxonomy' => 'product_cat',
+                    'field' => 'term_id',
+                    'terms' => $cat_id,
+                )
+            );
+        }
 
         if($postName == "name" && isset($_GET['order_by']) && !empty($_GET['order_by'])) {
             $params['order_by'] = $postName;
@@ -82,7 +88,9 @@ else
         }
         else if(is_numeric($postName) && isset($_GET['order_by']) && !empty($_GET['order_by'])) {
             $params['posts_per_page'] = $postName;
-        } else if(!is_numeric($postName)){
+        } else if(!is_numeric($postName) && isset($_GET['order_by']) && !empty($_GET['order_by'])){
+            $params['s'] = $postName;
+        } else if(!empty($postName)) {
             $params['s'] = $postName;
         }
 

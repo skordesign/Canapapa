@@ -10,6 +10,7 @@ $params = array(
     'post_type' => 'product',
     'meta_key' => '_custom_product_trademark_metabox',
     'meta_value' => $nameTrademark,
+    'post__not_in' => array($getProductDetail->ID),
 );
 $wc_product = new WP_Query($params);
 

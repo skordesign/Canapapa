@@ -8,7 +8,7 @@ $wp_slider = new WP_Query($params);
             <ul class="slides">
                 <?php if ($wp_slider->have_posts()) : ?>
                 <?php while ($wp_slider->have_posts()) : $wp_slider->the_post();
-                $src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), array(600, 172), false, '');
+                $src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), array(530, 400), false, '');
                 ?>
                 <li>
                     <a title="<?php the_title() ?>" target="_parent"

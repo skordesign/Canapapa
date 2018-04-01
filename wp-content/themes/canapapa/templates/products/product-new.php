@@ -24,8 +24,8 @@ $all_categories = get_categories($params);
 <section class="container">
     <div class="row">
         <div class="col-sm-12 big-title text-uppercase text-center">
-            <h3 class="text-primary"><?php esc_attr_e( 'Product new'); ?></h3>
-            <small><?php esc_attr_e( 'Always up to launch the most popular products to your customer is hand'); ?></small>
+            <h3 class="text-primary"><?php esc_attr_e( 'Sản phẩm mới'); ?></h3>
+            <small><?php esc_attr_e( 'Luôn cập nhật những sản phẩm mới nhất đến tay khách hàng'); ?></small>
             <p><span class="ion-android-star-outline"></span></p>
         </div>
         <div class="col-sm-12">
@@ -82,7 +82,7 @@ $all_categories = get_categories($params);
                                                  style="display: block;">
                                                 <div class="product-main">
                                                     <?php
-                                                    $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_new_product->post->ID));
+                                                    $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_new_product->post->ID), array(263, 240), false, '');
                                                     ?>
                                                     <div class="product-view">
                                                         <figure class="double-img">
