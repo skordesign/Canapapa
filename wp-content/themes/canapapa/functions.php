@@ -47,7 +47,7 @@ function canapapa_script_enqueue()
     wp_enqueue_script('bootstrap-select', get_template_directory_uri() . '/js/bootstrap-select.min.js', array('jquery'));
     wp_enqueue_script('slick', get_template_directory_uri() . '/js/slick/slick.min.js', array('jquery'));
     wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array('jquery'));
-
+    wp_enqueue_script('menu', get_template_directory_uri() . '/js/menu.js', array('jquery'));
 
 
 }
