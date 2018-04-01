@@ -30,30 +30,34 @@ $all_categories = get_categories($params);
                     <?php if($all_categories) : ?>
                     <?php foreach ($all_categories as $cate) : ?>
                     <div class="sub_item_menu">
-                        <?php if($cate->parent == 0 ) : ?>
+                        <?php if($cate->parent == 0 ) :
+                            // get the thumbnail id using the queried category term_id
+                            $thumbnail_id = get_woocommerce_term_meta( $cate->term_id, 'thumbnail_id', true );
+                            // get the image URL
+                            $image = wp_get_attachment_url( $thumbnail_id );
+                        ?>
                         <a alt="<?php echo $cate->name ?>" class="parent_menu" href="<?php echo get_category_link($cate->term_id) ?>">
                             <b><?php echo $cate->name ?></b><em class="fa fa-angle-right"> </em>
                         </a>
                         <?php endif; ?>
-                        <?php foreach ($all_categories as $child_cate) : ?>
-                        <?php if($child_cate->parent == $cate->term_id) :
-                            // get the thumbnail id using the queried category term_id
-                            $thumbnail_id = get_woocommerce_term_meta( $child_cate->term_id, 'thumbnail_id', true );
-                            // get the image URL
-                            $image = wp_get_attachment_url( $thumbnail_id );
-                        ?>
+
                         <div class="conten_hover_submenu" style="display: none;">
                             <div class="col_hover_submenu">
-                                <a href="<?php echo get_category_link($cate->term_id) ?>">
-                                    <strong><?php echo $child_cate->name ?></strong>
-                                </a>
+                                <?php foreach ($all_categories as $child_cate) : ?>
+                                <?php if($child_cate->parent == $cate->term_id) :
+                                ?>
+                                    <a href="<?php echo get_category_link($child_cate->term_id) ?>">
+                                        <strong><?php echo $child_cate->name ?></strong>
+                                    </a>
+
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
                             </div>
-                            <a class="img_banner_landdin_page" href="<?php echo get_category_link($child_cate->term_id) ?>">
+                            <a class="img_banner_landdin_page" href="<?php echo get_category_link($cate->term_id) ?>">
                                 <img src="<?php echo $image ?>" alt="" width="530" height="400">
                             </a>
                         </div>
-                        <?php endif; ?>
-                        <?php endforeach; ?>
+
                     </div>
                     <?php endforeach; ?>
                     <?php endif; ?>
