@@ -15,9 +15,9 @@
         </div>
     </header>
     <?php
-    global $getProductDetail;
+    global $product;
     global $wp, $product_cat;
-    $getProductDetail = get_post();
+    $product = get_post();
     $product_cat = explode('=', $wp->query_string);
     ?>
     <main id="maincontent" class="page-main">

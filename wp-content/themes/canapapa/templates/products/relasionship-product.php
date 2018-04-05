@@ -1,6 +1,6 @@
 <?php
-global $getProductDetail;
-$id_relationship_product = wc_get_related_products($getProductDetail->ID);
+global $product;
+$id_relationship_product = wc_get_related_products($product->ID);
 
 $args = array(
     'post_type' => 'product',
@@ -19,7 +19,7 @@ $wc_relationship_product = new WP_Query($args);
         <?php if ($wc_relationship_product->have_posts()) : ?>
         <?php while ($wc_relationship_product->have_posts()) : $wc_relationship_product->the_post();
         global $product;
-        $discount = ($product->price / $product->regular_price)*10;
+                $discount = (100 - ($product->price / $product->regular_price)*100);
         ?>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 product-item-container effect-wrap effect-animate">
             <div class="product-main">

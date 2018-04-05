@@ -1217,7 +1217,7 @@
             $(i[0]).val( function(i, oldval) {
                 return ++oldval;
             });
-        })
+        });
         $('button.minus').click(function() {
             var i =  $(this).siblings('input');
             var val = $(i[0]).val()
@@ -1307,6 +1307,36 @@
                 // instead of a settings object
             ]
         });
+
+        $('#add_to_cart').click(function () {
+            var product_id = $(this).attr("data-id");
+            var quantity = $('input[name="quantity"]').val();
+            var name = $(this).attr('data-name');
+            $.ajax({
+                url: '/wp-admin/admin-ajax.php',
+                type: 'POST',
+                dataType: 'json',
+                data: {action: 'addCustomToCart', product_id : product_id, qty : quantity, name : name},
+                beforeSend: function () {
+                    $('.loader').css("display", "block");
+                },
+                success: function (data) {
+                    $('.add-to-cart-success').css("display", "block");
+                    $('.qty').text(data.count_qty);
+                },
+                error: function (err) {
+                    console.log(err);
+                },
+                complete: function () {
+                    $('.loader').css("display", "none");
+                }
+            });
+        });
+
+        $('.btn_site_2').click(function () {
+            $('#quick-view-login').css('display', 'block');
+        });
+
     });
 }(jQuery));
 

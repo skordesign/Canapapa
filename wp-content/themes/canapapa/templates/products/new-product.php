@@ -14,7 +14,7 @@ $wc_new_product = new WP_Query($params);
                 <?php if ($wc_new_product->have_posts()) : ?>
                     <?php while ($wc_new_product->have_posts()) : $wc_new_product->the_post();
                         global $product;
-                        $discount = ($product->price / $product->regular_price)*10;
+                        $discount = (100 - ($product->price / $product->regular_price)*100);
                     ?>
                         <div class="product-item-container effect-wrap effect-animate">
                             <div class="product-main">
@@ -29,7 +29,9 @@ $wc_new_product = new WP_Query($params);
                                         </a>
                                     </figure>
                                     <span class="label offer-label-left">bán chạy</span>
+                                    <?php if(!empty($discount)) : ?>
                                     <span class="label offer-label-right"><?php echo round($discount, 2); ?>% giảm</span></div>
+                                    <?php endif; ?>
                                     <div class="product-btns  effect-content-inner">
                                         <p class="effect-icon">
                                             <a href="<?php echo $product->add_to_cart_url() ?>" class="hint-top" data-hint="Thêm vào giỏ hàng">
