@@ -21,8 +21,8 @@ $params = array(
     'hide_empty' => $empty
 );
 $all_categories = get_categories($params);
-//echo '<pre>'; print_r($all_categories); die();
 ?>
+<div class="loader" style="display: none"></div>
 <div class="container"><!--mo div bao 3 block, logo, search, (gio hang, ho tro, dang nhap)-->
     <div class="col-lg-2 col-md-3 col-sm-4">
         <a class="logo" href="<?php echo get_home_url() ?>" title="Canapapa - Chất lượng cho tất cả">
@@ -36,16 +36,16 @@ $all_categories = get_categories($params);
             <div class="block block-search" style="padding-left: 69px;">
                 <div class="block-title">
                     <input type="hidden" class="search_category" name="cat" value="21">
-                    <?php if($cat != '') : ?>
-                    <?php foreach ($all_categories as $category) : ?>
-                    <?php if($category->term_id == $cat) : ?>
+                    <?php if ($cat != '') : ?>
+                        <?php foreach ($all_categories as $category) : ?>
+                            <?php if ($category->term_id == $cat) : ?>
                                 <a class="sort_title" href="javascript:;" id="dLabel" data-toggle="dropdown"
                                    aria-haspopup="true" aria-expanded="false" style="width: 70px;">
                                     <span><?php echo $category->name ?></span>
                                     <i class="fa fa-caret-down"></i>
                                 </a>
-                    <?php endif; ?>
-                    <?php endforeach; ?>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                     <?php else: ?>
                         <a class="sort_title" href="javascript:;" id="dLabel" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false" style="width: 70px;">
@@ -54,24 +54,26 @@ $all_categories = get_categories($params);
                         </a>
                     <?php endif; ?>
                     <ul class="dropdown-menu" aria-labelledby="dLabel" name="cat" style="left: 0px;">
-                        <?php if($cat == '') : ?>
-                        <li data-id="" value="">
-                            <span>Tất cả</span>
-                        </li>
+                        <?php if ($cat == '') : ?>
+                            <li data-id="" value="">
+                                <span>Tất cả</span>
+                            </li>
                         <?php endif; ?>
                         <?php foreach ($all_categories as $cate) : ?>
-                        <?php if($cate->parent == 0) : ?>
-                            <li class="search_cate" data-id="<?php echo $cate->term_id ?>" value="<?php echo $cate->term_id ?>">
-                                <span><?php echo $cate->name ?></span>
-                            </li>
-                        <?php endif; ?>
-                        <?php foreach ($all_categories as $child_cate) : ?>
-                            <?php if($child_cate->parent == $cate->term_id) : ?>
-                            <li class="search_child_cate" data-id="<?php echo $child_cate->term_id ?>" value="<?php echo $child_cate->term_id ?>">
-                                <span><?php echo $child_cate->name ?></span>
-                            </li>
+                            <?php if ($cate->parent == 0) : ?>
+                                <li class="search_cate" data-id="<?php echo $cate->term_id ?>"
+                                    value="<?php echo $cate->term_id ?>">
+                                    <span><?php echo $cate->name ?></span>
+                                </li>
                             <?php endif; ?>
-                        <?php endforeach; ?>
+                            <?php foreach ($all_categories as $child_cate) : ?>
+                                <?php if ($child_cate->parent == $cate->term_id) : ?>
+                                    <li class="search_child_cate" data-id="<?php echo $child_cate->term_id ?>"
+                                        value="<?php echo $child_cate->term_id ?>">
+                                        <span><?php echo $child_cate->name ?></span>
+                                    </li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -81,7 +83,8 @@ $all_categories = get_categories($params);
                         <div class="control">
                             <input class="input-text"
                                    placeholder="Tìm sản phẩm bạn mong muốn..." id="search"
-                                   name="postname" autocomplete="off" value="<?php echo $postname ?>" aria-haspopup="false">
+                                   name="postname" autocomplete="off" value="<?php echo $postname ?>"
+                                   aria-haspopup="false">
                             <div id="block_suggest_search" style="display: none">
 
                             </div>
@@ -126,6 +129,14 @@ $all_categories = get_categories($params);
     <div class="col-lg-4 col-md-3 col-sm-3">
         <!--mo block "gio hang, dang nhap, ho tro", the dong o cuoi item ho tro khach hang-->
         <div class="item_header">
+            <div class="add-to-cart-success" style="display: none;"><span class="close"><i
+                            class="tikicon icon-circle-close"></i></span>
+                <p class="text">
+                    <i class="tikicon icon-circle-tick"></i>
+                    Thêm vào giỏ hàng thành  công!
+                </p>
+                <a href="<?php echo wc_get_cart_url(); ?>" class="btn">Xem giỏ hàng và thanh toán</a>
+            </div>
             <div data-block="minicart" class="minicart-wrapper">
                 <a class="action showcart popup-cart" href="<?php echo wc_get_cart_url(); ?>">
                     <img alt="Giỏ hàng"
@@ -152,27 +163,27 @@ $all_categories = get_categories($params);
 
                     <div class="item_da_login">
                         <a href=""><i aria-hidden="true"
-                                                                         class="fa fa-file-text-o"></i> Tài
+                                      class="fa fa-file-text-o"></i> Tài
                             khoản của bạn </a>
                     </div>
                     <div class="item_da_login">
                         <a href=""><i aria-hidden="true"
-                                                                            class="fa fa-list-alt"></i> Quản
+                                      class="fa fa-list-alt"></i> Quản
                             lý đơn hàng </a>
                     </div>
                     <div class="item_da_login">
                         <a href=""><i aria-hidden="true"
-                                                                 class="fa fa-heart-o"></i> Sản phẩm yêu
+                                      class="fa fa-heart-o"></i> Sản phẩm yêu
                             thích</a>
                     </div>
                     <div class="item_da_login">
                         <a href=""><i aria-hidden="true"
-                                                                         class="fa fa-map-marker"></i> Địa
+                                      class="fa fa-map-marker"></i> Địa
                             chỉ giao hàng</a>
                     </div>
                     <div class="item_da_login">
                         <a href=""><i aria-hidden="true"
-                                                                                class="fa fa-sign-out"></i>
+                                      class="fa fa-sign-out"></i>
                             Thoát</a>
                     </div>
                 </div>
@@ -180,7 +191,7 @@ $all_categories = get_categories($params);
         </div>
         <div class="item_header">
             <a class="icon_header" href=""><img alt="Câu hỏi thường gặp"
-                                                                    src="<?php bloginfo('template_url') ?>/images/icon_03.png"></a>
+                                                src="<?php bloginfo('template_url') ?>/images/icon_03.png"></a>
             <a class="txt_gio_hang" href="">Hỗ trợ <br> khách hàng</a>
         </div>
     </div><!--dong div wrap login, ho tro, gio hang duoc mo o minicart.phtml-->

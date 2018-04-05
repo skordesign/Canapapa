@@ -1,16 +1,15 @@
 <?php
-global $getProductDetail;
+global $product;
 //get custom product
-$getArrayCustom = get_post_custom($getProductDetail->ID, '_custom_product_trademark_metabox', true);
+$getArrayCustom = get_post_custom($product->ID, '_custom_product_trademark_metabox', true);
 $nameTrademark = $getArrayCustom['_custom_product_trademark_metabox']['0'];
-
 //get trademark of product
 $params = array(
     'posts_per_page' => 6,
     'post_type' => 'product',
     'meta_key' => '_custom_product_trademark_metabox',
     'meta_value' => $nameTrademark,
-    'post__not_in' => array($getProductDetail->ID),
+    'post__not_in' => array(get_the_ID()),
 );
 $wc_product = new WP_Query($params);
 
@@ -24,7 +23,7 @@ $wc_product = new WP_Query($params);
             <?php if ($wc_product->have_posts()) : ?>
             <?php while ($wc_product->have_posts()) : $wc_product->the_post();
                 global $product;
-                $discount = ($product->price / $product->regular_price)*10;
+                $discount = (100 - ($product->price / $product->regular_price)*100);
                 $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()));
             ?>
             <div class="item_sanpham">
@@ -35,8 +34,8 @@ $wc_product = new WP_Query($params);
                     <div class="info_shopping">
                         <div class="price_item_shopping">
                             <div class="product_shopping text-uppercase"><?php echo $nameTrademark ?></div>
-                            <span class="giamoi"><?php echo number_format($product->price, 0, '.', ',') ?>đ</span>
-                            <span class="giacu"><?php echo number_format($product->regular_price, 0, '.', ','); ?>đ</span>
+                            <span class="giamoi"><?php echo number_format($wc_product->price, 0, '.', ',') ?>đ</span>
+                            <span class="giacu"><?php echo number_format($wc_product->regular_price, 0, '.', ','); ?>đ</span>
                             <span class="discount_percent2"><?php echo round($discount, 2); ?>%</span>
                         </div>
                         <h3 class="block_main_info_hsk">

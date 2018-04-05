@@ -107,7 +107,7 @@ else
                     <?php while ($wc_new_product->have_posts()) : $wc_new_product->the_post();
                         $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($wc_new_product->ID));
                         global $product;
-                        $discount = ($product->price / $product->regular_price) * 10;
+                        $discount = (100 - ($product->price / $product->regular_price)*100);
                         ?>
                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 product-item-container effect-wrap effect-animate">
                             <div class="product-main">

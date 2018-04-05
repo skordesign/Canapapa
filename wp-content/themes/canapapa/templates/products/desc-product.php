@@ -1,5 +1,5 @@
 <?php
-global $getProductDetail, $nameTrademark, $nameOrigin, $nameProduction, $user_manual;
+global $product, $nameTrademark, $nameOrigin, $nameProduction, $user_manual;
 ?>
 <div class="col-sm-12 accordion">
     <div role="tabpanel">
@@ -12,7 +12,7 @@ global $getProductDetail, $nameTrademark, $nameOrigin, $nameProduction, $user_ma
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane product-pane fade clearfix active in" id="descreption">
-                <?php echo $getProductDetail->post_content ?>
+                <?php echo $product->post_content ?>
             </div>
             <div role="tabpanel" class="tab-pane product-pane fade clearfix" id="user_manual">
                 <div class="single-review clearfix">
@@ -74,7 +74,7 @@ global $getProductDetail, $nameTrademark, $nameOrigin, $nameProduction, $user_ma
                             </div>
                             <div class="block_total_right col-lg-5 col-md-4 col-sm-4 text-center">
                                 <div class="txt_chiase">Chia sẽ nhận xét của bạn về sản phẩm này</div>
-                                <a href="" data-login="1" class="btn btn_site_2 write-rating-btn"> Viết Bình luận</a>
+                                <a data-login="1" class="btn btn_site_2 write-rating-btn"> Viết Bình luận</a>
                             </div>
                         </div>
                         <form method="post" name="rating_form">
