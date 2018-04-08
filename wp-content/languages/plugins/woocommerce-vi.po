@@ -15,6 +15,7 @@ msgstr ""
 msgid "Profile &rarr;"
 msgstr "Hồ sơ &rarr;"
 
+
 #: includes/admin/class-wc-admin-setup-wizard.php:479
 msgid "Read more about what we collect."
 msgstr "Tìm hiểu thêm về dữ liệu được thu thập."

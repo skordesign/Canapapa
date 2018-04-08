@@ -19,8 +19,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-?>
 
+?>
 <form class="woocommerce-ordering" method="get">
 	<select name="orderby" class="orderby">
 		<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
