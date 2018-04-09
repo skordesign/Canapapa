@@ -99,48 +99,4 @@ function product_user_manual_save_postdata($post_id) {
 }
 add_action('save_post', 'product_user_manual_save_postdata');
 
-function custom_product_trademark_meta_box()
-{
-    add_meta_box("demo-meta-box", "Trademark", "custom_meta_box_trademark", "product", "side", "high", null);
-}
-
-add_action("add_meta_boxes", "custom_product_trademark_meta_box");
-
-function custom_meta_box_trademark($object)
-{
-    wp_nonce_field(basename(__FILE__), "meta-box-nonce");
-    ?>
-    <ul class="order_actions submitbox">
-        <li class="wide" id="actions">
-            <select name="product_trademark_meta_box">
-                <?php
-                $params = array('post_type' => 'trademark');
-                $wc_trademarks = get_posts($params);
-                $value = get_post_custom($object->ID, "_custom_product_trademark_metabox", true);
-
-                foreach($wc_trademarks as $key => $val)
-                {
-                    if($value['_custom_product_trademark_metabox'][0] == $val->post_title) {
-                       echo '<option selected>'.$val->post_title.'</option>';
-                    } else {
-                        echo '<option>'.$val->post_title.'</option>';
-                    }
-                }
-                ?>
-            </select>
-        </li>
-    </ul>
-    <?php
-}
-
-function product_trademark_save_postdata($post_id) {
-    if (array_key_exists('product_trademark_meta_box', $_POST)) {
-        update_post_meta(
-            $post_id,
-            '_custom_product_trademark_metabox',
-            $_POST['product_trademark_meta_box']
-        );
-    }
-}
-add_action('save_post', 'product_trademark_save_postdata');
 
