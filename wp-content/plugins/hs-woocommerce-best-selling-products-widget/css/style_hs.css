@@ -1,0 +1,23 @@
+/* recently viewed products */
+#woocommerce_top_selling_products{
+    margin: 0 auto;
+    text-align: center;
+}
+#woocommerce_top_selling_products .top_product_price{
+    margin-left: 0px;
+}
+#woocommerce_top_selling_products .top_product_price li{
+    padding: 0px;
+}
+#woocommerce_top_selling_products .heading h4{
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+#woocommerce_top_selling_products .top_selling_product_list_widget a img{
+    display: block;
+    height: auto;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 15px;
+}
