@@ -13,7 +13,6 @@
  */
 require_once trailingslashit( get_template_directory() ).'acmethemes/init.php';
 
-include 'inc/create_module_trademark.php';
 include 'inc/feature_system.php';
 include 'inc/custom_metebox_products.php';
 function online_shop_canapapa_deals_widget_init(){
