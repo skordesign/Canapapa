@@ -209,7 +209,7 @@
     clear: both;
 }
 .pwb-all-brands .pwb-brands-cols-outer .pwb-brands-col3{
-    padding: 0 15px;
+    padding: 15px 15px;
     width: 20%;
     float: left;
 }
@@ -274,3 +274,14 @@
     }
 }
 /* ----------------------- /Responsive ----------------------- */
+
+/*custom css*/
+.pwb-brands-col3 div {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+}
+.pwb-brands-col3 p {
+    color: red;
+    font-weight: bold;
+    text-align: center
+}
