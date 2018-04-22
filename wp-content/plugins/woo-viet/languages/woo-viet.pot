@@ -1,0 +1,531 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Woo Viet - WooCommerce for Vietnam\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-22 03:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: inc/onepay/domestic-settings.php:90
+#, php-format
+msgid ""
+"%sContact OnePay%s to configure this URL on its site. <strong>This is "
+"required  based on its guidelines.</strong>"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:111
+msgid ""
+"<span style=\"color: red\" \">This gateway is not active on your site. "
+"Because OnePay supports VND only.</span>"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:130
+msgid "Add districts for Vietnam"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:120
+msgid "Add provinces for Vietnam"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:92
+msgid "Add the OnePay Domestic Gateway"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:71
+msgid "An Giang"
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:41
+msgid "API Credentials"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:72
+msgid "Ba Ria - Vung Tau"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:75
+msgid "Bac Giang"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:74
+msgid "Bac Kan"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:73
+msgid "Bac Lieu"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:76
+msgid "Bac Ninh"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:77
+msgid "Ben Tre"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:79
+msgid "Binh Dinh"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:78
+msgid "Binh Duong"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:80
+msgid "Binh Phuoc"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:81
+msgid "Binh Thuan"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:82
+msgid "Ca Mau"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:50
+msgid "Can not save settings! Please refresh this page."
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:84
+msgid "Can Tho"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:83
+msgid "Cao Bang"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:142
+msgid "Change VND currency symbol"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:172
+msgid "Choose what you want to change. E.g:"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:159
+msgid "Convert <code>000</code> of prices to K (or anything)"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:85
+msgid "Da Nang"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:86
+msgid "Dak Lak"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:87
+msgid "Dak Nong"
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:96
+msgid "Debug log"
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:34
+msgid "Description"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:90
+msgid "Dien Bien"
+msgstr ""
+
+#: inc/class-wooviet-notices.php:91
+msgid "Dismiss this notice"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:52
+msgid "District"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:88
+msgid "Dong Nai"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:89
+msgid "Dong Thap"
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:98
+msgid "Enable logging"
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:13
+msgid "Enable/Disable"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:99 inc/class-wooviet-admin-page.php:126
+#: inc/class-wooviet-admin-page.php:138 inc/class-wooviet-admin-page.php:149
+#: inc/class-wooviet-admin-page.php:166 inc/class-wooviet-admin-page.php:185
+msgid "Enabled"
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:43
+#, php-format
+msgid ""
+"Enter your OnePay API credentials. Contact OnePay to have your credentials "
+"%shere%s."
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:56
+msgid "Get your Access Code from OnePay."
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:48
+msgid "Get your Merchant ID from OnePay."
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:80
+msgid "Get your password info from OnePay."
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:64
+msgid "Get your Secure Secret from OnePay."
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:72
+msgid "Get your user info from OnePay."
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:91
+msgid "Gia Lai"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:92
+msgid "Ha Giang"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:93
+msgid "Ha Nam"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:94
+msgid "Ha Noi"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:95
+msgid "Ha Tinh"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:96
+msgid "Hai Duong"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:97
+msgid "Hai Phong"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:99
+msgid "Hau Giang"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:101
+msgid "Ho Chi Minh"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:98
+msgid "Hoa Binh"
+msgstr ""
+
+#. Author of the plugin
+msgid "htdat"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://github.com/htdat/woo-viet"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://profiles.wordpress.org/htdat"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:100
+msgid "Hung Yen"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:155
+msgid "Insert a text to change the default symbol <code>đ</code>"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:237
+msgid "Insert the exchange rate of this currency to VND"
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:86
+msgid "Instant Payment Notification (IPN)"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:102
+msgid "Khanh Hoa"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:103
+msgid "Kien Giang"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:104
+msgid "Kon Tum"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:105
+msgid "Lai Chau"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:108
+msgid "Lam Dong"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:107
+msgid "Lang Son"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:106
+msgid "Lao Cai"
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:100
+#, php-format
+msgid "Log events, such as IPN requests, inside %s"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:109
+msgid "Long An"
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:46
+msgid "Merchant ID"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:110
+msgid "Nam Dinh"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:111
+msgid "Nghe An"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:112
+msgid "Ninh Binh"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:113
+msgid "Ninh Thuan"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:107
+msgid "OnePay can work on your site."
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:30
+msgid "OnePay Domestic Gateway"
+msgstr ""
+
+#: inc/class-wooviet-onepay-domestic.php:28 inc/onepay/domestic-settings.php:15
+msgid "OnePay Domestic Gateway (by Woo Viet)"
+msgstr ""
+
+#: inc/class-wooviet-onepay-domestic.php:250
+#, php-format
+msgid ""
+"OnePay Domestic Gateway Info | Code: %1$s | Message: %2$s | MerchantTxnRef: "
+"%3$s | Type: %4$s"
+msgstr ""
+
+#: inc/class-wooviet-onepay-domestic.php:105
+msgid "OnePay Payment Title"
+msgstr ""
+
+#: inc/class-wooviet-onepay-domestic.php:29
+msgid "OnePay supports all major bank ATMs in Vietnam."
+msgstr ""
+
+#: inc/class-wooviet-notices.php:89
+msgid "Or run a short survery:"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:114
+msgid "Phu Tho"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:115
+msgid "Phu Yen"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:109
+#, php-format
+msgid ""
+"Please configure this gateway under <a href=\"%s\">WooCommerce -> Settings ->"
+" Checkout</a>."
+msgstr ""
+
+#: inc/class-wooviet-notices.php:87
+msgid "Please help us to improve Woo Viet."
+msgstr ""
+
+#: inc/class-wooviet-onepay-domestic.php:27
+msgid "Proceed to OnePay"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:49
+msgid "Province"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:116
+msgid "Quang Binh"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:117
+msgid "Quang Nam"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:118
+msgid "Quang Ngai"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:119
+msgid "Quang Ninh"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:120
+msgid "Quang Tri"
+msgstr ""
+
+#: inc/class-wooviet-notices.php:88
+msgid "Rate us!"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:131
+msgid "Require \"Add provinces for Vietnam\" active"
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:75
+msgid "Required. Provided by OnePay"
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:51 inc/onepay/domestic-settings.php:59
+#: inc/onepay/domestic-settings.php:67 inc/onepay/domestic-settings.php:83
+msgid "Required. Provided by OnePay."
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:230
+msgid ""
+"Select a PayPal supported currency (like USD, EUR, etc), which is used to "
+"convert VND prices"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:43
+msgid "Settings saved"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:121
+msgid "Soc Trang"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:122
+msgid "Son La"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:178
+#, php-format
+msgid "Support VND for <a href=\"%s\">the PayPal Standard gateway</a>"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:123
+msgid "Tay Ninh"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:124
+msgid "Thai Binh"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:125
+msgid "Thai Nguyen"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:126
+msgid "Thanh Hoa"
+msgstr ""
+
+#: inc/class-wooviet-vnd-paypal-standard.php:100
+#, php-format
+msgid ""
+"The prices will be converted to %1$s in the PayPal pages with the exchange "
+"rate %2$s."
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:37
+msgid "This controls the description which the user sees during checkout."
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:29
+msgid "This controls the title which the user sees during checkout."
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"This plugin provides features and integrations specifically for Vietnam."
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:127
+msgid "Thua Thien - Hue"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:128
+msgid "Tien Giang"
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:27
+msgid "Title"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:129
+msgid "Tra Vinh"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:130
+msgid "Tuyen Quang"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:131
+msgid "Vinh Long"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:132
+msgid "Vinh Phuc"
+msgstr ""
+
+#: inc/onepay/domestic-settings.php:38
+msgid "With OnePay, you can make payment by using any local Vietnam ATM card."
+msgstr ""
+
+#. Name of the plugin
+msgid "Woo Viet - WooCommerce for Vietnam"
+msgstr ""
+
+#: woo-viet.php:95
+msgid ""
+"Woo Viet is not running because WooCommerce is not active. Please activate "
+"both plugins."
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:62
+msgid "Woo Viet Settings"
+msgstr ""
+
+#: inc/class-wooviet-provinces.php:133
+msgid "Yen Bai"
+msgstr ""
+
+#: inc/class-wooviet-admin-page.php:104
+#, php-format
+msgid "Your store currency is <code>%s</code>. "
+msgstr ""
