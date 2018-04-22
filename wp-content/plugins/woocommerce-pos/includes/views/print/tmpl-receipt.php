@@ -185,7 +185,7 @@
   </tbody>
   <tfoot>
     <tr class="subtotal">
-      <th colspan="2"><?php _e( 'Subtotal', 'woocommerce-pos' ); ?>:</th>
+      <th colspan="2"><?php _e( 'Tổng cộng', 'woocommerce-pos' ); ?>:</th>
       <td colspan="1">{{{money subtotal}}}</td>
     </tr>
     {{#if has_discount}}
