@@ -76,10 +76,10 @@ class Best_selling_products_Widget extends WP_Widget {
 					
 					if($sale[0] !=""){
 						$product_currency_symbol = get_woocommerce_currency_symbol();
-						$product_price = $sale[0];
+						$product_price = number_format($sale[0]);
 					}else{
 						$product_currency_symbol = get_woocommerce_currency_symbol();
-						$product_price = $price[0] ;
+						$product_price = number_format($price[0]);
 					}
 					
 					if(empty($product_price)){
@@ -90,7 +90,12 @@ class Best_selling_products_Widget extends WP_Widget {
 				?>
 					<ul class="top_product_price">
 					  <li><span class="woocommerce-Price-amount amount">
-					       <?php if(!empty($product_price)) { ?><span class="woocommerce-Price-currencySymbol"><?php _e($product_currency_symbol,'best_selling_product'); ?></span>&nbsp;<?php  _e($product_price,'best_selling_product'); }
+					       <?php if(!empty($product_price)) { ?>
+                               <span class="woocommerce-Price-currencySymbol">
+                                   <?php _e($product_price,'best_selling_product'); ?>
+                               </span> <?php  _e($product_currency_symbol,'best_selling_product'); ?>
+                               <?php
+					       }
 								else{
 									?>
 									<span class="woocommerce-Price-currencySymbol"> <?php _e($product_currency_symbol,'best_selling_product'); ?></span>&nbsp;<?php _e($min_variation_price[0],'best_selling_product'); ?>&nbsp;<?php _e("-",'best_selling_product'); ?><?php _e($product_currency_symbol,'best_selling_product');?> &nbsp;<?php _e($max_variation_price[0],'best_selling_product'); ?> 
