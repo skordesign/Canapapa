@@ -2102,7 +2102,7 @@ a.my-account:hover{
 	color: #2d2d2d;
 }
 .single-item .content .title{
-
+	text-transform: uppercase;
 	margin-bottom: 3px;
 	color: #2d2d2d;
 }
@@ -3243,4 +3243,7 @@ ul.products-canapapa-deals li.product-canapapa-deals, ul.products-canapapa-deals
 .trademark {
 	padding: 40px 0px;
 	float: left;
+}
+.woocommerce-loop-product__excerpt {
+	color: #2d2d2d;
 }
