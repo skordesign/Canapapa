@@ -504,10 +504,10 @@ class Perfect_Woocommerce_Brands{
                       $image_size = $image_size_selected;
                   }
 
-                  $attachment_html = wp_get_attachment_image($attachment_id,$image_size);
+                      $attachment_src = wp_get_attachment_image_src($attachment_id,$image_size);
 
-                  if( !empty($attachment_html) && $show_as=='brand_image' || !empty($attachment_html) && !$show_as ){
-                    echo '<a href="'.$brand_link.'" title="'.__( 'View brand', 'perfect-woocommerce-brands' ).'">'.$attachment_html.'</a>';
+                  if( !empty($attachment_src) && $show_as=='brand_image' || !empty($attachment_src) && !$show_as ){
+                    echo '<a href="'.$brand_link.'" title="'.__( 'View brand', 'perfect-woocommerce-brands' ).'"><img width="250" height="250" src="'.$attachment_src['0'].'" alt="'.$brand->name.'"></a>';
                   }else{
                     echo '<a href="'.$brand_link.'" title="'.__( 'View brand', 'perfect-woocommerce-brands' ).'">'.$brand->name.'</a>';
                   }
