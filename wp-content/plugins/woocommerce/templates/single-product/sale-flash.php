@@ -26,9 +26,14 @@ global $post, $product;
 <?php if ( $product->is_on_sale() ) : ?>
 
     <?php
-    $discount = round(100 - ($product->sale_price / $product->regular_price) * 100);
+    if(!empty($product->sale_price)) {
+        $discount = round(100 - ($product->sale_price / $product->regular_price) * 100);
+    }
+
+    if(!empty($discount)) {
+        echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . esc_html__( '- '.$discount. '%', 'woocommerce' ) . '</span>', $post, $product );
+    }
     ?>
-    <?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . esc_html__( '- '.$discount. '%', 'woocommerce' ) . '</span>', $post, $product ); ?>
 
 <?php endif;
 
