@@ -55,3 +55,5 @@ if ( ! function_exists( 'online_shop_deals' ) ) :
     }
 endif;
 add_action( 'online_shop_action_deals', 'online_shop_deals', 20 );
+
+add_filter( 'jetpack_development_mode', '__return_true' );
